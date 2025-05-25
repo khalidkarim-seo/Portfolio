@@ -42,11 +42,11 @@
       <div class="logo"><a href="/index.html"><span class="highlight">KK</span> DEVELOPER</a></div>
       <div class="hamburger" id="hamburger">&#9776;</div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services" title="View our services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="#services" title="View our services"><i class="fa-solid fa-wrench"></i></a></li>
+        <li><a href="#about"><i class="fa-solid fa-user"></i></a></li>
+        <li><a href="#portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
+        <li><a href="#contact"><i class="fa-solid fa-phone"></i></a></li>
       </ul>
     </nav>
   </header>
@@ -154,8 +154,8 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-      <h2>Our Web Development Work</h2>
-      <p>Some of the recent projects I've worked on.</p>
+      <h2>Our Portfolio</h2>
+      <p>Some of the recent projects We've worked on.</p>
       <div class="portfolio-grid">
         <div class="project-card">
           <a href="http://niceflyconsultants.org/" target="_blank"><img src="assets/nice fly consultants.PNG" alt="Consultancy-Website-by-kk-developer" /></a>
@@ -220,8 +220,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <script src="script.js" defer></script>
 
   <script>
@@ -230,21 +228,6 @@
       document.getElementById('nav-links').classList.toggle('show');
     });
 
-    // VANTA background
-    VANTA.NET({
-      el: "#home",
-      mouseControls: true,
-      touchControls: true,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0xff0000,
-      backgroundColor: 0x000000,
-      points: 8.00,
-      maxDistance: 30.00,
-      spacing: 20.00
-    });
 
     // Scroll animations
     document.addEventListener("DOMContentLoaded", () => {
