@@ -410,6 +410,8 @@ footer::before {
 .hero p{
   font-size: 12px;
 }
+.hero-content{width: 90vw;
+    height: 60vh;}
 
 
   .service-cards {
