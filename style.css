@@ -13,39 +13,44 @@
     line-height: 1.6;
     background:black;
     color:rgb(211, 210, 210);
-  }
+ }
   #services, #about, #portfolio {
     padding-top: 70px;
   }
   
   header {
     height: 70px;
-    background:rgb(245, 245, 245);
-    padding: 1rem 0;
+    background:#3f3c3c4b;
     position: sticky;
     top: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.137); /* Optional: adds some depth */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     z-index: 1000;
-    transition: .5s ease;
+      border-bottom: 4px solid rgba(245, 245, 245, 0.534);
+
   }
   
   .navbar {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     max-width: 80%;
     margin: auto;
     padding: 0 20px;
   }
+   .logo img{
+    height: 60px;
+    background-position: center;
+  }
   
   .logo a{
     text-decoration: none;
-    color:black;
+    color:whitesmoke;
     font-size: 1.6rem;
     font-weight: bold;
 
 
-  }
-  .highlight {
-    color: orangered;
   }
   
   .nav-links {
@@ -59,7 +64,7 @@
   .nav-links a {
     padding-left:10px ;
     padding-right: 10px;
-    color: black;
+    color: whitesmoke;
     text-decoration: none;
     transition: color 0.3s;
 
@@ -67,38 +72,54 @@
   
   .nav-links a:hover {
     text-decoration: underline;
-    color:rgb(0, 109, 0);
+    color:rgb(201, 97, 1);
   }
   
   .hero {
     height: 100vh;
-      background: url('assets/desktop-version.png') no-repeat center center/cover;
-
-    text-align: center;
     padding: 100px 20px;
+    background: url('assets/karim-web-studio-background.jpg')fixed no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   .hero-content{
     z-index: 111;
+    width: 70vw;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f0f0f03a; /* You can change this to any background color */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Optional: adds some depth */
+    border-radius: 15px; /* Optional: rounded corners */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+
   }
   
   .hero-content h1 {
-    font-size: 3.5rem;
+    padding-top: 10%;
+    font-size: 2rem;
     margin-bottom: 1rem;
+    color: white;
   }
   .hero p{
-    font-size: 2rem;
+    font-size: 1rem;
+    color: white;
   }
 .btn {
   position: relative;
   display: inline-block;
-  margin-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-bottom: 4px solid whitesmoke;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 4px solid orange;
   border-radius: 5%;
   text-decoration: none;
   font-size: 3rem;
-  color: whitesmoke;
+  color: orange;
   font-weight: bold;
   overflow: hidden;
   z-index: 1;
@@ -136,7 +157,7 @@
   font-size: 3rem;
   }
   .services, .about, .portfolio, .contact p{
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   
@@ -332,38 +353,42 @@ footer::before {
   /* Hamburger button */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
-/* Responsive styles */
+/* Responsive styles navbar */
 @media (max-width: 768px) {
   .hamburger {
-    color: black;
+    color: whitesmoke;
     display: block;
   }
 
-  .nav-links {
+.nav-links {
     overflow: hidden;
     position: absolute;
     align-items: center;
     text-align: center;
-    width: 100%;
+    width: 20%; /* adjusted from 12% to make it more visible */
+    height: 100vh;
     top: 70px;
-    right: 0%;
-    background-color: #ffffff80;
-    display:inline-block;
+    right: 0;
+    background-color: #00000083;
+    transition: transform 0.8s ease-in-out;
+    flex-direction: column;
     display: none;
   }
 
   .nav-links.show {
-    display: flex;
-  }
+    display:flex;
 
+  }
   .nav-links li {
     margin: 10px 0;
+    padding-top: 30px;
   }
 }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .services, .about, .portfolio, .contact {
@@ -375,18 +400,18 @@ footer::before {
   .services, .about, .portfolio, .contact p{
     font-size: .9rem;
   }
-.logo{
-  font-size: 1.5rem;
-}
-.hero {
-        background: url('assets/mobile-version.png') no-repeat center center/cover;
-
-}
 .hero h1{
-  font-size: 2rem;
+  padding-top: 10%;
+  font-size: 1rem;
 }
 .hero p{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.hero-content{
+      width: 70vw;
+    height: 60vh;
+
 }
 
   .service-cards {
