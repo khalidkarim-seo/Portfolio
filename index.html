@@ -18,7 +18,9 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Purple+Purse&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
@@ -41,27 +43,34 @@
 </head>
 
 <body>
-  <header>
-      <link rel="icon" href="assets/webflow-by-khalid-favicon.png" type="image/png">
-    <nav class="navbar">
-      <div class="logo"><a href="/index.html"><img src="assets/webflow-by-khalid-logo.png" alt="webflow-by-khalid-logo"></a></div>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home"><i class="fa-solid fa-house"></i></a></li>
-        <li><a href="#services" title="View our services"><i class="fa-solid fa-wrench"></i></a></li>
-        <li><a href="#about"><i class="fa-solid fa-user"></i></a></li>
-        <li><a href="#portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
-        <li><a href="#contact"><i class="fa-solid fa-phone"></i></a></li>
-      </ul>
-    </nav>
-  </header>
-
+    <link rel="icon" href="assets/webflow-by-khalid-favicon.png" type="image/png" />
+  <!-- Header -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/index.html">
+        <img src="assets/webflow-by-khalid-logo.png" alt="webflow-by-khalid-logo">
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li class="active"><a href="#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
+      <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
+      <li><a href="#portfolio" title="Portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
+      <li><a href="#contact" title="Contact"><i class="fa-solid fa-phone"></i></a></li>
+      <li><a href="blog.html" title="Blog"><i class="fa-solid fa-pen-nib"></i></a></li>
+      <div class="indicator"></div>
+    </ul>
+  </nav>
+</header>
+  <!-- Main Content -->
   <main>
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-content">
         <h1>Grow Your business With Professional Website</h1>
-        <h2>Hire! Webflow By Khalid Karim.</h2>
+        <h2>Hire! WEBFLOW BY KHALID.</h2>
         <p>We Offer Professional Web Development, SEO, and Social Media Marketing Services</p>
         <a href="https://wa.me/923078829986" class="btn" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         <p>WhatsApp Us</p>
@@ -226,43 +235,7 @@
     </ul>
   </footer>
 
-  <!-- Scripts -->
-  <script src="script.js" defer></script>
-
-  <script>
-    // Hamburger toggle
-
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-  // Close menu when clicking outside
-  document.addEventListener('click', function (event) {
-    const isClickInsideMenu = navLinks.contains(event.target);
-    const isClickOnHamburger = hamburger.contains(event.target);
-
-    if (!isClickInsideMenu && !isClickOnHamburger && navLinks.classList.contains('show')) {
-      navLinks.classList.remove('show');
-      body.classList.remove('nav-open');
-    }
-  });
-  
-
-
-    // Scroll animations
-    document.addEventListener("DOMContentLoaded", () => {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-left");
-          }
-        });
-      });
-      document.querySelectorAll(".left").forEach(el => observer.observe(el));
-    });
-  </script>
-  
+<!-- External JavaScript File -->
+<script src="script.js" defer></script>  
 </body>
 </html>
