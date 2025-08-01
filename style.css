@@ -8,11 +8,12 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-body {
+html, body {
   line-height: 1.6;
   background: black;
   color: rgb(211, 210, 210);
-  overflow-x: hidden;
+  overflow-x: hidden; /* ✅ Hides horizontal scroll */
+  max-width: 100vw;   /* ✅ Prevents accidental overflow */
 }
 
 /* ----------------------------------------------------
@@ -39,7 +40,6 @@ header {
   margin: auto;
   padding: 0 20px;
 }
-
 /* Logo */
 .logo img {
   height: 48px;
@@ -652,6 +652,7 @@ footer a:hover {
     right: 0;
     height: 100vh;
     width: 20%;
+    max-width: 100vw; /* ✅ Prevents overflow */
     background-color: #000000d0;
     flex-direction: column;
     align-items: center;
