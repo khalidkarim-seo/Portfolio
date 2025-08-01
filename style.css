@@ -37,7 +37,6 @@ header {
   max-width: 90%;
   margin: auto;
   padding: 0 20px;
-   overflow-x: hidden;
 }
 
 /* Logo */
@@ -646,11 +645,12 @@ footer a:hover {
   /* Navbar */
   .hamburger { display: block; }
   .nav-links {
+     overflow: hidden;
     position: absolute;
     top: 60px;
     right: 0;
     height: 100vh;
-    width: 15%;
+    width: 18%;
     background-color: #000000d0;
     flex-direction: column;
     align-items: center;
