@@ -91,6 +91,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelectorAll(".left").forEach((el) => observer.observe(el));
+  
+ // Custom Cursor
+const cursor = document.querySelector(".custom-cursor");
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY}px`;
+});
+ 
 
   // -------------------- Contact Form --------------------
   const contactForm = document.getElementById("contactForm");

@@ -8,13 +8,27 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-html, body {
+body {
   line-height: 1.6;
   background: black;
   color: rgb(211, 210, 210);
   overflow-x: hidden; /* ✅ Hides horizontal scroll */
   max-width: 100vw;   /* ✅ Prevents accidental overflow */
 }
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background:#146EF5;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  z-index: 2000;
+}
+
 
 /* ----------------------------------------------------
    Header & Navbar
