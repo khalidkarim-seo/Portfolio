@@ -10,10 +10,11 @@
 
 body {
   line-height: 1.6;
-  background: black;
+  background: #0a0a0a url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background-repeat: repeat;
   color: rgb(211, 210, 210);
-  overflow-x: hidden; /* ✅ Hides horizontal scroll */
-  max-width: 100vw;   /* ✅ Prevents accidental overflow */
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Custom Cursor */
@@ -247,7 +248,7 @@ header {
 
 /* ---------------- About Section ---------------- */
 .about {
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.185), rgba(255, 255, 255, 0.05));
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   padding: 40px 20px;
@@ -385,7 +386,7 @@ button:hover {
    Footer
 ---------------------------------------------------- */
 footer {
-  background: linear-gradient(to top, #1a0b0b, #261011);
+  background: #312020 url('https://www.transparenttextures.com/patterns/asfalt-light.png');
   font-size: 1rem;
   text-align: center;
   padding: 30px 15px;
@@ -400,7 +401,7 @@ footer::before {
   content: '';
   display: block;
   height: 4px;
-  background: linear-gradient(to right, #f06292, #ba68c8, #5e17eb);
+  background: linear-gradient(to right, #146ef563, #146ef5ab,#146EF5);
   width: 100%;
   position: absolute;
   top: 0;
@@ -449,12 +450,12 @@ footer a:hover {
 /* Hover Effects with Glow */
 .social li:hover {
   transform: scale(1.3) translateY(-8px);
-  filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.5));
+  filter: drop-shadow(0 0 10px #458fff);
 }
 
 .social li:hover a {
-  color: orange;
-  text-shadow: 0 0 8px rgba(255, 165, 0, 0.8);
+  color:#146EF5;
+  text-shadow: 0 0 8px black;
 }
 
 /* ----------------------------------------------------
@@ -481,70 +482,66 @@ footer a:hover {
   padding: 40px 20px;
   text-align: center;
 }
+
 .certificates-slider h2 {
   margin-bottom: 30px;
   font-size: 2rem;
   color: whitesmoke;
+  font-weight: 600;
+}
+.certificates-slider h2 a {
+  text-decoration: none;
 }
 
+/* Slider Wrapper */
 .slider-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 90%;
+  max-width: 100%;
   margin: auto;
 }
+
+/* Slider Container */
 .slider-container {
   overflow: hidden;
   position: relative;
   margin: auto;
-  overflow-x: auto;
   scroll-behavior: smooth;
   white-space: nowrap;
   max-width: 100%;
-}
-.slider-track {
-  display: inline-flex;
-  animation: scrollSlider 8s linear infinite;
-  width: max-content;
-}
-.slider-track img {
-  width: 500px;
-  margin: 0 15px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.slider-track img:hover {
-  transform: scale(1.05);
+  border-radius: 12px;
 }
 
+/* Slider Track */
+.slider-track {
+  display: inline-flex;
+  animation: scrollSlider 15s linear infinite;
+  width: max-content;
+}
+
+.slider-track img {
+  width: 420px;
+  max-width: 90vw;
+  margin: 0 15px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-track img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Slider Auto Scroll Animation */
 @keyframes scrollSlider {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* Slider Buttons */
-.slider-btn {
-  background: transparent;
-  color: black;
-  border: none;
-  font-size: 3rem;
-  cursor: pointer;
-  padding: 10px;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  transition: background 0.3s ease;
-}
-.slider-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.slider-btn.backward { left: 10px; }
-.slider-btn.forward { right: 10px; }
 
 /* ----------------------------------------------------
    Blog Pages
@@ -665,31 +662,60 @@ footer a:hover {
     top: 60px;
     right: 0;
     height: 100vh;
-    width: 20%;
+    width: 60px;
     max-width: 100vw; /* ✅ Prevents overflow */
     background-color: #000000d0;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding-top: 30px;
-    transform: translateX(100%);
     transition: transform 0.6s ease-in-out;
     z-index: 999;
+    display: none;
   }
-  .nav-links.show { transform: translateX(0); 
+  .nav-links.show { 
+    display: flex; 
   }
-  .nav-links li { margin: 10px 0; }
   .indicator { display: none; }
+  .custom-cursor { display: none;}
+
+  /* Hero Button – mobile version */
+.btn {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 12px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(94, 255, 0);
+  text-decoration: none;
+  border-radius: none;
+  border-bottom: none;
+  overflow: hidden;
+  transition: none;
+}
+
+.btn::before {
+  display: none;
+}
+
+.btn:hover::before {
+  display: none;
+}
+
+.btn:hover {
+  display: none;
+}
 
   /* Sections */
   .services, .about, .portfolio, .contact { max-width: 100%; }
-  .services h2, .about h2, .portfolio h2, .contact h2 { font-size: 1.6rem; }
-  .services p, .about p, .portfolio p, .contact p { font-size: 0.9rem; }
+  .services h2, .about h2, .portfolio h2, .contact h2 { font-size: 1.4rem; }
+  .services p, .about p, .portfolio p, .contact p { font-size: 0.8rem; }
 
   /* Hero */
   .hero h1 { font-size: 24px; }
   .hero h2 { font-size: 16px; }
-  .hero p { font-size: 12px; }
+  .hero p { font-size: 14px; }
   .hero-content{ max-width: 90%;}
 
   /* Cards & Portfolio */
@@ -698,13 +724,21 @@ footer a:hover {
   .left { width: 60%; }
 
   /* Slider */
-  .certificates-slider{
-    padding: 0 0;
-  }
+  /* Responsive Adjustments */
+@media (max-width: 768px) {
   .slider-track img {
     width: 300px;
     margin: 0 10px;
   }
+}
+
+@media (max-width: 480px) {
+  .slider-track img {
+    width: 240px;
+    margin: 0 8px;
+  }
+}
+
 
   /* Blog */
   .blog-post { padding: 20px; }
