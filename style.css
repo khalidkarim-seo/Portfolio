@@ -10,7 +10,7 @@
 
 body {
   line-height: 1.6;
-  background: #0a0a0a url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background: #0a0a0a url('https://www.transparenttextures.com/patterns/asfalt-light.png') fixed;
   background-repeat: repeat;
   color: rgb(211, 210, 210);
   overflow-x: hidden;
@@ -22,7 +22,7 @@ body {
   position: fixed;
   width: 18px;
   height: 18px;
-  background:#146EF5;
+  background:#146ef58e;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -37,13 +37,13 @@ body {
 header {
   width: 100%;
   height: 60px;
-  background: rgba(3, 3, 3, 0.6);
+  background: rgba(255, 255, 255, 0.37);
   position: sticky;
   top: 0;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px) #146ef58e;
   z-index: 1111;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid ;
   transition: background 0.3s ease-in-out;
 }
 
@@ -76,7 +76,7 @@ header {
   position: relative;
 }
 .nav-links a {
-  color: whitesmoke;
+  color:rgb(37, 36, 36);
   text-decoration: none;
   padding: 8px 12px;
   display: flex;
@@ -85,7 +85,7 @@ header {
   transition: 0.3s ease;
 }
 .nav-links a:hover {
-  color: #146EF5;
+  color: black;
   transform: translateY(-2px);
 }
 
@@ -95,20 +95,20 @@ header {
   bottom: 0;
   height: 3px;
   width: 40px;
-  background: #146EF5;
+  background: black;
   border-radius: 2px;
   transition: all 0.3s ease;
   transform: translateX(0);
 }
 .nav-links li.active a {
-  color: #146EF5;
+  color: black;
 }
 
 /* Hamburger (Mobile) */
 .hamburger {
   display: none;
   font-size: 2rem;
-  color: whitesmoke;
+  color: black;
   cursor: pointer;
 }
 
@@ -126,7 +126,7 @@ header {
   align-items: center;
   text-align: center;
   font-family: "Purple Purse", serif;
-  color: #fff;
+  color: #ffffff9f;
   position: relative;
   z-index: 1;
 }
@@ -148,21 +148,18 @@ header {
   margin-bottom: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #fff;
 }
 
 .hero h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-weight: 500;
-  color: #f0f0f0;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  color: #e0e0e0;
   line-height: 1.7;
 }
 
@@ -174,10 +171,10 @@ header {
   padding: 12px 40px;
   font-size: 1.8rem;
   font-weight: 700;
-  color: orange;
+  color:#146EF5;
   text-decoration: none;
   border-radius: 6px;
-  border-bottom: 3px solid orange ;
+  border-bottom: 3px solid #146EF5 ;
   overflow: hidden;
   transition: color 0.4s ease, transform 0.2s ease;
 }
@@ -218,13 +215,16 @@ header {
   margin: 0 auto;
   text-align: center;
   padding-top: 60px;
-  margin-bottom: 20px;
 }
 
 .services h2, .about h2, .portfolio h2, .contact h2 {
   font-family: "Purple Purse", serif;
-  font-size: 2.4rem;
-  padding: 10px 0;
+  font-size: 2rem;
+  padding-top: 20px;
+}
+.services h3, .about h3, .portfolio h3, .contact h3 {
+   font-family: "Purple Purse", serif;
+  font-size: 1.5rem;
 }
 
 .about, .portfolio, .contact p {
@@ -243,7 +243,7 @@ header {
 }
 .card a {
   text-decoration: none;
-  color: #146EF5;
+  color:whitesmoke;
 }
 .card {
   flex: 1 1 280px;
@@ -253,7 +253,7 @@ header {
   padding: 30px 25px;
   color: #f5f5f5;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 10px #146ef569;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -264,12 +264,6 @@ header {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  font-weight: 600;
-  color: #ffffff;
-}
 
 .card p {
   font-size: 0.95rem;
@@ -277,35 +271,19 @@ header {
   color: #d1d1d1;
 }
 
-/* Ensures full width for left-aligned elements */
 .left {
   width: 100%;
 }
 
 /* ---------------- About Section ---------------- */
-.about {
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.185), rgba(255, 255, 255, 0.05));
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  padding: 20px 20px;
-  position: relative;
-  overflow: hidden;
-}
+.about {  
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
 
-/* Decorative light glow */
-.about::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
-  animation: rotateGlow 20s linear infinite;
-  z-index: 0;
 }
-
-/* Profile Image */
 .about img {
   height: 150px;
   width: 150x;
@@ -326,34 +304,30 @@ header {
   filter: grayscale(0%);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
-
-/* About Card */
 .about-card {
-  margin: 30px auto;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.55);
+  flex: 1 1 280px;
+  background: rgba(255, 255, 255, 0.05); /* Subtle glass effect */
+  backdrop-filter: blur(8px); /* Professional frosted look */
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
+  padding: 30px 25px;
+  color: #f5f5f5;
+  text-align: center;
+  box-shadow: 0 8px 10px whitesmoke;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
+}
 .about-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 25px #146EF5;
 }
 
-/* Optional subtle text styling */
 .about-card p {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.8;
   font-size: 1.05rem;
 }
 
-/* Animated Glow Background */
 @keyframes rotateGlow {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -401,6 +375,7 @@ header {
   gap: 15px;
   max-width: 500px;
   margin: auto;
+  padding-bottom: 40px;
 }
 input, textarea {
   padding: 10px;
@@ -423,7 +398,7 @@ button:hover {
    Footer
 ---------------------------------------------------- */
 footer {
-  background: #312020 url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background: #000000 url('https://www.transparenttextures.com/patterns/asfalt-light.png');
   font-size: 1rem;
   text-align: center;
   padding: 30px 15px;
@@ -515,7 +490,7 @@ footer a:hover {
 ---------------------------------------------------- */
 .certificates-slider {
   max-width: 100%;
-  height: auto;
+  height:100vh;
   background:  linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
   url('assets/pakistan\ flag\ premium.png') fixed center center/cover;
   padding: 40px 40px;
@@ -585,110 +560,137 @@ footer a:hover {
 
 
 /* ----------------------------------------------------
-   Blog Pages
+   Blog Pages (Professional Style)
 ---------------------------------------------------- */
 .blog-container {
-  max-width: 1100px;
+  max-width: 80%;
   margin: 60px auto;
   padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
 }
 
+/* Blog Post Card */
 .blog-post {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(20, 20, 20, 0.85);
   padding: 30px;
   margin-bottom: 40px;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .blog-post:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
+
+/* Blog Post Title */
 .blog-post h2 {
   font-size: 2rem;
-  margin-bottom: 10px;
-  color: white;
-  font-family: "Purple Purse", serif;
-  text-shadow: 1px 1px 6px #5e17eb;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(94, 23, 235, 0.25);
   transition: color 0.3s;
 }
-.blog-post h2:hover { color: #5e17eb; }
+.blog-post h2:hover {
+  color: #8a6dfc;
+}
+
+/* Meta Information */
 .blog-post .meta {
-  color: #bbb;
+  color: #999;
   font-size: 0.85rem;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
 }
+
+/* Blog Content Preview */
 .blog-post p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgb(211, 210, 210);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #d0d0d0;
 }
+
+/* Read More Link */
 .blog-post a.read-more {
   display: inline-block;
-  margin-top: 15px;
-  color: orange;
+  margin-top: 20px;
+  color: #ffb347;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
-  border-bottom: 2px solid orange;
+  border-bottom: 2px solid transparent;
   transition: color 0.3s, border-color 0.3s;
 }
 .blog-post a.read-more:hover {
-  color: orangered;
-  border-color: orangered;
+  color: #ff7a29;
+  border-color: #ff7a29;
 }
 
-/* Single Blog Post */
+/* ----------------------------------------------------
+   Single Blog Post
+---------------------------------------------------- */
 .post-container {
-  max-width: 900px;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 40px 20px;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  padding: 50px 25px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
 }
+
+/* Post Header */
 .post-header h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 15px;
-  color: white;
-  font-family: "Purple Purse", serif;
-  text-shadow: 1px 1px 6px #FF0000;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.25);
 }
 .post-meta {
   color: #aaa;
   font-size: 0.9rem;
   margin-bottom: 30px;
+  letter-spacing: 0.5px;
 }
+
+/* Featured Image */
 .post-image {
-  width: 100%;
+  width: 50%;
   max-height: 400px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* Post Content */
 .post-content p {
-  font-size: 1.15rem;
-  line-height: 1.9;
-  margin-bottom: 20px;
-  color: rgb(211, 210, 210);
+  font-size: 1.12rem;
+  line-height: 1.85;
+  margin-bottom: 22px;
+  color: #d3d2d2;
 }
+
+/* Back to Blog Link */
 .back-link {
   margin-top: 40px;
   display: inline-block;
   text-decoration: none;
-  color: orange;
-  font-weight: bold;
-  border-bottom: 2px solid orange;
+  color: #ffb347;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
   transition: color 0.3s, border-color 0.3s;
 }
 .back-link:hover {
-  color: orangered;
-  border-color: orangered;
+  color: #ff7a29;
+  border-color: #ff7a29;
 }
 
 /* ----------------------------------------------------
@@ -730,11 +732,14 @@ footer a:hover {
 }
 
   /* Sections */
-  .services, .about, .portfolio, .contact { max-width: 100%; }
+  .services, .about, .portfolio, .contact { max-width: 90%; }
   .services h2, .about h2, .portfolio h2, .contact h2 { font-size: 1.4rem; }
   .services p, .about p, .portfolio p, .contact p { font-size: 0.8rem; }
 
   /* Hero */
+  .hero {
+  background:url('assets/pakistan\ flag\ premium.png') fixed center right/cover;
+  }
   .hero h1 { font-size: 24px; }
   .hero h2 { font-size: 16px; }
   .hero p { font-size: 14px; }
@@ -745,24 +750,16 @@ footer a:hover {
   .project-card { width: 100%; }
   .left { width: 60%; }
 
-  /* Slider */
-  /* Responsive Adjustments */
-@media (max-width: 768px) {
+  /* Slider responsive Adjustments */
   .slider-track img {
-    width: 300px;
+    width: 100%;
     margin: 0 10px;
   }
+  .certificates-slider h2 {
+  font-size: 1rem;
 }
 
-@media (max-width: 480px) {
-  .slider-track img {
-    width: 240px;
-    margin: 0 8px;
-  }
-}
-.certificates-slider h2 {
-  font-size: 1.2rem;
-}
+
 
 
   /* Blog */
