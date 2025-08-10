@@ -85,12 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("animate-left");
+        entry.target.classList.add("animate-service-img");
       }
     });
   });
 
-  document.querySelectorAll(".left").forEach((el) => observer.observe(el));
+  document.querySelectorAll(".service-img").forEach((el) => observer.observe(el));
   
  // Custom Cursor
 const cursor = document.querySelector(".custom-cursor");
