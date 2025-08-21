@@ -1,6 +1,10 @@
 /* ----------------------------------------------------
    Global Styles
 ---------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Purple+Purse&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,13 +41,14 @@ body {
 header {
   width: 100%;
   height: 60px;
-  background:rgba(250, 246, 246, 0.507);
-  position: sticky;
+  background:rgba(0, 0, 0, 0.473);
+  position:fixed;
   top: 0;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px) #146ef58e;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px) #146ef58e;
   z-index: 1111;
   border-bottom: 1px solid ;
+  align-content: center;
 }
 
 .navbar {
@@ -52,30 +57,28 @@ header {
   justify-content: space-between;
   max-width: 90%;
   margin: auto;
-  padding: 0 20px;
 }
 /* Logo */
-.logo img {
-  height: 48px;
-  transition: transform 0.5s;
+.logo a {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+font-family: "Macondo", cursive;
+  font-size:1.2rem ;
 }
-.logo img:hover {
-  transform: scale(1.05);
-}
-
 /* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   position: relative;
 }
 .nav-links li {
   position: relative;
 }
 .nav-links a {
-  color:rgb(0, 0, 0);
+  color:white;
   text-decoration: none;
   padding: 8px 12px;
   display: flex;
@@ -84,7 +87,6 @@ header {
   transition: 0.3s ease;
 }
 .nav-links a:hover {
-  color:rgba(0, 0, 0, 0.514);
   transform: translateY(-2px);
 }
 
@@ -94,13 +96,10 @@ header {
   bottom: 0;
   height: 3px;
   width: 40px;
-  background:white;
+  background:linear-gradient(90deg, #146EF5,rgba(3, 112, 255, 0.226));
   border-radius: 2px;
   transition: all 0.3s ease;
   transform: translateX(0);
-}
-.nav-links li.active a {
-  color:white;
 }
 
 /* Hamburger (Mobile) */
@@ -117,39 +116,42 @@ header {
 .hero {
   height: 100vh;
   padding: 0 20px;
-  background: url('assets/hero-background.jpg') fixed center center/cover;
+  background: url('assets/hero-backgroung.jpg') fixed center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-family: "Purple Purse", serif;
-  color: #000000;
+  color:white;
   position: relative;
 }
 
 .hero-content {
   max-width: 86%;
   padding: 20px 20px;
-  background: rgba(255, 255, 255, 0.418);
+  background:rgba(255, 255, 255, 0.089);
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 16px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   animation: fadeInUp 1.3s ease;
 }
 
 .hero-content h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
+  font-family: "Purple Purse", serif;
+
 }
 
 .hero h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  color: rgb(255, 194, 39);
 }
 
 .hero p {
@@ -157,6 +159,8 @@ header {
   margin-top: 1rem;
   margin-bottom: 2rem;
   line-height: 1.7;
+  font-family: "Macondo", cursive;
+  font-weight: bold;
 }
 
 /* Hero Button – Professional Style */
@@ -167,10 +171,10 @@ header {
   padding: 12px 40px;
   font-size: 1.8rem;
   font-weight: 700;
-  color:black;
+  color:white;
   text-decoration: none;
   border-radius: 6px;
-  border-bottom: 3px solid black ;
+  border-bottom: 3px solid white ;
   overflow: hidden;
   transition: color 0.4s ease, transform 0.2s ease;
 }
@@ -394,7 +398,7 @@ button:hover {
    Footer
 ---------------------------------------------------- */
 footer {
-  background: #000000 url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background: #000000 url('assets/hero-backgroung.jpg')fixed center center/cover;
   font-size: 1rem;
   text-align: center;
   padding: 30px 15px;
@@ -478,7 +482,7 @@ footer a:hover {
   padding-left: 10px;
   padding-right: 10px;
   background:  linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
-  url('assets/hero-background.jpg') fixed center center/cover;
+  url('assets/hero-backgroung.jpg') fixed center center/cover;
   align-content: center;
   align-items: center;
   text-align: center;
@@ -540,28 +544,49 @@ footer a:hover {
 /* ----------------------------------------------------
    Blog Pages (Professional Style)
 ---------------------------------------------------- */
+.blog {  margin: 60px auto;
+padding: 40px 20px;
+color: white; 
+text-align: center;
+}
+.blog h1 { font-family: "Purple Purse", serif;
+  font-size: 2.5rem;
+}
+
 .blog-container {
-  background: #0a0a0a71 url('assets/blog-background.jpg') fixed center/cover;
+  background: #0a0a0a71 url('assets/hero-backgroung.jpg') fixed center/cover;
   max-width: 90%;
   margin: 60px auto;
   padding: 40px 20px;
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
   text-align: center;
-  color: black;
+  color:white;
   text-shadow: 2px white;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
 /* Blog Post Card */
 .blog-post {
-  background: rgba(0, 0, 0, 0.562);
+    width: 48%;
   padding: 30px;
   margin-bottom: 40px;
   margin-top: 40px;
-  border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+  background:rgba(255, 255, 255, 0.295);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.3s ease;
+
 }
 .blog-post:hover {
   transform: translateY(-4px);
@@ -572,16 +597,15 @@ footer a:hover {
 .blog-post h2 {
   font-size: 2rem;
   margin-bottom: 12px;
-  color: #ffffff;
+  color:black;
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(94, 23, 235, 0.25);
   transition: color 0.3s;
 }
 
 /* Meta Information */
 .blog-post .meta {
-  color: #999;
+  color: black;
   font-size: 0.85rem;
   margin-bottom: 18px;
   letter-spacing: 0.5px;
@@ -591,14 +615,14 @@ footer a:hover {
 .blog-post p {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: #d0d0d0;
+  color: black;
 }
 
 /* Read More Link */
 .blog-post a.read-more {
   display: inline-block;
   margin-top: 20px;
-  color: #ffb347;
+  color:orangered;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -606,8 +630,8 @@ footer a:hover {
   transition: color 0.3s, border-color 0.3s;
 }
 .blog-post a.read-more:hover {
-  color: #ff7a29;
-  border-color: #ff7a29;
+  color: orangered;
+  border-color: orangered;
 }
 
 /* ----------------------------------------------------
@@ -676,36 +700,46 @@ footer a:hover {
    Responsive Styles
 ---------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Navbar */
-  .hamburger { display: block; }
-  .nav-links {
-    overflow: hidden;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    height: 100vh;
-    width: 60px;
-      background:rgba(255, 255, 255, 0.24);
+/* Navbar */
+.hamburger { 
+  display: block; 
+  cursor: pointer;
+  color: white;
+}
 
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 30px;
-    transition: transform 0.6s ease-in-out;
-    z-index: 999;
-    display: none;
-  }
-  .nav-links.show { 
-    display: flex; 
-  }
-  .indicator { display: none; }
+.nav-links {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  height: 100vh;
+  width: 200px; /* increase width so links are visible */
+  background: rgba(0, 0, 0, 0.459);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: fadeInUp 1.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+
+  /* hide off-screen initially */
+  transform: translateX(100%);
+  transition: transform 0.6s ease-in-out;
+  z-index: 999;
+}
+
+/* Show menu */
+.nav-links.show {
+  transform: translateX(0);
+}
   .custom-cursor { display: none;}
 
   /* Hero Button – mobile version */
 .btn {
   padding: 12px 12px;
   font-size: 3rem;
-  color: rgb(0, 255, 34);
+  color: rgb(1, 221, 30);
   border-radius: none;
   border-bottom: none;
 }
@@ -717,6 +751,10 @@ footer a:hover {
   .services p, .about p, .portfolio p, .contact p { font-size: 0.8rem; }
 
   /* Hero */
+  .hero {
+      background: url('assets/responsive-background.jpg') fixed center center/cover;
+
+  }
   .hero h1 { font-size: 1.8rem; }
   .hero h2 { font-size: 1.3rem; }
   .hero p { font-size: 1rem; }
@@ -730,7 +768,9 @@ footer a:hover {
 
 
   /* Blog */
-  .blog-post { padding: 20px; }
+  .blog h1 {font-size: 1.8rem;}
+  .blog-post { padding: 20px; 
+  width: 100%;}
   .blog-post h2 { font-size: 1.5rem; }
   .post-header h1 { font-size: 1.8rem; }
   .post-content p { font-size: 1rem; }
