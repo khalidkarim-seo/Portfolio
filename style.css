@@ -41,13 +41,13 @@ body {
 header {
   width: 100%;
   height: 60px;
-  background:rgba(0, 0, 0, 0.473);
+  background:rgba(0, 0, 0, 0.247);
   position:fixed;
   top: 0;
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px) #146ef58e;
+  -webkit-backdrop-filter: blur(15px) ;
   z-index: 1111;
-  border-bottom: 1px solid ;
+  border-bottom: 1px solid #146ef58e ;
   align-content: center;
 }
 
@@ -71,7 +71,7 @@ font-family: "Macondo", cursive;
   list-style: none;
   display: flex;
   gap: 25px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   position: relative;
 }
 .nav-links li {
@@ -126,13 +126,13 @@ font-family: "Macondo", cursive;
 }
 
 .bg-video {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* video کو پیچھے رکھنے کے لیے */
+  z-index: -111; /* video کو پیچھے رکھنے کے لیے */
 }
 .hero-content {
   position: relative;
@@ -563,21 +563,22 @@ text-align: center;
 }
 
 .blog-container {
-  background: #0a0a0a71 url('assets/responsive-background.jpg') fixed center/cover;
+  background: #0a0a0a71 url('assets/hero-backgroung.jpg') fixed center/cover;
   max-width: 100%;
   margin: 60px auto;
   padding: 20px 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(15px);
   text-align: center;
-  color:white;
-  text-shadow: 2px white;
+  color:black;
+  text-shadow: 2px black;
     display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-radius: 5px;
 
 }
 
@@ -588,7 +589,7 @@ text-align: center;
   margin-bottom: 40px;
   margin-top: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;  
-  background:rgba(255, 255, 255, 0.295);
+  background:rgba(0, 0, 0, 0.075);
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 16px;
   backdrop-filter: blur(16px);
@@ -606,7 +607,7 @@ text-align: center;
 .blog-post h2 {
   font-size: 2rem;
   margin-bottom: 12px;
-  color:black;
+  color:white;
   font-family: "Playfair Display", serif;
   font-weight: 600;
   transition: color 0.3s;
@@ -614,7 +615,7 @@ text-align: center;
 
 /* Meta Information */
 .blog-post .meta {
-  color: black;
+  color: wheat;
   font-size: 0.85rem;
   margin-bottom: 18px;
   letter-spacing: 0.5px;
@@ -624,14 +625,14 @@ text-align: center;
 .blog-post p {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: black;
+  color:white;
 }
 
 /* Read More Link */
 .blog-post a.read-more {
   display: inline-block;
   margin-top: 20px;
-  color:white;
+  color:goldenrod;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
