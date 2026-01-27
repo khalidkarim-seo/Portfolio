@@ -45,9 +45,13 @@
 <header>
   <nav class="navbar">
     <div class="logo">
-      <a href="/index.html"><img src="assets/logo-image.png" alt="webflow-by-khalid-logo" height="25px"></a>
-    </div>
+      <a href="/index.html"><img src="assets/webflow by khalid.png" alt="webflow-by-khalid" height="60"></a>
+    </div><li class="theme-toggle">
+  <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+</li>
+
     <div class="hamburger" id="hamburger">&#9776;</div>
+    
     <ul class="nav-links" id="nav-links">
       <li class="active"><a href="#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
       <li><a href="#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
@@ -62,19 +66,47 @@
   <div class="custom-cursor"></div>
 
 </header>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-       <video autoplay muted loop playsinline class="bg-video">
+<!-- Hero Section -->
+<section id="home" class="hero hero-pro">
+  <video autoplay muted loop playsinline class="bg-video">
     <source src="assets/background video.mp4" type="video/mp4">
   </video>
-      <div class="hero-content">
-        <h1>Grow Your business With Professional Website</h1>
-        <h2>Hire! KHALID KARIM.</h2>
-        <p>We Offer Professional Web Development, SEO, and Social Media Marketing Services</p>
-        <a href="https://wa.me/923078829986" class="btn" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-        <p>WhatsApp Us</p>
-      </div>
-    </section>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content-pro">
+    <span class="hero-badge">Webflow • WordPress • SEO</span>
+
+    <h1>
+      Grow Your Business with a <span>High-Converting Website</span>
+    </h1>
+
+    <h2>
+      Web Development & Digital Growth by <strong>Khalid Karim</strong>
+    </h2>
+
+    <p>
+      We design fast, SEO-optimized, and visually stunning websites  
+      that turn visitors into paying customers.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/923078829986" target="_blank" class="btn btn-primary">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+
+      <a href="#portfolio" class="btn btn-outline">
+        View Portfolio
+      </a>
+    </div>
+
+    <div class="hero-trust">
+      <span>✔️ Trusted by Businesses</span>
+      <span>✔️ SEO Optimized</span>
+      <span>✔️ Fast & Responsive</span>
+    </div>
+  </div>
+</section>
 
     <!-- Services Section -->
     <section id="services" class="services">

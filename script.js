@@ -110,3 +110,102 @@ document.addEventListener("mousemove", (e) => {
     });
   }
 });
+/* ==================================================
+   AUTO + MANUAL THEME (SUNRISE / SUNSET)
+================================================== */
+
+(function themeController() {
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById("themeToggle");
+
+  const STORAGE_KEY = "themePreference"; // day | night | auto
+
+  function setTheme(theme) {
+    if (theme === "day") {
+      root.setAttribute("data-theme", "day");
+      toggleBtn.textContent = "☀️";
+    } else {
+      root.removeAttribute("data-theme");
+      toggleBtn.textContent = "🌙";
+    }
+  }
+
+  function savePreference(pref) {
+    localStorage.setItem(STORAGE_KEY, pref);
+  }
+
+  function getPreference() {
+    return localStorage.getItem(STORAGE_KEY) || "auto";
+  }
+
+  /* ---------- SUN CALCULATION ---------- */
+  function getSunTimes(lat, lon) {
+    const today = new Date().toISOString().split("T")[0];
+    const url = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}&formatted=0`;
+
+    return fetch(url)
+      .then(res => res.json())
+      .then(data => ({
+        sunrise: new Date(data.results.sunrise),
+        sunset: new Date(data.results.sunset)
+      }));
+  }
+
+  function applyAutoTheme(sunrise, sunset) {
+    const now = new Date();
+    if (now >= sunrise && now < sunset) {
+      setTheme("day");
+    } else {
+      setTheme("night");
+    }
+  }
+
+  /* ---------- AUTO MODE ---------- */
+  function initAutoMode() {
+    if (!navigator.geolocation) {
+      fallbackByTime();
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        getSunTimes(pos.coords.latitude, pos.coords.longitude)
+          .then(({ sunrise, sunset }) => {
+            applyAutoTheme(sunrise, sunset);
+
+            // recheck every 10 minutes
+            setInterval(() => applyAutoTheme(sunrise, sunset), 10 * 60 * 1000);
+          });
+      },
+      fallbackByTime
+    );
+  }
+
+  /* ---------- FALLBACK ---------- */
+  function fallbackByTime() {
+    const hour = new Date().getHours();
+    if (hour >= 6 && hour < 19) {
+      setTheme("day");
+    } else {
+      setTheme("night");
+    }
+  }
+
+  /* ---------- MANUAL TOGGLE ---------- */
+  toggleBtn.addEventListener("click", () => {
+    const current = root.hasAttribute("data-theme") ? "day" : "night";
+    const next = current === "day" ? "night" : "day";
+
+    setTheme(next);
+    savePreference(next);
+  });
+
+  /* ---------- INIT ---------- */
+  const preference = getPreference();
+
+  if (preference === "day" || preference === "night") {
+    setTheme(preference);
+  } else {
+    initAutoMode();
+  }
+})();
