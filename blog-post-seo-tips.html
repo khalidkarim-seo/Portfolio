@@ -33,7 +33,7 @@
 
 <body>
 
-<!-- Header (same as index.html) -->
+<!-- Header (for blog)--->
 <header>
   <nav class="navbar">
     <div class="logo">
@@ -43,16 +43,49 @@
 </li>
 
     <div class="hamburger" id="hamburger">&#9776;</div>
-    
+
     <ul class="nav-links" id="nav-links">
-      <li class="active"><a href="#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
-      <li><a href="#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
-      <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
-      <li><a href="#portfolio" title="Portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
-      <li><a href="#contact" title="Contact"><i class="fa-solid fa-phone"></i></a></li>
-      <li><a href="blog.html" title="Blog"><i class="fa-solid fa-pen-nib"></i></a></li>
-      <div class="indicator"></div>
-    </ul>
+  <li>
+    <a href="index.html#home" title="Home">
+      <i class="fa-solid fa-house"></i>
+    </a>
+  </li>
+
+  <li>
+    <a href="#services" title="Services">
+      <i class="fa-solid fa-wrench"></i>
+    </a>
+  </li>
+
+  <li>
+    <a href="#about" title="About">
+      <i class="fa-solid fa-user"></i>
+    </a>
+  </li>
+
+  <li>
+    <a href="#portfolio" title="Portfolio">
+      <i class="fa-solid fa-briefcase"></i>
+    </a>
+  </li>
+
+  <li>
+    <a href="#contact" title="Contact">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </li>
+
+  <!-- Blog Active -->
+  <li class="active">
+    <a href="blog.html" title="Blog">
+      <i class="fa-solid fa-pen-nib"></i>
+    </a>
+  </li>
+
+  <div class="indicator"></div>
+</ul>
+
+    
   </nav>
     <!-- Custom Cursor -->
   <div class="custom-cursor"></div>
@@ -101,7 +134,173 @@
   </a>
 
 </section>
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card"><a href="blog-web-development-guide.html">
+          <img class="service-img" src="assets/web-development-services.png" alt="Web Development Services">
+          <h3>Website Development</h3>
+          <p>Custom, responsive, and fast-loading websites tailored to your business.
+            Custom Coding(HTML, CSS, JavaScript), Advanced WordPress and Webflow services.
+          </p></a>
+        </div>
+        <div class="card"><a href="blog-post-seo-tips.html">
+          <img class="service-img" src="assets/SEO-services.png" alt="SEO Services">
+          <h3>Search Engine Optimization</h3>
+          <p>Improve your site’s visibility and rankings on Google & other search engines.
+            Keywords Research, On-page SEO, Off-page SEO, Technical-SEO, Content Optimization.
+          </p>
+          </a>
+        </div>
+        <div class="card"><a href="blog-social-media-marketing.html">
+          <img class="service-img" src="assets/social-media-marketing.png" alt="Social Media Marketing services">
+          <h3>Social Media Marketing</h3>
+          <p>Grow your audience and brand presence across all major platforms.
+            Facebook, Instagram, linkedin Ads Running Services and managment.
+          </p>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- About Section -->
+    <section id="about" class="about">
+      <H2>About Us</H2>
+      <div class="service-cards">
+    <div class="about-card">
+      <img src="assets/khalid-karim.png" alt="Webflow-Developer">
+      <h3>Web Developer</h3>
+      <p>Hello! I'm <strong>Khalid Karim</strong>, CEO of "WEBFLOW BY KHALID". With Years of experience in web development. Expertise in Webflow Development, WordPress , HTML and CSS. I help businesses build strong online identities with Proffessional and Stunning Look.</p>
+    </div>
+    <div class="about-card">
+      <img src="assets/ali-hussain.png" alt="SEO-Expert">
+      <h3>SEO Expert</h3>
+      <p>Hello! I'm <strong>Ali Hussain</strong>, Manager and Focal Person of "WEBFLOW BY KHALID". I help to Improve website’s visibility and rankings on Google & other search engines.
+            Keywords Research, On-page SEO, Off-page SEO, Technical-SEO, Content Optimization.</p>
+    </div>
+    <div class="about-card">
+      <img src="assets/Zeeshan.png" alt="social-media-Manager">
+      <h3>Social Media Manager</h3>
+      <p>Hello! I'm <strong>Zeeshan Siddique</strong>, Social Media Manager of "WEBFLOW BY KHALID". I help to Grow your audience and brand presence across all major platforms.</p>
+    </div>
+    </div>
+    </section>
+<!-- Skills & Certificates Section -->
+<section id="certificates" class="certificates-slider">
+  <h2>Certificates by <a href="https://digiskills.pk/">DigiSkills.pk</a></h2>
+  <div class="slider-wrapper">
+    <div class="slider-container">
+      <div class="slider-track">
+        <img src="assets/freelancing.PNG" alt="freelancing">
+        <img src="assets/digital-marketing.PNG" alt="digital-marketing">
+        <img src="assets/affiliate-marketing.PNG" alt="affiliate-marketing">
+        <img src="assets/virtual-assistant.PNG" alt="virtual-assistant">
+        <img src="assets/freelancing.PNG" alt="freelancing">
+
+        <!-- Add more images as needed -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const track = document.querySelector('.slider-track');
+    const leftBtn = document.querySelector('.slider-btn.backward');
+    const rightBtn = document.querySelector('.slider-btn.forward');
+
+    // Pause auto-scroll on hover
+    track.addEventListener('mouseenter', () => {
+      track.style.animationPlayState = 'paused';
+    });
+    track.addEventListener('mouseleave', () => {
+      track.style.animationPlayState = 'running';
+    });
+
+    // Manual navigation
+    leftBtn.addEventListener('click', () => {
+      document.querySelector('.slider-container').scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      document.querySelector('.slider-container').scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+</section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <h2>Our Portfolio</h2>
+      <p>Some of the recent projects We've worked on.</p>
+      <div class="portfolio-grid">
+        <div class="project-card">
+          <a href="http://niceflyconsultants.org/" target="_blank"><img src="assets/nice fly consultants.PNG" alt="Consultancy-Website-by-kk-developer" /></a>
+          <h3>Custom Coding Consultancy Website</h3>
+          <p>Custom HTML, CSS, and JavaScript site with SEO optimization and responsive design.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://khalidkarim.webflow.io/" target="_blank"><img src="assets/khalid-karim-portfolio.PNG" alt="Portfolio-Website-by-kk-developer" /></a>
+          <h3>Webflow Portfolio Website</h3>
+          <p>Custom Webflow site with SEO, animations, and responsive layout.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://nimiese-pizza.webflow.io/" target="_blank"><img src="assets/Food website.PNG" alt="webflow-demo" /></a>
+          <h3>Webflow food website</h3>
+          <p>nimiese-pizza food website, Animations, Interactions and responsive design.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://kk-developer.com/" target="_blank"><img src="assets/kk developer.PNG" alt="Landing-Page-by-kk-developer" /></a>
+          <h3>Custom Coding Servies website</h3>
+          <p>Custom HTML/CSS/JS landing page with full SEO optimization and responsive design.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://sooper-solutions.webflow.io/" target="_blank"><img src="assets/Demo-1.PNG" alt="webflow-demo" /></a>
+          <h3>Webflow custom Design-1</h3>
+          <p>Webflow Demo sooper-solutions website, Animations, Interactions and responsive design.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://yook-custom-design.webflow.io/" target="_blank"><img src="assets/Demo-2.PNG" alt="webflow-demo" /></a>
+          <h3>Webflow Custom Design-2</h3>
+          <p>Webflow Demo yook website, Animations, Interactions and responsive design.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://khalids-fantabulous-site-163d1d.webflow.io/" target="_blank"><img src="assets/Demo-3.PNG" alt="webflow-demo" /></a>
+          <h3>Webflow custom Design-3</h3>
+          <p>Webflow Demo website, Animations, Interactions and responsive design.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://webflowbykhalid.com/" target="_blank"><img src="assets/webflowbykhalid.PNG" alt="webflow-by-khalid" /></a>
+          <h3>Custom Coding Portfolio website</h3>
+          <p>Webflow development portfolio website, Animations, Interactions and responsive design.</p>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="5ded0990-dab7-48df-8947-7044915f9b2c">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Submit Form</button>
+      </form>
+    </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Webflow By Khalid. All Rights Reserved.</p>
+    <ul class="social">
+      <li><a href="https://wa.me/923078829986" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+      <li><a href="mailto:khalidkarim.seo@gmail.com" aria-label="Email Khalid Karim"><i class="fa-solid fa-envelope"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/khalid-karim-seo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+    </ul>
+  </footer>
+
+<!-- External JavaScript File -->
+<script src="script.js" defer></script>  
+
 </body>
 </html>

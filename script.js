@@ -1,23 +1,20 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", () => {
-  // -------------------- Slider Functionality --------------------
+
+  /* ================= SLIDER ================= */
   const track = document.querySelector(".slider-track");
   const leftBtn = document.querySelector(".slider-btn.backward");
   const rightBtn = document.querySelector(".slider-btn.forward");
   const sliderContainer = document.querySelector(".slider-container");
 
   if (track && leftBtn && rightBtn && sliderContainer) {
-    // Pause auto-scroll on hover
-    track.addEventListener("mouseenter", () => {
+    sliderContainer.addEventListener("mouseenter", () => {
       track.style.animationPlayState = "paused";
     });
 
-    track.addEventListener("mouseleave", () => {
+    sliderContainer.addEventListener("mouseleave", () => {
       track.style.animationPlayState = "running";
     });
 
-    // Manual navigation
     leftBtn.addEventListener("click", () => {
       sliderContainer.scrollBy({ left: -300, behavior: "smooth" });
     });
@@ -27,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -------------------- Hamburger & Nav Toggle --------------------
+  /* ================= NAV TOGGLE ================= */
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
   const indicator = document.querySelector(".indicator");
@@ -38,14 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle("show");
     });
 
-    // Close menu on link click (for mobile)
-    document.querySelectorAll(".nav-links a").forEach((link) => {
+    document.querySelectorAll(".nav-links a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("show");
       });
     });
 
-    // Close menu if clicked outside
     document.addEventListener("click", (e) => {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove("show");
@@ -53,72 +48,68 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -------------------- Active Indicator --------------------
-  function moveIndicator(element) {
-    if (!indicator || !navLinks) return;
-    const rect = element.getBoundingClientRect();
+  /* ================= INDICATOR ================= */
+  function moveIndicator(item) {
+    if (!indicator || !navLinks || !item) return;
+
+    const rect = item.getBoundingClientRect();
     const navRect = navLinks.getBoundingClientRect();
+
     indicator.style.width = `${rect.width}px`;
     indicator.style.transform = `translateX(${rect.left - navRect.left}px)`;
   }
 
-  // Set initial position to the active link
-  const activeItem = document.querySelector(".nav-links li.active a");
-  if (activeItem) moveIndicator(activeItem.parentElement);
+  const activeItem = document.querySelector(".nav-links li.active") || navItems[0];
+  moveIndicator(activeItem);
 
-  // Hover and Click events for indicator
-  navItems.forEach((item) => {
+  navItems.forEach(item => {
     item.addEventListener("mouseenter", () => moveIndicator(item));
-    item.addEventListener("mouseleave", () => {
-      const active = document.querySelector(".nav-links li.active");
-      if (active) moveIndicator(active);
-    });
+    item.addEventListener("mouseleave", () => moveIndicator(activeItem));
 
     item.addEventListener("click", () => {
-      document.querySelector(".nav-links li.active")?.classList.remove("active");
+      navItems.forEach(i => i.classList.remove("active"));
       item.classList.add("active");
       moveIndicator(item);
     });
   });
 
-  // -------------------- Scroll Animations --------------------
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+  /* ================= SCROLL ANIMATION ================= */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("animate-service-img");
       }
     });
-  });
+  }, { threshold: 0.3 });
 
-  document.querySelectorAll(".service-img").forEach((el) => observer.observe(el));
-  
- // Custom Cursor
-const cursor = document.querySelector(".custom-cursor");
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
-});
- 
+  document.querySelectorAll(".service-img").forEach(el => observer.observe(el));
 
-  // -------------------- Contact Form --------------------
+  /* ================= CUSTOM CURSOR ================= */
+  const cursor = document.querySelector(".custom-cursor");
+  if (cursor) {
+    document.addEventListener("mousemove", e => {
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  }
+
+  /* ================= CONTACT FORM ================= */
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", e => {
       e.preventDefault();
       alert("Thank you! Your message has been sent.");
-      this.reset();
+      contactForm.reset();
     });
   }
 });
-/* ==================================================
-   AUTO + MANUAL THEME (SUNRISE / SUNSET)
-================================================== */
 
+/* ================= THEME CONTROLLER ================= */
 (function themeController() {
   const root = document.documentElement;
   const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
 
-  const STORAGE_KEY = "themePreference"; // day | night | auto
+  const STORAGE_KEY = "themePreference";
 
   function setTheme(theme) {
     if (theme === "day") {
@@ -130,82 +121,30 @@ document.addEventListener("mousemove", (e) => {
     }
   }
 
-  function savePreference(pref) {
-    localStorage.setItem(STORAGE_KEY, pref);
-  }
-
-  function getPreference() {
+  function getPref() {
     return localStorage.getItem(STORAGE_KEY) || "auto";
   }
 
-  /* ---------- SUN CALCULATION ---------- */
-  function getSunTimes(lat, lon) {
-    const today = new Date().toISOString().split("T")[0];
-    const url = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}&formatted=0`;
-
-    return fetch(url)
-      .then(res => res.json())
-      .then(data => ({
-        sunrise: new Date(data.results.sunrise),
-        sunset: new Date(data.results.sunset)
-      }));
+  function savePref(p) {
+    localStorage.setItem(STORAGE_KEY, p);
   }
 
-  function applyAutoTheme(sunrise, sunset) {
-    const now = new Date();
-    if (now >= sunrise && now < sunset) {
-      setTheme("day");
-    } else {
-      setTheme("night");
-    }
-  }
-
-  /* ---------- AUTO MODE ---------- */
-  function initAutoMode() {
-    if (!navigator.geolocation) {
-      fallbackByTime();
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        getSunTimes(pos.coords.latitude, pos.coords.longitude)
-          .then(({ sunrise, sunset }) => {
-            applyAutoTheme(sunrise, sunset);
-
-            // recheck every 10 minutes
-            setInterval(() => applyAutoTheme(sunrise, sunset), 10 * 60 * 1000);
-          });
-      },
-      fallbackByTime
-    );
-  }
-
-  /* ---------- FALLBACK ---------- */
   function fallbackByTime() {
-    const hour = new Date().getHours();
-    if (hour >= 6 && hour < 19) {
-      setTheme("day");
-    } else {
-      setTheme("night");
-    }
+    const h = new Date().getHours();
+    setTheme(h >= 6 && h < 19 ? "day" : "night");
   }
 
-  /* ---------- MANUAL TOGGLE ---------- */
   toggleBtn.addEventListener("click", () => {
-    const current = root.hasAttribute("data-theme") ? "day" : "night";
-    const next = current === "day" ? "night" : "day";
-
+    const isDay = root.hasAttribute("data-theme");
+    const next = isDay ? "night" : "day";
     setTheme(next);
-    savePreference(next);
+    savePref(next);
   });
 
-  /* ---------- INIT ---------- */
-  const preference = getPreference();
-
-  if (preference === "day" || preference === "night") {
-    setTheme(preference);
+  const pref = getPref();
+  if (pref === "day" || pref === "night") {
+    setTheme(pref);
   } else {
-    initAutoMode();
+    fallbackByTime();
   }
 })();
