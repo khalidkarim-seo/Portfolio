@@ -367,7 +367,7 @@ header {
 .contact {
   position: relative;
   max-width: 90%;
-  margin: 5%;
+  margin:auto;
   padding: 60px;
   text-align: center;
 
@@ -1387,3 +1387,4 @@ footer a:hover {
     font-size: 1rem;
   }
 }
+
