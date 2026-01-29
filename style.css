@@ -12,17 +12,17 @@
   --accent: #146EF5;
 }
 
+
 /* =====================================
    DAY MODE OVERRIDES (NO HEADER / HERO CHANGE)
 ===================================== */
 
-
-/* 2- Body background white */
+/* Body background white */
 [data-theme="day"] body {
   background: #ffffff !important;
 }
 
-/* 3- Sections background grey */
+/* Sections background grey */
 [data-theme="day"] .services,
 [data-theme="day"] .about,
 [data-theme="day"] .portfolio,
@@ -34,7 +34,7 @@
   background: lightgray !important;
 }
 
-/* 4- All font color black (except header & hero) */
+/* All font color black (except header & hero) */
 [data-theme="day"] body,
 [data-theme="day"] .services *,
 [data-theme="day"] .about *,
@@ -52,10 +52,11 @@
 [data-theme="day"] .about-card,
 [data-theme="day"] .project-card,
 [data-theme="day"] .blog-post {
-  background:linear-gradient(
+  background: linear-gradient(
     #0066ff,
     #146ef57a,
-    #146ef53a) !important;
+    #146ef53a
+  ) !important;
   color: #000000 !important;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -70,16 +71,18 @@
 [data-theme="day"] footer a {
   color: #000000 !important;
 }
+
 [data-theme="day"] footer p {
   color: #0a0a0a !important;
 }
+
 
 /* ----------------------------------------------------
    Global Styles
 ---------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Purple+Purse&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Purple+Purse&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -90,13 +93,16 @@
 
 body {
   line-height: 1.6;
-  background: var(--bg-main) url('https://www.transparenttextures.com/patterns/asfalt-light.png') fixed;
+  background: var(--bg-main)
+    url("https://www.transparenttextures.com/patterns/asfalt-light.png") fixed;
   color: var(--text-main);
   overflow-x: hidden;
   max-width: 100vw;
 }
 
+
 /* Custom Cursor */
+
 .custom-cursor {
   position: fixed;
   width: 18px;
@@ -136,6 +142,7 @@ header {
 }
 
 /* Logo */
+
 .logo a {
   text-align: center;
   text-decoration: none;
@@ -145,6 +152,7 @@ header {
 }
 
 /* Nav Links */
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -172,26 +180,30 @@ header {
 }
 
 /* Active Indicator */
+
 .indicator {
   position: absolute;
   bottom: 0;
   height: 3px;
   width: 40px;
-  background: linear-gradient(90deg, #146EF5, rgba(3, 112, 255, 0.226));
+  background: linear-gradient(
+    90deg,
+    #146ef5,
+    rgba(3, 112, 255, 0.226)
+  );
   border-radius: 2px;
   transition: all 0.3s ease;
   transform: translateX(0);
 }
 
 /* Hamburger */
+
 .hamburger {
   display: none;
   font-size: 2rem;
   color: black;
   cursor: pointer;
 }
-
-
 /* ----------------------------------------------------
    Hero Section
 ---------------------------------------------------- */
@@ -219,7 +231,7 @@ header {
 .hero-content-pro {
   position: relative;
   z-index: 1;
-  max-width:80%;
+  max-width: 80%;
   padding: 20px 20px;
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(18px);
@@ -312,7 +324,11 @@ header {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: linear-gradient(
+    135deg,
+    #25D366,
+    #128C7E
+  );
   color: #081b12;
   box-shadow:
     0 10px 30px rgba(37, 211, 102, 0.45),
@@ -332,8 +348,7 @@ header {
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow:
-    0 6px 16px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
 }
 
 .btn-outline {
@@ -360,32 +375,32 @@ header {
    Sections
 ---------------------------------------------------- */
 
-/* Sections – Theme Aware */
 .services,
 .about,
 .portfolio,
 .contact {
   position: relative;
   max-width: 90%;
-  margin:auto;
+  margin: 6%;
   padding: 60px;
   text-align: center;
-
-  background: var(--bg-glass); /* Night default */
+  background: var(--bg-glass);
   border-radius: 12px;
-  overflow: hidden; /* clips corners perfectly */
+  overflow: hidden;
   transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Day Mode Override */
+
 [data-theme="day"] .services,
 [data-theme="day"] .about,
 [data-theme="day"] .portfolio,
 [data-theme="day"] .contact {
-  background: #f2f2f2; /* soft light grey */
+  background: #f2f2f2;
 }
 
-/* RIGHT BORDER */
+/* Right Border */
+
 .services::after,
 .about::after,
 .portfolio::after,
@@ -394,22 +409,20 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-
   width: 4px;
   height: 100%;
-
   background: linear-gradient(
     180deg,
     #146ef53a,
     #146ef57a,
     #0066ff
   );
-
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 
-/* BOTTOM BORDER */
+/* Bottom Border */
+
 .services::before,
 .about::before,
 .portfolio::before,
@@ -418,21 +431,20 @@ header {
   position: absolute;
   left: 0;
   bottom: 0;
-
   width: 100%;
   height: 4px;
-
   background: linear-gradient(
     90deg,
     #146ef53a,
     #146ef57a,
     #0066ff
   );
-
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
-/*headings 2 for all */
+
+
+/* Headings */
 
 .services h2,
 .about h2,
@@ -462,8 +474,6 @@ header {
   font-size: 1rem;
   padding-top: 10px;
 }
-
-
 /* ----------------------------------------------------
    Service Cards
 ---------------------------------------------------- */
@@ -500,6 +510,9 @@ header {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+
+/* Service Image Animation */
+
 .service-img {
   width: 150px;
   opacity: 1;
@@ -515,6 +528,7 @@ header {
     opacity: 0;
     transform: translateY(-250px) rotate(-200deg);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) rotate(0deg);
@@ -523,7 +537,7 @@ header {
 
 
 /* ----------------------------------------------------
-   About
+   About Section
 ---------------------------------------------------- */
 
 .about img {
@@ -535,7 +549,10 @@ header {
   border-radius: 60%;
   border: 4px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    filter 0.4s ease;
   position: relative;
   z-index: 1;
 }
@@ -584,7 +601,9 @@ header {
   width: 48%;
   overflow: hidden;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -609,7 +628,7 @@ header {
 
 
 /* ----------------------------------------------------
-   Contact
+   Contact Section
 ---------------------------------------------------- */
 
 .contact {
@@ -646,8 +665,6 @@ button:hover {
   background: #146ef57e;
   color: whitesmoke;
 }
-
-
 /* ----------------------------------------------------
    Theme Toggle
 ---------------------------------------------------- */
@@ -682,14 +699,19 @@ footer {
 }
 
 footer::before {
-  content: '';
+  content: "";
   display: block;
   height: 4px;
-  background: linear-gradient(to right, #146ef53a, #146ef57a, #0066ff);
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  background: linear-gradient(
+    to right,
+    #146ef53a,
+    #146ef57a,
+    #0066ff
+  );
 }
 
 footer p,
@@ -721,14 +743,18 @@ footer a:hover {
   display: inline-block;
   font-size: 2.2rem;
   transform: scale(1);
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
 }
 
 .social li a {
   text-decoration: none;
   color: white;
   display: inline-flex;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 .social li:hover {
@@ -749,12 +775,16 @@ footer a:hover {
   max-width: 100%;
   height: 100vh;
   padding: 10% 10px;
-  background:
-    linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-    url('assets/hero-backgroung.jpg') fixed center center / cover;
   align-content: center;
   align-items: center;
   text-align: center;
+  background:
+    linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("assets/hero-backgroung.jpg") fixed center center / cover;
 }
 
 .certificates-slider h2 a {
@@ -775,24 +805,26 @@ footer a:hover {
   overflow: hidden;
   position: relative;
   margin: auto;
-  scroll-behavior: smooth;
-  white-space: nowrap;
   max-width: 100%;
+  white-space: nowrap;
+  scroll-behavior: smooth;
 }
 
 .slider-track {
   display: inline-flex;
-  animation: scrollSlider 10s linear infinite;
   width: max-content;
+  animation: scrollSlider 10s linear infinite;
 }
 
 .slider-track img {
   width: auto;
-  margin: 0 15px;
   height: auto;
+  margin: 0 15px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.3s ease;
 }
 
 .slider-track img:hover {
@@ -801,19 +833,21 @@ footer a:hover {
 }
 
 @keyframes scrollSlider {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 
 /* ----------------------------------------------------
    Blog Pages
 ---------------------------------------------------- */
-/* =====================================
-   PRO BLOG STYLING
-===================================== */
 
-/* Blog Listing Page */
+/* Blog Listing */
+
 .blog {
   margin: auto;
   padding: 60px 20px;
@@ -835,34 +869,39 @@ footer a:hover {
 .blog-container {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  );
 }
 
+
 /* Blog Cards */
+
 .blog-post {
-  background: var(--bg-card);
-  border-radius: 18px;
-  padding: 30px;
-  text-align: left;
-  transition: all 0.35s ease;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
+  text-align: left;
+  padding: 30px;
+  border-radius: 18px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s ease;
 }
 
 .blog-post::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(20, 110, 245, 0.12), transparent 60%);
   opacity: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(20, 110, 245, 0.12),
+    transparent 60%
+  );
   transition: opacity 0.4s ease;
-}
-
-.blog-post:hover::before {
-  opacity: 1;
 }
 
 .blog-post:hover {
@@ -870,46 +909,73 @@ footer a:hover {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
 }
 
-/* Blog Card Title */
+.blog-post:hover::before {
+  opacity: 1;
+}
+
+.blog-post::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.blog-post:hover::after {
+  opacity: 1;
+}
+
+
+/* Blog Card Content */
+
 .blog-post h2 {
   font-family: "Purple Purse", serif;
   font-size: 1.6rem;
   margin-bottom: 10px;
-  color: var(--text-white);
   line-height: 1.4;
+  color: var(--text-white);
 }
 
-/* Meta */
 .blog-post .meta {
   font-size: 0.85rem;
-  color: #cbd5f5;
-  margin-bottom: 15px;
   letter-spacing: 0.4px;
+  margin-bottom: 15px;
+  color: #cbd5f5;
 }
 
-/* Description */
 .blog-post p {
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--text-main);
 }
 
-/* Read More Button */
-.blog-post .read-more {
-  position: relative;          /* 🔑 REQUIRED */
-  z-index: 10;                 /* 🔑 REQUIRED */
-  pointer-events: auto;        /* 🔑 REQUIRED */
 
+/* Read More Button */
+
+.blog-post .read-more {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
   display: inline-block;
   margin-top: 20px;
   padding: 10px 22px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #146ef5, #00c6ff);
-  color: #fff;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.35s ease;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #146ef5,
+    #00c6ff
+  );
   box-shadow: 0 8px 22px rgba(20, 110, 245, 0.45);
+  transition: all 0.35s ease;
 }
 
 .blog-post .read-more:hover {
@@ -917,88 +983,243 @@ footer a:hover {
   box-shadow: 0 14px 30px rgba(20, 110, 245, 0.65);
 }
 
+
+
 /* =====================================
-   SINGLE BLOG POST PAGE
+   MOBILE RESPONSIVE — TABLET
 ===================================== */
 
-.post-container {
-  max-width: 900px;
-  margin: 120px auto;
-  padding: 60px 50px;
-  border-radius: 22px;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.01)
-    ),
-    var(--bg-glass);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+@media (max-width: 992px) {
+
+  /* Navbar */
+  .navbar {
+    max-width: 95%;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 1.1rem;
+  }
+
+  /* Hero */
+  .hero-content-pro {
+    max-width: 92%;
+    padding: 24px;
+  }
+
+  .hero-content-pro h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-content-pro h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Sections */
+  .services,
+  .about,
+  .portfolio,
+  .contact {
+    padding: 40px 28px;
+  }
+
+  /* Portfolio */
+  .project-card {
+    width: 100%;
+  }
+
+  /* Blog */
+  .post-container {
+    margin: 100px 20px;
+    padding: 40px 28px;
+  }
 }
 
-/* Header */
-.post-header h1 {
-  font-family: "Purple Purse", serif;
-  font-size: 2.6rem;
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-
-.post-meta {
-  font-size: 0.9rem;
-  color: #cbd5f5;
-  margin-bottom: 30px;
-}
-
-/* Post Image */
-.post-image {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 18px;
-  margin-bottom: 35px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-}
-
-/* Content */
-.post-content p {
-  font-size: 1.15rem;
-  line-height: 1.9;
-  margin-bottom: 22px;
-  color: var(--text-main);
-}
-
-.post-content h2 {
-  font-family: "Purple Purse", serif;
-  font-size: 1.9rem;
-  margin: 40px 0 15px;
-  color: var(--text-white);
-}
-
-/* Back Link */
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 40px;
-  padding: 12px 26px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  color: #081b12;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
-  transition: all 0.35s ease;
-}
-
-.back-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.65);
-}
 
 /* =====================================
-   RESPONSIVE BLOG
+   MOBILE RESPONSIVE — PHONE
 ===================================== */
 
 @media (max-width: 768px) {
+
+/* =====================================
+   RESPONSIVE NAVBAR — JS MATCHED (.show)
+===================================== */
+
+/* Default desktop */
+#hamburger {
+  display: none;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  #hamburger {
+    display: block;
+    font-size: 2rem;
+    color: var(--text-white);
+    cursor: pointer;
+    z-index: 1300;
+  }
+
+  /* Mobile menu panel */
+  #nav-links {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 260px;
+    height: calc(100vh - 60px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 18px;
+    padding: 28px 22px;
+
+    background: rgba(0, 0, 0, 0.96);
+    backdrop-filter: blur(14px);
+
+    transition: right 0.35s ease;
+    z-index: 1250;
+  }
+
+  /* When JS adds .show */
+  #nav-links.show {
+    right: 0;
+  }
+
+  /* Nav links full width */
+  #nav-links li {
+    width: 100%;
+  }
+
+  #nav-links a {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  #nav-links a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: none;
+  }
+
+  /* Hide indicator on mobile */
+  .indicator {
+    display: none !important;
+  }
+}
+
+  /* -------------------------
+     Hero
+  ------------------------- */
+
+  .hero-pro {
+    padding: 20px;
+  }
+
+  .hero-content-pro {
+    max-width: 100%;
+    padding: 22px 18px;
+  }
+
+  .hero-content-pro h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content-pro h2 {
+    font-size: 1.05rem;
+  }
+
+  .hero-content-pro p {
+    font-size: 0.98rem;
+  }
+
+  .hero-trust {
+    gap: 12px;
+    font-size: 0.8rem;
+  }
+
+  /* -------------------------
+     Buttons
+  ------------------------- */
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------
+     Sections
+  ------------------------- */
+
+  .services,
+  .about,
+  .portfolio,
+  .contact {
+    max-width: 95%;
+    padding: 32px 18px;
+  }
+
+  .services h2,
+  .about h2,
+  .portfolio h2,
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  /* -------------------------
+     Cards
+  ------------------------- */
+
+  .service-cards {
+    gap: 18px;
+    padding: 20px 10px;
+  }
+
+  .card,
+  .about-card {
+    padding: 22px 18px;
+  }
+
+  .service-img {
+    width: 110px;
+  }
+
+  /* -------------------------
+     Portfolio
+  ------------------------- */
+
+  .portfolio-grid {
+    gap: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem;
+  }
+
+  /* -------------------------
+     Certificates Slider
+  ------------------------- */
+
+  .certificates-slider {
+    height: auto;
+    padding: 80px 10px;
+  }
+
+  .slider-track img {
+    height: 180px;
+  }
+
+  /* -------------------------
+     Blog
+  ------------------------- */
+
   .blog h1 {
     font-size: 2rem;
   }
@@ -1007,384 +1228,77 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 
+  .blog-post {
+    padding: 22px;
+  }
+
+  /* -------------------------
+     Single Post
+  ------------------------- */
+
   .post-container {
-    margin: 100px 15px;
-    padding: 35px 20px;
+    margin: 90px 12px;
+    padding: 28px 18px;
+    border-radius: 16px;
   }
 
   .post-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
-  .post-content h2 {
-    font-size: 1.4rem;
-  }
-}
-/* =====================================
-   PRO BLOG IMAGE STYLING
-===================================== */
-
-/* Blog Card Images (Listing Page) */
-.blog-post img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 18px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-  transition: transform 0.5s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  filter: brightness(0.92) contrast(1.05) saturate(1.1);
-}
-
-/* Hover Effect */
-.blog-post:hover img {
-  transform: scale(1.06);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
-  filter: brightness(1) contrast(1.1) saturate(1.2);
-}
-
-
-/* =====================================
-   SINGLE BLOG POST IMAGE
-===================================== */
-
-.post-image {
-  width: 100%;
-  max-height: 460px;
-  object-fit: cover;
-  border-radius: 22px;
-  margin-bottom: 40px;
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.55),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  transition: transform 0.6s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  filter: brightness(0.95) contrast(1.08) saturate(1.15);
-}
-
-/* Subtle Hover Zoom (Single Post) */
-.post-image:hover {
-  transform: scale(1.025);
-  box-shadow:
-    0 28px 65px rgba(0, 0, 0, 0.7),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-  filter: brightness(1) contrast(1.12) saturate(1.25);
-}
-
-
-/* =====================================
-   IMAGE OVERLAY GLOW (PREMIUM FEEL)
-===================================== */
-
-.blog-post::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top left,
-    rgba(255, 255, 255, 0.08),
-    transparent 45%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.blog-post:hover::after {
-  opacity: 1;
-}
-/* =====================================
-   PRO BLOG IMAGE STYLING
-===================================== */
-
-/* Blog Card Images (Listing Page) */
-.blog-post img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 18px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-  transition: transform 0.5s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  filter: brightness(0.92) contrast(1.05) saturate(1.1);
-}
-
-/* Hover Effect */
-.blog-post:hover img {
-  transform: scale(1.06);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
-  filter: brightness(1) contrast(1.1) saturate(1.2);
-}
-
-
-/* =====================================
-   SINGLE BLOG POST IMAGE
-===================================== */
-
-.post-image {
-  width: 100%;
-  max-height: 460px;
-  object-fit: cover;
-  border-radius: 22px;
-  margin-bottom: 40px;
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.55),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  transition: transform 0.6s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  filter: brightness(0.95) contrast(1.08) saturate(1.15);
-}
-
-/* Subtle Hover Zoom (Single Post) */
-.post-image:hover {
-  transform: scale(1.025);
-  box-shadow:
-    0 28px 65px rgba(0, 0, 0, 0.7),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-  filter: brightness(1) contrast(1.12) saturate(1.25);
-}
-
-
-/* =====================================
-   IMAGE OVERLAY GLOW (PREMIUM FEEL)
-===================================== */
-
-.blog-post::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top left,
-    rgba(255, 255, 255, 0.08),
-    transparent 45%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.blog-post:hover::after {
-  opacity: 1;
-}
-
-
-/* ----------------------------------------------------
-   Responsive Styles
----------------------------------------------------- */
-
-@media (max-width: 768px) {
-
-  /* Navbar */
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    color: white;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    height: 100vh;
-    width: 200px;
-    background: rgba(0, 0, 0, 0.459);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    animation: fadeInUp 1.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 30px;
-    transform: translateX(100%);
-    transition: transform 0.6s ease-in-out;
-    z-index: 999;
-  }
-
-  .nav-links.show {
-    transform: translateX(0);
-  }
-
-  .custom-cursor {
-    display: none;
-  }
-
-  /* Hero */
-  .hero-pro {
-    height: auto;
-    min-height: 100vh;
-    padding: 100px 15px 40px;
-  }
-
-  .hero-content-pro {
-    max-width: 100%;
-    padding: 25px 18px;
-    border-radius: 14px;
-  }
-
-  .hero-badge {
-    font-size: 0.75rem;
-    padding: 5px 12px;
-  }
-
-  .hero-trust {
-    gap: 12px;
-    font-size: 0.75rem;
-  }
-
-  /* Buttons */
-  .btn {
-    padding: 12px 18px;
+  .post-content p {
     font-size: 1rem;
-    border-radius: 40px;
   }
 
-  /* Sections */
-  .services,
-  .about,
-  .portfolio,
+  /* -------------------------
+     Contact
+  ------------------------- */
+
   .contact {
-    max-width: 90%;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 60px;
   }
 
-  .services h2,
-  .about h2,
-  .portfolio h2,
-  .contact h2,
-  .certificates-slider h2 {
-    font-size: 1.4rem;
+  .contact form {
+    max-width: 100%;
   }
 
-  .services h3,
-  .about h3,
-  .portfolio h3,
-  .contact h3 {
-    font-size: 1rem;
-  }
-
-  .services p,
-  .about p,
-  .portfolio p,
-  .contact p {
-    font-size: 0.8rem;
-  }
+  /* -------------------------
+     Footer
+  ------------------------- */
 
   footer {
     text-align: center;
+    font-size: 0.9rem;
   }
 
-  /* Cards & Portfolio */
-  .service-cards {
-    flex-direction: column;
-    gap: 20px;
+  .social li {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* =====================================
+   EXTRA SMALL DEVICES
+===================================== */
+
+@media (max-width: 480px) {
+
+  .hero-content-pro h1 {
+    font-size: 1.55rem;
   }
 
-  .service-img {
-    transform: translateX(0);
-    width: 120px;
+  .hero-content-pro h2 {
+    font-size: 0.95rem;
   }
 
-  .project-card {
+  .btn {
     width: 100%;
   }
 
-  .portfolio-grid {
-    gap: 15px;
-    margin: 15px 0;
-  }
-
-  /* Contact */
-  .contact form {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  /* Certificates */
-  .certificates-slider {
-    height: auto;
-    min-height: 80vh;
-    padding: 60px 10px;
-  }
-
-  .slider-track img {
-    max-width: 85vw;
-    height: auto;
-  }
-
-}
-/* =====================================
-   BLOG HERO SECTION STYLE
-===================================== */
-
-/* Wrapper if inside blog section */
-.blog .hero-content-pro {
-  max-width: 900px;
-  margin: 140px auto 60px;
-  padding: 50px 45px;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  animation: fadeInUp 1.2s ease;
-}
-
-/* Subtle gradient overlay */
-.blog .hero-content-pro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(20, 110, 245, 0.18),
-    transparent 60%
-  );
-  opacity: 0.6;
-  z-index: 0;
-}
-
-/* Ensure content above overlay */
-.blog .hero-content-pro h1,
-.blog .hero-content-pro p {
-  position: relative;
-  z-index: 1;
-}
-
-/* Title */
-.blog .hero-content-pro h1 {
-  font-family: "Purple Purse", serif;
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 15px;
-  color: #ffffff;
-  text-shadow: 0 0 18px rgba(20, 110, 245, 0.35);
-}
-
-/* Subtitle */
-.blog .hero-content-pro p {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: #e5e7eb;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .blog .hero-content-pro {
-    margin: 120px 15px 40px;
-    padding: 30px 20px;
-    border-radius: 18px;
-  }
-
-  .blog .hero-content-pro h1 {
-    font-size: 2rem;
-  }
-
-  .blog .hero-content-pro p {
-    font-size: 1rem;
+  .hero-trust {
+    flex-direction: column;
+    gap: 8px;
   }
 }
-
