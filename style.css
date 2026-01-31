@@ -1260,7 +1260,6 @@ footer a:hover {
 
   /* Hero */
   .hero {
-    height: auto;
     padding: 40px;
     padding-top: 60px;
   }
@@ -1350,88 +1349,8 @@ footer a:hover {
 
 }
 
-@media (max-width: 480px) {
 
-  .slider-track img {
-    height: 130px;
-    max-width: 200px;
-  }
-
-}
-  /* Blog */
-  .blog-container {
-    flex-direction: column;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-  }
-
-}
-
-
-/* =====================================================
-   RESPONSIVE — SMALL MOBILE (≤ 480px)
-===================================================== */
-
-@media (max-width: 480px) {
-
-  /* Hero */
-  .hero-content {
-    padding: 20px;
-    border-radius: 14px;
-  }
-
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero h2 {
-    font-size: 1rem;
-  }
-
-  .hero-badge {
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-
-  /* Buttons */
-  .btn-primary,
-  .btn-secondary {
-    padding: 14px 18px;
-    font-size: .95rem;
-  }
-
-  /* Section headings */
-  .services h2,
-  .about h2,
-  .portfolio h2,
-  .contact h2 {
-    font-size: 1.5rem;
-  }
-
-  .services h3,
-  .about h3 {
-    font-size: 1.2rem;
-  }
-
-  /* About image */
-  .about img {
-    height: 120px;
-  }
-
-  /* Post */
-  .post-container {
-    padding: 60px 16px;
-  }
-
-  .post-image {
-    width: 100%;
-  }
-
-}
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   .blog-hero-inner {
     grid-template-columns: 1fr;
@@ -1451,3 +1370,4 @@ footer a:hover {
     font-size: 34px;
   }
 }
+
