@@ -48,7 +48,7 @@
 
 
 /* ----------------------------------------------------
-   Body
+  for all Body
 ---------------------------------------------------- */
 
 body {
@@ -85,82 +85,188 @@ body {
 header {
   width: 100%;
   height: 60px;
-  background: rgba(0, 0, 0, 0.247);
+  background: rgba(0, 0, 0, 0.25);
   position: fixed;
   top: 0;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   z-index: 1111;
   border-bottom: 1px solid #146ef58e;
-  align-content: center;
 }
+
+/* Navbar container */
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   max-width: 90%;
   margin: auto;
+  height: 100%;
 }
-
-/* Logo */
-
 .logo a {
-  text-align: center;
   text-decoration: none;
   color: white;
   font-family: "Macondo", cursive;
   font-size: 1.2rem;
+  letter-spacing: 0.5px;
 }
-
-/* Nav Links */
-
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
-  font-size: 1.4rem;
-  position: relative;
-}
-
-.nav-links li {
+  gap: 26px;
+  font-size: 1.35rem;
   position: relative;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease;
+  padding: 8px 14px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .nav-links a:hover {
   transform: translateY(-2px);
+  opacity: 0.85;
 }
-
-/* Active Indicator */
-
 .indicator {
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   height: 3px;
   width: 40px;
-  background: linear-gradient(90deg, #146EF5, rgba(3, 112, 255, 0.226));
-  border-radius: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #146EF5,
+    rgba(20, 110, 245, 0.2)
+  );
+
+  border-radius: 6px;
   transition: all 0.3s ease;
-  transform: translateX(0);
+}
+.hamburger {
+  width: 32px;
+  height: 24px;
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+  z-index: 2000;
+
+  transition: transform 0.3s ease;
 }
 
-/* Hamburger */
+.hamburger span {
+  height: 2.5px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
 
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  color: black;
-  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease;
+}
+
+/* Hover / tap feel */
+.hamburger:hover {
+  transform: scale(1.08);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+/* Active (X) */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+/* ----------------------------------------------------
+   Header & Navbar (mobile responsive)
+---------------------------------------------------- */
+
+
+@media (max-width: 800px) {
+
+  .navbar {
+    max-width: 85%;
+  }
+
+  .logo a {
+    font-size: 1.1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 40%;
+    height: calc(100vh - 60px);
+
+    background: linear-gradient(
+      180deg,
+      rgba(18, 18, 18, 0.9),
+      rgba(0, 0, 0, 0.97)
+    );
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    font-size: 1.1rem;
+    letter-spacing: 0.6px;
+
+    opacity: 0;
+
+    transition:
+      right 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
+
+    box-shadow: -18px 0 45px rgba(0, 0, 0, 0.65);
+  }
+
+  .nav-links.active {
+    right: 0;
+    opacity: 1;
+  }
+
+  .nav-links a {
+    padding: 12px 26px;
+    border-radius: 28px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(-6px);
+    letter-spacing: 1px;
+  }
+
+  .indicator {
+    display: none;
+  }
 }
 
 
@@ -344,6 +450,71 @@ header {
 .btn-secondary:active {
   transform: translateY(-1px) scale(.98);
 }
+/* ----------------------------------------------------
+   HERO SECTION — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .custom-cursor{
+    display: none;
+  }
+
+  .hero {
+    padding: 0 16px;
+  }
+
+  /* Glass Card */
+
+  .hero-content {
+    max-width: 100%;
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  /* Badge */
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 6px 14px;
+    margin-bottom: 14px;
+  }
+
+  /* Headings */
+
+  .hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .hero h2 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  /* Buttons Layout */
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Buttons */
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 22px;
+    font-size: 1rem;
+  }
+}
 
 
 /* ----------------------------------------------------
@@ -391,6 +562,52 @@ header {
   font-size: 1rem;
   padding-top: 10px;
 }
+/* ----------------------------------------------------
+   Sections — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .services,
+  .about,
+  .portfolio,
+  .contact {
+    max-width: 95%;
+    padding-top: 40px;
+  }
+
+  /* Section Headings */
+
+  .services h2,
+  .about h2,
+  .portfolio h2,
+  .contact h2,
+  .certificates-slider h2 {
+    font-size: 1.7rem;
+    padding-top: 8px;
+  }
+
+  .services h3,
+  .about h3,
+  .portfolio h3,
+  .contact h3,
+  .certificates-slider h3 {
+    font-size: 1.3rem;
+    padding-bottom: 8px;
+  }
+
+  /* Section Text */
+
+  .services p,
+  .about p,
+  .portfolio p,
+  .contact p,
+  .certificates-slider p {
+    font-size: 0.95rem;
+    padding-top: 8px;
+    line-height: 1.6;
+  }
+}
 
 
 /* ----------------------------------------------------
@@ -428,6 +645,28 @@ header {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.15);
 }
+/* ----------------------------------------------------
+   Service Cards — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .service-cards {
+    gap: 20px;
+    padding: 30px 10px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 24px 18px;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: 0 8px 10px #146ef569;
+  }
+}
 
 
 /* ----------------------------------------------------
@@ -455,6 +694,32 @@ header {
   100% {
     opacity: 1;
     transform: translateY(0) rotate(0deg);
+  }
+}
+/* ----------------------------------------------------
+   Service Images Animation — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .service-img {
+    width: 110px;
+    transform: translateX(0);
+  }
+
+  .animate-service-img {
+    animation-duration: 1.5s;
+  }
+
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateY(-120px) rotate(-120deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
   }
 }
 
@@ -505,6 +770,34 @@ header {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+/* ----------------------------------------------------
+   About Section — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .about img {
+    height: 120px;
+    margin: 16px auto;
+  }
+
+  .about img:hover {
+    transform: none;
+    filter: grayscale(50%);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+  }
+
+  .about-card {
+    flex: 1 1 100%;
+    padding: 24px 18px;
+    text-align: left;
+  }
+
+  .about-card:hover {
+    transform: none;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+  }
+}
 
 
 /* ----------------------------------------------------
@@ -549,128 +842,58 @@ header {
   padding: 0 15px 15px;
   font-size: 0.95rem;
 }
-
-
 /* ----------------------------------------------------
-   Contact Form
+   Portfolio & Contact — Mobile Responsive (max 800px)
 ---------------------------------------------------- */
 
-.contact {
-  height: 100vh;
-  align-items: center;
-  text-align: center;
-  align-content: center;
+@media (max-width: 800px) {
+
+  /* Portfolio */
+
+  .portfolio-grid {
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-card:hover {
+    transform: none;
+    box-shadow: 0 2px 5px wheat;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+    padding: 12px 12px 0;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+    padding: 0 12px 12px;
+  }
+
+  /* Contact */
+
+  .contact {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .contact form {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 1rem;
+    padding: 12px;
+  }
 }
-
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: auto;
-}
-
-input,
-textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  padding: 10px;
-  background: #146EF5;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #146ef57e;
-  color: whitesmoke;
-}
-/* ----------------------------------------------------
-   Footer
----------------------------------------------------- */
-
-footer {
-  background: #000000;
-  font-size: 1rem;
-  text-align: right;
-  padding: 30px 15px;
-  color: #ccc;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Top Gradient Border */
-
-footer::before {
-  content: '';
-  display: block;
-  height: 4px;
-  background: linear-gradient(to right, #146ef53a, #146ef57a, #0066ff);
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Footer Text Hover */
-
-footer p,
-footer a {
-  color: #ccc;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: orange;
-}
-
-
-/* ----------------------------------------------------
-   Social Icons
----------------------------------------------------- */
-
-.social {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-  gap: 25px;
-  padding: 0;
-  list-style: none;
-}
-
-.social li {
-  display: inline-block;
-  font-size: 2.2rem;
-  transform: scale(1);
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-/* Icon Links */
-
-.social li a {
-  text-decoration: none;
-  color: white;
-  display: inline-flex;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Hover Glow */
-
-.social li:hover {
-  transform: scale(1.3) translateY(-8px);
-}
-
-.social li:hover a {
-  color: #146EF5;
-  text-shadow: 0 0 8px black;
-}
-
 
 /* ----------------------------------------------------
    Certificates Slider — PRO VERSION
@@ -819,6 +1042,242 @@ footer a:hover {
 .slider-wrapper:hover .slider-track {
   animation-play-state: paused;
 }
+/* ----------------------------------------------------
+   Certificates Slider — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .certificates-slider {
+    min-height: auto;
+    padding: 60px 10px;
+  }
+
+  /* Headings */
+
+  .certificates-content h2 {
+    margin-bottom: 28px;
+    font-size: 1.6rem;
+  }
+
+  /* Slider spacing */
+
+  .slider-track {
+    gap: 16px;
+    animation-duration: 22s;
+  }
+
+  /* Certificate Images */
+
+  .slider-track img {
+    height: 160px;
+    max-width: 240px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+
+  .slider-track img:hover {
+    transform: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  }
+
+  /* Touch behavior */
+
+  .slider-wrapper:hover .slider-track {
+    animation-play-state: running;
+  }
+}
+
+
+/* ----------------------------------------------------
+   Contact Form
+---------------------------------------------------- */
+
+.contact {
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background: #146EF5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #146ef57e;
+  color: whitesmoke;
+}
+/* ----------------------------------------------------
+   Contact Form — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .contact {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .contact form {
+    max-width: 100%;
+    padding: 0 15px;
+    gap: 12px;
+  }
+
+  input,
+  textarea {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+/* ----------------------------------------------------
+   Footer
+---------------------------------------------------- */
+
+footer {
+  background: #000000;
+  font-size: 1rem;
+  text-align: right;
+  padding: 30px 15px;
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Top Gradient Border */
+
+footer::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right, #146ef53a, #146ef57a, #0066ff);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Footer Text Hover */
+
+footer p,
+footer a {
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: orange;
+}
+
+
+/* ----------------------------------------------------
+   Social Icons
+---------------------------------------------------- */
+
+.social {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 25px;
+  padding: 0;
+  list-style: none;
+}
+
+.social li {
+  display: inline-block;
+  font-size: 2.2rem;
+  transform: scale(1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Icon Links */
+
+.social li a {
+  text-decoration: none;
+  color: white;
+  display: inline-flex;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover Glow */
+
+.social li:hover {
+  transform: scale(1.3) translateY(-8px);
+}
+
+.social li:hover a {
+  color: #146EF5;
+  text-shadow: 0 0 8px black;
+}
+/* ----------------------------------------------------
+   Footer — Mobile Responsive (max 800px)
+---------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  footer {
+    text-align: center;
+    padding: 24px 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Footer Text */
+
+  footer p,
+  footer a {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Social Icons */
+
+  .social {
+    margin-top: 18px;
+    gap: 18px;
+  }
+
+  .social li {
+    font-size: 1.8rem;
+  }
+
+  .social li:hover {
+    transform: none;
+  }
+
+  .social li:hover a {
+    text-shadow: none;
+  }
+}
+
+
 
 
 /* ----------------------------------------------------
@@ -1075,21 +1534,6 @@ footer a:hover {
   width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .blog-post {
-    padding: 28px;
-  }
-
-  .blog-post h2 {
-    font-size: 22px;
-  }
-}
-
-
-/* ----------------------------------------------------
-   Single Blog Post
----------------------------------------------------- */
 
 /* ==============================
    SINGLE BLOG POST — PRO STYLE
@@ -1168,211 +1612,132 @@ footer a:hover {
 .back-link:hover::after {
   width: 100%;
 }
+/* ----------------------------------------------------
+   Blog Pages — Mobile Responsive (max 800px)
+---------------------------------------------------- */
 
+@media (max-width: 800px) {
 
-/* =====================================================
-   RESPONSIVE — TABLET (≤ 992px)
-===================================================== */
+  /* =========================
+     BLOG HERO
+  ========================= */
 
-@media (max-width: 992px) {
-
-  /* Navbar */
-  .nav-links {
-    gap: 16px;
-    font-size: 1.1rem;
-  }
-
-  /* Hero */
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-
-  .hero h2 {
-    font-size: 1.3rem;
-  }
-
-  .hero p {
-    font-size: 1.05rem;
-  }
-
-  .hero-content {
-    padding: 28px;
-  }
-
-  /* Portfolio */
-  .project-card {
-    width: 100%;
-  }
-
-  /* Blog */
-  .blog-post {
-    width: 100%;
-  }
-
-  /* Post image */
-  .post-image {
-    width: 80%;
-  }
-}
-
-
-/* =====================================================
-   RESPONSIVE — MOBILE NAV (≤ 768px)
-===================================================== */
-
-@media (max-width: 768px) {
-
-  /* Header */
-  header {
-    height: 56px;
-  }
-
-  /* Hamburger show */
-  .hamburger {
-    display: block;
-    color: white;
-  }
-
-  /* Mobile Nav Panel */
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 220px;
-    flex-direction: column;
-    background: rgba(0,0,0,.95);
-    backdrop-filter: blur(12px);
-    border-left: 1px solid #146ef58e;
-    padding: 18px;
-    gap: 14px;
-
-    transform: translateX(100%);
-    transition: transform .3s ease;
-  }
-
-  .nav-links.show {
-    transform: translateX(0);
-  }
-
-  .indicator {
-    display: none;
-  }
-
-  /* Hero */
-  .hero {
-     height: 100vh;
-    padding: 40px;
-    padding-top: 60px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero h2 {
-    font-size: 1.1rem;
-  }
-
-  .hero p {
-    font-size: .95rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Service Cards */
-  .service-cards {
-     display: flex;
-    padding: 20px 10px;
-  }
-
-  .card {
-    width: 100%;
-  }
-
-  /* About */
-  .about-card {
-    width: 100%;
-  }
-
-  /* Portfolio */
-  .portfolio-grid {
-    flex-direction: column;
-  }
-
-  /* Contact */
-  .contact {
-    height: auto;
-    padding: 60px 20px;
-  }
-/* single blog post */
-@media (max-width: 768px) {
-  .post-content {
-    padding: 34px;
-  }
-
-  .post-header h1 {
-    font-size: 30px;
-  }
-
-  .post-content h2 {
-    font-size: 22px;
-  }
-
-  .post-content p {
-    font-size: 16px;
-  }
-}
-
-/* ==============================
-  certificates slider
-============================== */
-
-@media (max-width: 768px) {
-
-  .certificates-slider {
-    padding: 60px 16px;
+  .blog-hero {
     min-height: auto;
+    padding: 60px 16px;
   }
 
-  .slider-track img {
-    height: 160px;
-    max-width: 240px;
+  .hero-glow {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    left: -120px;
+    filter: blur(60px);
   }
-
-}
-
-
-@media (max-width: 768px) {
 
   .blog-hero-inner {
     grid-template-columns: 1fr;
+    gap: 40px;
     text-align: center;
   }
 
+  .blog-hero-content h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+  }
+
   .blog-hero-content p {
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 24px;
   }
 
   .hero-actions {
     justify-content: center;
   }
 
-  .blog-hero-content h1 {
-    font-size: 34px;
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 22px;
+  }
+
+  /* Image Card */
+
+  .blog-hero-img {
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  /* =========================
+     BLOG LISTING
+  ========================= */
+
+  .blog {
+    margin: 40px auto;
+    padding: 30px 16px;
+  }
+
+  .blog h1 {
+    font-size: 2rem;
+  }
+
+  .blog-posts {
+    padding: 60px 16px;
+  }
+
+  .blog-container {
+    gap: 24px;
+  }
+
+  .blog-post {
+    padding: 26px;
+  }
+
+  .blog-post:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .blog-post h2 {
+    font-size: 1.35rem;
+  }
+
+  .excerpt {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* =========================
+     SINGLE BLOG POST
+  ========================= */
+
+  .post-container {
+    padding: 80px 16px 60px;
+  }
+
+  .post-content {
+    padding: 30px 22px;
+    border-radius: 16px;
+  }
+
+  .post-content p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .post-content h2 {
+    font-size: 1.4rem;
+    margin: 36px 0 14px;
+  }
+
+  .post-highlight {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+
+  .back-link {
+    margin-top: 36px;
   }
 }
-
-
-
-
 

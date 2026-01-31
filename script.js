@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ================= Mobile Nav ================= */
-
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
@@ -51,42 +50,37 @@ if (hamburger && navLinks) {
   const navAnchors = navLinks.querySelectorAll("a");
 
   const openMenu = () => {
-    navLinks.classList.add("show");
+    navLinks.classList.add("active");   // FIXED
     hamburger.classList.add("active");
     hamburger.setAttribute("aria-expanded", "true");
   };
 
   const closeMenu = () => {
-    navLinks.classList.remove("show");
+    navLinks.classList.remove("active"); // FIXED
     hamburger.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
   };
 
   const toggleMenu = (e) => {
     e.stopPropagation();
-    navLinks.classList.contains("show") ? closeMenu() : openMenu();
+    navLinks.classList.contains("active") ? closeMenu() : openMenu();
   };
 
-  /* Toggle button */
   hamburger.addEventListener("click", toggleMenu);
 
-  /* Close when link clicked */
   navAnchors.forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  /* Close when clicking outside */
   document.addEventListener("click", (e) => {
     if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
       closeMenu();
     }
   });
 
-  /* Close on ESC key */
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
-
 }
 
 
