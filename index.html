@@ -40,18 +40,19 @@
 </head>
 
 <body>
+  <!-- Preloader -->
+<div id="preloader">
+  <div class="loader"></div>
+</div>
+
     <link rel="icon" href="assets/webflow-by-khalid-favicon.png" type="image/png" />
   <!-- Header -->
 <header>
   <nav class="navbar">
     <div class="logo">
       <a href="/index.html"><img src="assets/webflow by khalid.png" alt="webflow-by-khalid" height="60"></a>
-    </div><li class="theme-toggle">
-  <button id="themeToggle" aria-label="Toggle theme">🌙</button>
-</li>
-
+    </div>
     <div class="hamburger" id="hamburger">&#9776;</div>
-    
     <ul class="nav-links" id="nav-links">
       <li class="active"><a href="#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
       <li><a href="#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
@@ -66,45 +67,46 @@
   <div class="custom-cursor"></div>
 
 </header>
-<!-- Hero Section -->
-<section id="home" class="hero hero-pro">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="assets/background video.mp4" type="video/mp4">
+<section id="home" class="hero">
+<video autoplay muted loop playsinline class="bg-video">
+    <source src="/assets/background video.mp4" type="video/mp4">
   </video>
 
-  <div class="hero-overlay"></div>
+  <div class="video-overlay"></div>
+  <div class="hero-content">
 
-  <div class="hero-content-pro">
-    <span class="hero-badge">Website • Social Media • Marketing</span>
+    <span class="hero-badge">
+      Webflow • WordPress • SEO • Available Worldwide
+    </span>
 
     <h1>
-      Grow Your Business with a <span>High-Converting Website</span>
+      Professional Websites That Turn Visitors Into Clients
     </h1>
 
     <h2>
-      Web Development & Digital Growth by <strong>Webflow By Khalid</strong>
+      Hire Khalid Karim — Web Developer for Local & Global Businesses
     </h2>
 
     <p>
-      We design fast, SEO-optimized, and visually stunning websites  
-      that turn visitors into paying customers.
+      I design and develop fast, modern, and SEO-optimized websites 
+      for startups, small businesses, and brands worldwide.
     </p>
 
     <div class="hero-actions">
-      <a href="https://wa.me/923078829986" target="_blank" class="btn btn-primary">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+
+      <a href="https://wa.me/923078829986" target="_blank" rel="noopener" class="btn-primary">
+        <i class="fa-brands fa-whatsapp"></i> Get Free Consultation
       </a>
 
-      <a href="#portfolio" class="btn btn-outline">
-        Our Work
+      <a href="#portfolio" class="btn-secondary">
+        View Portfolio
       </a>
-    </div>
 
-    <div class="hero-trust">
-      <span>✔️ Trusted by Businesses</span>
-      <span>✔️ SEO Optimized</span>
-      <span>✔️ Fast & Responsive</span>
     </div>
+<div class="hero-trust">
+  ✔ Fast Delivery &nbsp; ✔ Affordable Packages &nbsp; ✔ Client Support
+</div>
+
   </div>
 </section>
 
@@ -162,6 +164,10 @@
     </section>
 <!-- Skills & Certificates Section -->
 <section id="certificates" class="certificates-slider">
+   <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/slider background.mp4" type="video/mp4">
+  </video>
   <h2>Certificates by <a href="https://digiskills.pk/">DigiSkills.pk</a></h2>
   <div class="slider-wrapper">
     <div class="slider-container">
