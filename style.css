@@ -1290,13 +1290,12 @@ footer a:hover {
 
   /* Service Cards */
   .service-cards {
+     display: flex;
     padding: 20px 10px;
   }
 
   .card {
     width: 100%;
-     height:100vh;
-     
   }
 
   /* About */
@@ -1372,6 +1371,7 @@ footer a:hover {
     font-size: 34px;
   }
 }
+
 
 
 
