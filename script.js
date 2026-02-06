@@ -1,5 +1,5 @@
 // =====================
-// SCRIPT — CLEAN VERSION
+// SCRIPT — CLEAN VERSION (FIXED)
 // =====================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (track && leftBtn && rightBtn && sliderContainer) {
 
-    // pause on hover
     track.addEventListener("mouseenter", () => {
       track.style.animationPlayState = "paused";
     });
@@ -41,47 +40,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-/* ================= Mobile Nav ================= */
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
+  /* ================= Mobile Nav ================= */
 
-if (hamburger && navLinks) {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
 
-  const navAnchors = navLinks.querySelectorAll("a");
+  if (hamburger && navLinks) {
 
-  const openMenu = () => {
-    navLinks.classList.add("active");   // FIXED
-    hamburger.classList.add("active");
-    hamburger.setAttribute("aria-expanded", "true");
-  };
+    const navAnchors = navLinks.querySelectorAll("a");
 
-  const closeMenu = () => {
-    navLinks.classList.remove("active"); // FIXED
-    hamburger.classList.remove("active");
-    hamburger.setAttribute("aria-expanded", "false");
-  };
+    const openMenu = () => {
+      navLinks.classList.add("active");
+      hamburger.classList.add("active");
+      hamburger.setAttribute("aria-expanded", "true");
+    };
 
-  const toggleMenu = (e) => {
-    e.stopPropagation();
-    navLinks.classList.contains("active") ? closeMenu() : openMenu();
-  };
+    const closeMenu = () => {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    };
 
-  hamburger.addEventListener("click", toggleMenu);
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navLinks.classList.contains("active") ? closeMenu() : openMenu();
+    });
 
-  navAnchors.forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
+    navAnchors.forEach(link =>
+      link.addEventListener("click", closeMenu)
+    );
 
-  document.addEventListener("click", (e) => {
-    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-      closeMenu();
-    }
-  });
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMenu();
+      }
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-}
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  }
 
 
   /* ================= Nav Indicator ================= */
@@ -179,73 +177,92 @@ if (hamburger && navLinks) {
   }
 
 
-  /* ================= Theme Mode ================= */
+  /* ================= Theme Mode (FIXED & MERGED) ================= */
 
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-  const savedTheme = localStorage.getItem("theme");
+  const THEME_KEY = "theme";
+  const root = document.documentElement;
 
-  function applyTheme(isDark) {
-    document.body.classList.toggle("dark", isDark);
+  let toggleBtn = document.getElementById("themeToggle");
+
+  if (!toggleBtn) {
+    toggleBtn = document.createElement("button");
+    toggleBtn.id = "themeToggle";
+    toggleBtn.className = "theme-toggle";
+    toggleBtn.setAttribute("aria-label", "Toggle Day Night Mode");
+    toggleBtn.innerText = "☀️";
+    document.body.appendChild(toggleBtn);
   }
 
-  // priority: saved > system
-  if (savedTheme) {
-    applyTheme(savedTheme === "dark");
-  } else {
-    applyTheme(prefersDark.matches);
-  }
-
-  // system change listener
-  const mediaListener = (e) => {
-    if (!localStorage.getItem("theme")) {
-      applyTheme(e.matches);
+  function setTheme(theme) {
+    if (theme === "day") {
+      root.setAttribute("data-theme", "day");
+      toggleBtn.innerText = "🌙";
+    } else {
+      root.removeAttribute("data-theme");
+      toggleBtn.innerText = "☀️";
     }
-  };
-
-  if (prefersDark.addEventListener) {
-    prefersDark.addEventListener("change", mediaListener);
-  } else {
-    prefersDark.addListener(mediaListener); // old safari
+    localStorage.setItem(THEME_KEY, theme);
   }
 
-  // manual toggle
-  const themeToggle = document.getElementById("themeToggle");
+  function getAutoTheme() {
+    if (window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "night";
+    }
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const isDark = !document.body.classList.contains("dark");
-      applyTheme(isDark);
-      localStorage.setItem("theme", isDark ? "dark" : "light");
+    const hour = new Date().getHours();
+    return hour >= 6 && hour < 18 ? "day" : "night";
+  }
+
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  setTheme(savedTheme || getAutoTheme());
+
+  toggleBtn.addEventListener("click", () => {
+    const current =
+      root.getAttribute("data-theme") === "day" ? "day" : "night";
+    setTheme(current === "day" ? "night" : "day");
+  });
+
+  if (!savedTheme && window.matchMedia) {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        setTheme(e.matches ? "night" : "day");
+      });
+  }
+
+
+  /* ================= Smooth Anchor Scroll ================= */
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
-  }
+  });
 
 });
-
-
 /* ================= Preloader ================= */
 
 window.addEventListener("load", () => {
-  document
-    .getElementById("preloader")
-    ?.classList.add("hide");
+  const preloader = document.getElementById("preloader");
+
+  if (!preloader) return;
+
+  preloader.classList.add("hide");
+
+  // Optional: remove from DOM completely (recommended)
+  setTimeout(() => {
+    preloader.remove();
+  }, 600); // match CSS transition
 });
 
-/* ================= id smoth click scroliing ================= */
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const targetId = this.getAttribute('href');
-
-    if (targetId === "#") return;
-
-    const target = document.querySelector(targetId);
-    if (!target) return;
-
-    e.preventDefault();
-
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  });
-});

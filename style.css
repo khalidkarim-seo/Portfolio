@@ -1,3 +1,180 @@
+/* ====================================================
+   DAY MODE – THEME VARIABLES (UPDATED)
+==================================================== */
+
+html[data-theme="day"] {
+  /* Backgrounds */
+  --bg-body: #f8f9fc;
+  --bg-section: #eef1f8;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-soft: #e6ebff;
+
+  /* Text */
+  --text-main: black;
+  --text-muted: black;
+  --text-soft: #6b7280;
+
+  /* UI */
+  --border-soft: rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  /* Card Gradient Accent */
+  --card-gradient-x: linear-gradient(
+    to right,
+    rgba(20, 110, 245, 0.15),
+    rgba(20, 110, 245, 0.35),
+    #146ef5
+  );
+
+  --card-gradient-y: linear-gradient(
+    to bottom,
+    rgba(20, 110, 245, 0.15),
+    rgba(20, 110, 245, 0.35),
+    #146ef5
+  );
+}
+
+/* ====================================================
+   GLOBAL DAY MODE BASE
+==================================================== */
+
+html[data-theme="day"] body {
+  background: var(--bg-body);
+  color: var(--text-main);
+}
+
+/* ====================================================
+   SECTIONS
+==================================================== */
+
+html[data-theme="day"] .services,
+html[data-theme="day"] .about,
+html[data-theme="day"] .portfolio,
+html[data-theme="day"] .contact {
+  background: var(--bg-section);
+}
+
+/* ====================================================
+   CARDS – DAY MODE STYLE (UPDATED)
+==================================================== */
+
+html[data-theme="day"] .card,
+html[data-theme="day"] .about-card,
+html[data-theme="day"] .project-card,
+html[data-theme="day"] .blog-post,
+html[data-theme="day"] .post-content {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--bg-card);
+  color: var(--text-main);
+
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+
+/* ====================================================
+   BLOG AREAS
+==================================================== */
+
+html[data-theme="day"] .blog-posts,
+html[data-theme="day"] .post-container {
+  background: #f5f6f8;
+}
+
+html[data-theme="day"] .blog-post h2,
+html[data-theme="day"] .post-content h2 {
+  color: #111;
+}
+
+html[data-theme="day"] .post-content p,
+html[data-theme="day"] .excerpt {
+  color: #333;
+}
+
+/* ====================================================
+   TEXT
+==================================================== */
+
+html[data-theme="day"] p,
+html[data-theme="day"] .excerpt,
+html[data-theme="day"] .meta {
+  color: var(--text-muted);
+}
+
+/* ====================================================
+   FORMS
+==================================================== */
+
+html[data-theme="day"] input,
+html[data-theme="day"] textarea {
+  background: #ffffff;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
+html[data-theme="day"] input::placeholder,
+html[data-theme="day"] textarea::placeholder {
+  color: #777;
+}
+
+/* ====================================================
+   HEADER & FOOTER
+==================================================== */
+
+html[data-theme="day"] header,
+html[data-theme="day"] footer{
+  background: #24007c49;
+  color: #111;
+}
+html[data-theme="day"] .social li a{
+  color: #000000;
+}
+
+/* ====================================================
+   PROJECT CARD HOVER
+==================================================== */
+
+html[data-theme="day"] .project-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ====================================================
+   DAY MODE – CARD GRADIENT ACCENT LINES
+==================================================== */
+
+/* Bottom Line */
+html[data-theme="day"] .card::before,
+html[data-theme="day"] .about-card::before,
+html[data-theme="day"] .project-card::before,
+html[data-theme="day"] .blog-post::before,
+html[data-theme="day"] .post-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--card-gradient-x);
+}
+
+/* Right Line */
+html[data-theme="day"] .card::after,
+html[data-theme="day"] .about-card::after,
+html[data-theme="day"] .project-card::after,
+html[data-theme="day"] .blog-post::after,
+html[data-theme="day"] .post-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--card-gradient-y);
+}
+
 /* ----------------------------------------------------
    Global Styles
 ---------------------------------------------------- */
@@ -67,14 +244,12 @@ body {
 
 .custom-cursor {
   position: fixed;
-  width: 18px;
-  height: 18px;
-  background: gold;
-  border-radius: 50%;
+  background:transparent;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: transform 0.6s ease;
   z-index: 2000;
+  color: rgb(255, 255, 0);
 }
 
 
@@ -107,7 +282,6 @@ header {
 }
 .logo a {
   text-decoration: none;
-  color: white;
   font-family: "Macondo", cursive;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
@@ -477,7 +651,7 @@ header {
   /* Badge */
 
   .hero-badge {
-    font-size: 12px;
+    font-size: 10px;
     padding: 6px 14px;
     margin-bottom: 14px;
   }
@@ -485,18 +659,18 @@ header {
   /* Headings */
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.25;
     margin-bottom: 14px;
   }
 
   .hero h2 {
-    font-size: 1.20rem;
+    font-size: 1rem;
     margin-bottom: 16px;
   }
 
   .hero p {
-    font-size: 1.05rem;
+    font-size: .8rem;
     line-height: 1.6;
     margin-bottom: 24px;
   }
@@ -531,6 +705,8 @@ header {
   max-width: 90%;
   margin: 0 auto;
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-top: 60px;
 }
 .services,
@@ -654,12 +830,12 @@ header {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.15);
 }
+
 /* ----------------------------------------------------
-   Service Cards — Mobile Responsive (max 800px)
+   Mobile Cards (max 800px)
 ---------------------------------------------------- */
 
 @media (max-width: 800px) {
-
   .service-cards {
     gap: 20px;
     padding: 30px 10px;
@@ -677,40 +853,36 @@ header {
   }
 }
 
-
 /* ----------------------------------------------------
-   Service Images Animation
+   Service Images Animation (FIXED)
 ---------------------------------------------------- */
 
 .service-img {
   width: 150px;
-}
-
-.service-img {
-  opacity: 1;
+  opacity: 0;
   transform: translateX(-250px);
 }
 
 .animate-service-img {
-  animation: myAnim 2s ease 0s 1 normal forwards;
+  animation: serviceImgAnim 2s ease forwards;
 }
 
-@keyframes myAnim {
-  0% {
+@keyframes serviceImgAnim {
+  from {
     opacity: 0;
-    transform: translateY(-250px) rotate(-200deg);
+    transform: translateX(-250px) rotate(-200deg);
   }
-  100% {
+  to {
     opacity: 1;
-    transform: translateY(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
   }
 }
+
 /* ----------------------------------------------------
-   Service Images Animation — Mobile Responsive (max 800px)
+   Service Images — Mobile (max 800px)
 ---------------------------------------------------- */
 
 @media (max-width: 800px) {
-
   .service-img {
     width: 110px;
     transform: translateX(0);
@@ -718,17 +890,6 @@ header {
 
   .animate-service-img {
     animation-duration: 1.5s;
-  }
-
-  @keyframes myAnim {
-    0% {
-      opacity: 0;
-      transform: translateY(-120px) rotate(-120deg);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) rotate(0deg);
-    }
   }
 }
 
@@ -1171,7 +1332,7 @@ button:hover {
 footer {
   background: #000000;
   font-size: 1rem;
-  text-align: right;
+  text-align: left;
   padding: 30px 15px;
   color: #ccc;
   position: relative;
@@ -1519,28 +1680,6 @@ footer a:hover {
   margin-bottom: 22px;
 }
 
-/* Read More */
-.read-more {
-  text-decoration: none;
-  font-weight: 500;
-  color: #ffffff;
-  position: relative;
-}
-
-.read-more::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: #ffb703;
-  transition: width 0.3s ease;
-}
-
-.read-more:hover::after {
-  width: 100%;
-}
 
 
 /* ==============================
@@ -1749,3 +1888,33 @@ footer a:hover {
   }
 }
 
+/* ----------------------------------------------------
+   DAY / NIGHT TOGGLE BUTTON
+---------------------------------------------------- */
+
+.theme-toggle {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 8888;
+
+  background: linear-gradient(135deg, #ffd86f, #fc6262);
+  color: #111;
+  font-size: 22px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
