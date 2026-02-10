@@ -179,11 +179,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= Theme Mode (FIXED & MERGED) ================= */
 
+ /* ================= Theme Mode (DAY / NIGHT) ================= */
+
   const THEME_KEY = "theme";
-  const root = document.documentElement;
 
   let toggleBtn = document.getElementById("themeToggle");
 
+  // Create toggle button if not exists
   if (!toggleBtn) {
     toggleBtn = document.createElement("button");
     toggleBtn.id = "themeToggle";
@@ -195,18 +197,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setTheme(theme) {
     if (theme === "day") {
-      root.setAttribute("data-theme", "day");
+      document.body.classList.add("day-mode");
       toggleBtn.innerText = "🌙";
     } else {
-      root.removeAttribute("data-theme");
+      document.body.classList.remove("day-mode");
       toggleBtn.innerText = "☀️";
     }
     localStorage.setItem(THEME_KEY, theme);
   }
 
   function getAutoTheme() {
-    if (window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
       return "night";
     }
 
@@ -218,11 +222,14 @@ document.addEventListener("DOMContentLoaded", () => {
   setTheme(savedTheme || getAutoTheme());
 
   toggleBtn.addEventListener("click", () => {
-    const current =
-      root.getAttribute("data-theme") === "day" ? "day" : "night";
+    const current = document.body.classList.contains("day-mode")
+      ? "day"
+      : "night";
+
     setTheme(current === "day" ? "night" : "day");
   });
 
+  // Auto switch if system theme changes (only if user didn’t choose manually)
   if (!savedTheme && window.matchMedia) {
     window
       .matchMedia("(prefers-color-scheme: dark)")

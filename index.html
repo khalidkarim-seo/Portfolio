@@ -40,11 +40,14 @@
 </head>
 
 <body>
+
   <!-- Preloader -->
 <div id="preloader">
   <div class="loader"></div>
 </div>
-
+    <!-- Custom Cursor -->
+  <div class="custom-cursor"><i class="fa-solid fa-face-smile fa-xl"></i></div>
+    <!-- favicon -->
     <link rel="icon" href="assets/webflow-by-khalid-favicon.png" type="image/png" />
   <!-- Header -->
 <header>
@@ -52,12 +55,14 @@
     <div class="logo">
       <a href="/index.html"><img src="assets/webflow by khalid.png" alt="webflow-by-khalid" height="60"></a>
     </div>
+        <div class="logo day-mode">
+      <a href="/index.html"><img src="assets/logo_day_mode.png" alt="webflow-by-khalid" height="45"></a>
+    </div>
   <div class="hamburger" id="hamburger">
   <span></span>
   <span></span>
   <span></span>
 </div>
-
     <ul class="nav-links" id="nav-links">
       <li class="active"><a href="#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
       <li><a href="#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
@@ -68,9 +73,6 @@
       <div class="indicator"></div>
     </ul>
   </nav>
-    <!-- Custom Cursor -->
-  <div class="custom-cursor"><i class="fa-solid fa-face-smile fa-xl"></i></div>
-
 </header>
 <section id="home" class="hero">
 <video autoplay muted loop playsinline class="bg-video">
@@ -89,18 +91,18 @@
     </h1>
 
     <h2>
-      Hire Khalid Karim — Web Developer for Local & Global Businesses
+      Online Web-Development And Digital Marketing Services
     </h2>
 
     <p>
-      I design and develop fast, modern, and SEO-optimized websites 
+      We design and develop fast, modern, and SEO-optimized websites 
       for startups, small businesses, and brands worldwide.
     </p>
 
     <div class="hero-actions">
 
       <a href="https://wa.me/923078829986" target="_blank" rel="noopener" class="btn-primary">
-        <i class="fa-brands fa-whatsapp"></i> Hire Me
+        <i class="fa-brands fa-whatsapp"></i> Hire Now
       </a>
 
       <a href="#portfolio" class="btn-secondary">
@@ -120,14 +122,14 @@
       <h2>Our Services</h2>
       <div class="service-cards">
         <div class="card"><a href="blog-web-development-guide.html">
-          <img class="service-img" src="assets/web-development-services.png" height="150" alt="Web Development Services">
+          <img class="service-img" src="assets/web-development-services.png" alt="Web Development Services">
           <h3>Website Development</h3>
           <p>Custom, responsive, and fast-loading websites tailored to your business.
             Custom Coding(HTML, CSS, JavaScript), Advanced WordPress and Webflow services.
           </p></a>
         </div>
         <div class="card"><a href="blog-post-seo-tips.html">
-          <img class="service-img" src="assets/SEO-services.png" height="150" alt="SEO Services">
+          <img class="service-img" src="assets/SEO-services.png" alt="SEO Services">
           <h3>Search Engine Optimization</h3>
           <p>Improve your site’s visibility and rankings on Google & other search engines.
             Keywords Research, On-page SEO, Off-page SEO, Technical-SEO, Content Optimization.
@@ -135,7 +137,7 @@
           </a>
         </div>
         <div class="card"><a href="blog-social-media-marketing.html">
-          <img class="service-img" src="assets/social-media-marketing.png" height="150" alt="Social Media Marketing services">
+          <img class="service-img" src="assets/social-media-marketing.png" alt="Social Media Marketing services">
           <h3>Social Media Marketing</h3>
           <p>Grow your audience and brand presence across all major platforms.
             Facebook, Instagram, linkedin Ads Running Services and managment.
@@ -187,29 +189,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    const track = document.querySelector('.slider-track');
-    const leftBtn = document.querySelector('.slider-btn.backward');
-    const rightBtn = document.querySelector('.slider-btn.forward');
-
-    // Pause auto-scroll on hover
-    track.addEventListener('mouseenter', () => {
-      track.style.animationPlayState = 'paused';
-    });
-    track.addEventListener('mouseleave', () => {
-      track.style.animationPlayState = 'running';
-    });
-
-    // Manual navigation
-    leftBtn.addEventListener('click', () => {
-      document.querySelector('.slider-container').scrollBy({ left: -300, behavior: 'smooth' });
-    });
-
-    rightBtn.addEventListener('click', () => {
-      document.querySelector('.slider-container').scrollBy({ left: 300, behavior: 'smooth' });
-    });
-  </script>
 </section>
 
     <!-- Portfolio Section -->

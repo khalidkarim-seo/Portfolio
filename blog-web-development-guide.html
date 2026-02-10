@@ -63,33 +63,41 @@
 </head>
 
 <body>
+      <!-- Preloader -->
+<div id="preloader">
+  <div class="loader"></div>
+</div>
+    <!-- Custom Cursor -->
+  <div class="custom-cursor"><i class="fa-solid fa-face-smile fa-xl"></i></div>
+    <!-- favicon -->
+    <link rel="icon" href="assets/webflow-by-khalid-favicon.png" type="image/png" />
   <!-- Header -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="/index.html"><img src="assets/webflow by khalid.png" alt="webflow-by-khalid-logo" height="60">
-        </a>
-      </div>
-        <div class="hamburger" id="hamburger">
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/index.html"><img src="assets/webflow by khalid.png" alt="webflow-by-khalid" height="60"></a>
+    </div>
+        <div class="logo day-mode">
+      <a href="/index.html"><img src="assets/logo_day_mode.png" alt="webflow-by-khalid" height="45"></a>
+    </div>
+  <div class="hamburger" id="hamburger">
   <span></span>
   <span></span>
   <span></span>
 </div>
+    <ul class="nav-links" id="nav-links">
+      <li ><a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
+      <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
+      <li><a href="#portfolio" title="Portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
+      <li><a href="#contact" title="Contact"><i class="fa-solid fa-phone"></i></a></li>
+      <li class="active"><a href="blog.html" title="Blog"><i class="fa-solid fa-pen-nib"></i></a></li>
+      <div class="indicator"></div>
+    </ul>
+  </nav>
+</header>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
-        <li><a href="index.html#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
-        <li><a href="index.html#about" title="About"><i class="fa-solid fa-user"></i></a></li>
-        <li><a href="index.html#portfolio" title="Portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
-        <li><a href="index.html#contact" title="Contact"><i class="fa-solid fa-phone"></i></a></li>
-        <li class="active"><a href="blog.html" title="Blog"><i class="fa-solid fa-pen-nib"></i></a></li>
-        <div class="indicator"></div>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Custom Cursor -->
-  <div class="custom-cursor"></div>
    <!-- blog hero section -->
 <section class="blog-hero">
   <!-- background glow -->
@@ -172,7 +180,7 @@
 
   </article>
 
-  <a href="blog.html" class="back-link">
+  <a href="blog.html" class="hero-btn primary">
     ← Back to Blog
   </a>
 </section>
@@ -189,7 +197,7 @@
       <p class="excerpt">
         Want to get more traffic? Learn how to optimize your website with powerful on-page and off-page SEO strategies that actually work.
       </p>
-      <a class="read-more" href="blog-post-seo-tips.html">Read Article →</a>
+      <a class="hero-btn primary" href="blog-post-seo-tips.html">Read Article →</a>
     </article>
 
     <article class="blog-post">
@@ -201,7 +209,7 @@
       <p class="excerpt">
         Webflow is changing the way websites are built. Discover why developers and clients are moving to no-code and low-code platforms.
       </p>
-      <a class="read-more" href="blog-post-webflow-future.html">Read Article →</a>
+      <a class="hero-btn primary" href="blog-post-webflow-future.html">Read Article →</a>
     </article>
 
     <article class="blog-post">
@@ -213,7 +221,7 @@
       <p class="excerpt">
         Pakistan’s freelance market is booming. Learn how to earn from home with Webflow and international clients.
       </p>
-      <a class="read-more" href="blog-post-freelance-webflow.html">Read Article →</a>
+      <a class="hero-btn primary" href="blog-post-freelance-webflow.html">Read Article →</a>
     </article>
 
     <article class="blog-post">
@@ -225,7 +233,7 @@
       <p class="excerpt">
         From front-end fundamentals to AI-driven back-end systems — everything you need to know about modern web development.
       </p>
-      <a class="read-more" href="blog-web-development-guide.html">Read Article →</a>
+      <a class="hero-btn primary" href="blog-web-development-guide.html">Read Article →</a>
     </article>
 
     <article class="blog-post">
@@ -237,7 +245,7 @@
       <p class="excerpt">
         Learn how to grow your brand, boost engagement, and master Instagram, TikTok, and LinkedIn marketing strategies.
       </p>
-      <a class="read-more" href="blog-social-media-marketing.html">Read Article →</a>
+      <a class="hero-btn primary" href="blog-social-media-marketing.html">Read Article →</a>
     </article>
 
   </div>
