@@ -71,36 +71,32 @@
   </script>
 </head>
 <body>
-    <!-- Preloader -->
+  <div class="progress-bar" id="progressBar"></div>
+<!-- Preloader -->
 <div id="preloader">
   <div class="loader"></div>
 </div>
-    <!-- Custom Cursor -->
-  <div class="custom-cursor"><i class="fa-solid fa-face-smile fa-xl"></i></div>
-    <!-- favicon -->
-    <link rel="icon" href="assets/webflow-by-khalid-favicon.png" type="image/png" />
-  <!-- Header -->
+
+<!-- Custom Cursor -->
+<div class="custom-cursor"><i class="fa-solid fa-face-smile fa-xl"></i></div>
+
+<!-- Header -->
 <header>
   <nav class="navbar">
     <div class="logo">
-      <a href="/index.html"><img src="assets/webflow by khalid.png" alt="webflow-by-khalid" height="60"></a>
+      <a href="/index.html"><img src="assets/webflow by khalid.png" height="60"></a>
     </div>
-        <div class="logo day-mode">
-      <a href="/index.html"><img src="assets/logo_day_mode.png" alt="webflow-by-khalid" height="45"></a>
+    <div class="logo day-mode">
+      <a href="/index.html"><img src="assets/logo_day_mode.png" height="45"></a>
     </div>
-  <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
     <ul class="nav-links" id="nav-links">
-      <li ><a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a></li>
-      <li><a href="#services" title="Services"><i class="fa-solid fa-wrench"></i></a></li>
-      <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
-      <li><a href="#portfolio" title="Portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
-      <li><a href="#contact" title="Contact"><i class="fa-solid fa-phone"></i></a></li>
-      <li class="active"><a href="blog.html" title="Blog"><i class="fa-solid fa-pen-nib"></i></a></li>
-      <div class="indicator"></div>
+      <li><a href="/index.html"><i class="fa-solid fa-house"></i></a></li>
+      <li class="active"><a href="blog.html"><i class="fa-solid fa-pen-nib"></i></a></li>
     </ul>
   </nav>
 </header>
@@ -133,10 +129,40 @@
 </section>
 
 <!-- Blog Section -->
-<section id="blog-posts" class="services">
+<section id="blog-posts" class="services blog-cards">
   <h2>Latest Blog Posts</h2>
 
   <div class="service-cards">
+    <div class="card">
+  <a href="blog-post-html-basics.html">
+    <img class="blog-img" src="assets/what is html.jpg" alt="HTML Basics Blog">
+    <h3>HTML Basics: The Foundation of Every Website</h3>
+    <p>
+      Learn what HTML is, how it structures web pages, and why it is the most important language for every web developer to master.
+    </p>
+  </a>
+</div>
+
+<div class="card">
+  <a href="blog-post-css-guide.html">
+    <img class="blog-img" src="assets/what is css.png" alt="CSS Guide Blog">
+    <h3>CSS Guide: Styling Modern Websites Like a Pro</h3>
+    <p>
+      Learn how CSS transforms simple HTML into beautiful designs. Master layouts, colors, animations, and responsive styling.
+    </p>
+  </a>
+</div>
+
+<div class="card">
+  <a href="blog-post-javascript-guide.html">
+    <img class="blog-img" src="assets/what is javascript.jpg" alt="JavaScript Guide Blog">
+    <h3>JavaScript Guide: Make Websites Interactive</h3>
+    <p>
+      Learn how JavaScript brings websites to life with dynamic content, user interactions, and powerful functionality.
+    </p>
+  </a>
+</div>
+
 
     <div class="card">
       <a href="blog-post-seo-tips.html">
@@ -190,19 +216,6 @@
 
   </div>
 </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="5ded0990-dab7-48df-8947-7044915f9b2c">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message" required></textarea>
-        <button type="submit">Submit Form</button>
-      </form>
-    </section>
-
   <!-- Footer -->
   <footer>
     <p>© 2025 Webflow By Khalid. All Rights Reserved.</p>
