@@ -1930,3 +1930,52 @@ body.day-mode .logo.day-mode {
 body.day-mode .custom-cursor {
   color: black;
 }
+/* =========================
+   Free Course Videos
+========================= */
+
+.free-course-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.video-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.video-card {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.video-card h3 {
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+
+/* =========================
+   Mobile Responsive (800px)
+========================= */
+
+@media (max-width: 800px) {
+
+
+  .video-card {
+    width: 100%;
+  }
+
+  .video-card h3 {
+    font-size: 18px;
+  }
+
+}
