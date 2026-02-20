@@ -299,3 +299,94 @@ if (progressBar) {
   window.addEventListener("load", updateProgress);
   window.addEventListener("resize", updateProgress);
 }
+
+
+// scroll reveal for about section
+const about = document.querySelector(".about");
+const observer = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting){
+    about.classList.add("show");
+
+    // Skill bars
+    document.querySelectorAll(".skill-fill").forEach(fill=>{
+      const width = fill.style.width;
+      fill.style.width = width;
+    });
+
+    // Stats counters
+    document.querySelectorAll(".stat h4").forEach(stat=>{
+      const target = parseInt(stat.innerText);
+      let count = 0;
+      const suffix = stat.innerText.replace(target,"");
+      const speed = target/80;
+
+      const update = () => {
+        count += speed;
+        if(count<target){
+          stat.innerText = Math.floor(count) + suffix;
+          requestAnimationFrame(update);
+        } else {
+          stat.innerText = target + suffix;
+        }
+      };
+      update();
+    });
+
+    observer.disconnect();
+  }
+});
+observer.observe(about);
+
+
+/* ===============================
+   ABOUT TOGGLE FUNCTION
+=============================== */
+function toggleAbout() {
+  const hidden = document.getElementById("aboutHidden");
+  const arrow = document.getElementById("aboutArrow");
+
+  hidden.classList.toggle("show");
+
+  if (hidden.classList.contains("show")) {
+    arrow.textContent = "▲";
+
+    // Delay animation by 0.2 seconds
+    setTimeout(() => {
+      animateSkills();
+    }, 200);
+
+  } else {
+    arrow.textContent = "▼";
+
+    // Reset bars when closing (optional but recommended)
+    resetSkills();
+  }
+}
+
+
+/* ===============================
+   SKILL BAR ANIMATION
+=============================== */
+function animateSkills() {
+  const skillBars = document.querySelectorAll(".skill-fill");
+
+  skillBars.forEach(bar => {
+    const width = bar.getAttribute("data-width");
+
+    if (width) {
+      bar.style.width = width;
+    }
+  });
+}
+
+
+/* ===============================
+   RESET SKILLS (Optional)
+=============================== */
+function resetSkills() {
+  const skillBars = document.querySelectorAll(".skill-fill");
+
+  skillBars.forEach(bar => {
+    bar.style.width = "0";
+  });
+}

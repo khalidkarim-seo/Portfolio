@@ -1,0 +1,305 @@
+/* ====================================================
+   DAY / NIGHT TOGGLE BUTTON
+==================================================== */
+
+.theme-toggle {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 8888;
+
+  font-size: 22px;
+  color: #111;
+  background: linear-gradient(135deg, #ffd86f, #fc6262);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ====================================================
+   DAY MODE OVERRIDES
+   Triggered when body has .day-mode
+==================================================== */
+
+/* =========================
+   GLOBAL
+========================= */
+
+body.day-mode {
+  background: whitesmoke url("/assets/basketball.png") fixed;
+  background-repeat: repeat;
+  color: black;
+}
+
+/* =========================
+   HEADER & NAVBAR
+========================= */
+
+body.day-mode header {
+  background: rgba(112, 112, 112, 0.25);
+}
+
+body.day-mode .nav-links a {
+  color: black;
+}
+
+body.day-mode .hamburger span {
+  background: black;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  body.day-mode .nav-links {
+    background: rgba(112, 112, 112, 0.25);
+  }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+body.day-mode .hero {
+  color: black;
+  background-image: url("/assets/gradient-1770579979210.svg");
+}
+
+body.day-mode .hero-content {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+body.day-mode .hero-badge {
+  background: rgba(0, 0, 0, 0.27);
+  color: black;
+}
+
+body.day-mode .hero h2 {
+  color: whitesmoke;
+}
+
+/* Hide hero background video in Day Mode */
+body.day-mode .hero video,
+body.day-mode .hero-bg-video,
+body.day-mode .hero video.bg-video {
+  display: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+body.day-mode .btn-secondary {
+  background: rgba(0, 0, 0, 0.76);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+body.day-mode .btn-secondary:hover {
+  background: #fff;
+  color: #111;
+}
+
+body.day-mode button {
+  background: #146EF5;
+}
+
+body.day-mode button:hover {
+  background: #146ef57e;
+  color: whitesmoke;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+body.day-mode .services,
+body.day-mode .about,
+body.day-mode .portfolio,
+body.day-mode .contact,
+body.day-mode .card a {
+  color: black;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+body.day-mode .card {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: black;
+}
+
+/* =========================
+   ABOUT SECTION - DAY MODE
+========================= */
+
+body.day-mode .about {
+  color: #111;
+}
+
+body.day-mode .about-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: justify;
+  color: #111;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+  transition: all 0.3s ease;
+}
+
+body.day-mode .about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 25px rgba(0, 110, 245, 0.3);
+}
+
+/* About Image */
+
+body.day-mode .about img {
+  filter: grayscale(20%);
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+body.day-mode .about img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* About Stats */
+
+body.day-mode .about-stats .stat h4 {
+  color: #0077ff;
+}
+
+/* Skills */
+
+body.day-mode .skill-bar {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.day-mode .skill-fill {
+  background: linear-gradient(90deg, #00f7ff, #0077ff);
+}
+
+/* About Button */
+
+body.day-mode .about-btn {
+  background: linear-gradient(90deg, #0077ff, #00f7ff);
+  color: #fff;
+}
+
+body.day-mode .about-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+body.day-mode .project-card {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================
+   CERTIFICATES SLIDER
+========================= */
+
+body.day-mode .certificates-slider::before {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+body.day-mode input,
+body.day-mode textarea {
+  border: 1px solid #ccc;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+body.day-mode footer {
+  background: whitesmoke;
+  color: black;
+}
+
+body.day-mode footer p,
+body.day-mode footer a {
+  color: black;
+}
+
+body.day-mode footer a:hover {
+  color: white;
+}
+
+/* =========================
+   BLOG PAGES
+========================= */
+
+body.day-mode .blog-hero {
+  background: radial-gradient(circle at 20% 20%, #e5e7eb, #f9fafb 60%);
+  color: black;
+}
+
+body.day-mode .blog-post,
+body.day-mode .post-content {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body.day-mode .blog-post h2,
+body.day-mode .excerpt,
+body.day-mode .post-content p,
+body.day-mode .post-content h2,
+body.day-mode .post-highlight {
+  color: black;
+}
+
+/* =========================
+   LOGO SWITCHING
+========================= */
+
+/* Default (Night Mode) */
+.logo.day-mode {
+  display: none;
+}
+
+/* Day Mode */
+body.day-mode .logo {
+  display: none;
+}
+
+body.day-mode .logo.day-mode {
+  display: block;
+}
+
+/* =========================
+   CURSOR
+========================= */
+
+body.day-mode .custom-cursor {
+  color: black;
+}

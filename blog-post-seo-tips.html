@@ -14,6 +14,9 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="blog.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="day.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Open Graph -->
@@ -124,6 +127,11 @@
 <!-- Single Blog Post -->
 <section id="read-this" class="post-container">
   <article class="post-content">
+    <div class="reading-timeline">
+  <div class="timeline-line"></div>
+  <div class="timeline-progress"></div>
+  <div class="timeline-dot"></div>
+</div>
 
     <p>
       SEO remains one of the most powerful ways to get consistent, organic traffic.
@@ -160,10 +168,10 @@
     <p class="post-highlight">
       SEO is a long-term game. Stay consistent and results will compound over time.
     </p>
+  <a href="blog.html" class="hero-btn primary">← Back to Blog</a>
 
   </article>
 
-  <a href="blog.html" class="hero-btn primary">← Back to Blog</a>
 </section>
 
 <section id="free-course" class="free-course-section">
@@ -198,6 +206,39 @@
   </footer>
 
   <!-- External JS -->
-  <script src="script.js" defer></script>  
+  <script src="script.js" defer></script> 
+  
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const post = document.querySelector(".post-content");
+  const progress = document.querySelector(".timeline-progress");
+  const dot = document.querySelector(".timeline-dot");
+
+  function updateTimeline() {
+    const rect = post.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    const totalHeight = post.offsetHeight;
+    const scrollStart = window.scrollY + rect.top;
+    const scrollEnd = scrollStart + totalHeight;
+
+    const currentScroll = window.scrollY + windowHeight / 4;
+
+    let progressPercent = 
+      (currentScroll - scrollStart) / (scrollEnd - scrollStart);
+
+    progressPercent = Math.max(0, Math.min(1, progressPercent));
+
+    const progressHeight = progressPercent * 100;
+
+    progress.style.height = progressHeight + "%";
+    dot.style.top = progressHeight + "%";
+  }
+
+  window.addEventListener("scroll", updateTimeline);
+  updateTimeline();
+});
+</script>
+
 </body>
 </html>

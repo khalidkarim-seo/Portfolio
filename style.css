@@ -91,13 +91,12 @@ body {
 header {
   width: 100%;
   height: 60px;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.466);
   position: fixed;
   top: 0;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   z-index: 1111;
-  border-bottom: 2px solid #146ef58e;
 }
 
 /* Navbar container */
@@ -200,69 +199,6 @@ header {
 .hamburger.active span:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
 }
-/* ----------------------------------------------------
-   Header & Navbar (mobile responsive)
----------------------------------------------------- */
-@media (max-width: 800px) {
-
-  .navbar {
-    max-width: 85%;
-  }
-
-  .logo a {
-    font-size: 1.1rem;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 60px;
-    right: -100%;
-    width: 25%;
-    height:auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    gap: 18px;
-    padding: 28px 22px;
-
-    background: rgba(0, 0, 0, 0.96);
-    backdrop-filter: blur(14px);
-
-    transition: right 0.35s ease;
-    z-index: 1250;
-
-    border-left:2px solid #146ef58e ;
-    border-bottom: 2px solid #146ef58e;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-links a {
-    padding: 12px 26px;
-    border-radius: 28px;
-    font-size: 1.8rem;
-  }
-
-  .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateX(-6px);
-    letter-spacing: 1px;
-  }
-
-  .indicator {
-    display: none;
-  }
-}
-
 
 /* HERO SECTION */
 
@@ -299,15 +235,16 @@ header {
 /* Content above video */
 
 .hero-content {
+  max-width: 80%;
   position: relative;
   z-index: 2;
+  margin: auto;
+  padding:20px;
 }
 
 /* Glass Card */
 
 .hero-content {
-  max-width: 900px;
-  padding: 40px;
   border-radius: 18px;
   background: rgba(0,0,0,0.25);
   backdrop-filter: blur(14px);
@@ -331,7 +268,7 @@ header {
 /* Headings */
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 16px;
@@ -371,13 +308,13 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 34px;
+  padding: 10px 20px;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: .4px;
   color: #fff;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 20px;
   border: none;
   background: linear-gradient(135deg, #1b7500, #91ff38);
   box-shadow:
@@ -426,13 +363,13 @@ header {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  padding: 16px 32px;
+  padding: 10px 20px;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: .4px;
   text-decoration: none;
   color: #fff;
-  border-radius: 12px;
+  border-radius: 20px;
   border: 2px solid rgba(255,255,255,0.6);
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(6px);
@@ -450,73 +387,6 @@ header {
 .btn-secondary:active {
   transform: translateY(-1px) scale(.98);
 }
-/* ----------------------------------------------------
-   HERO SECTION — Mobile Responsive (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-  .custom-cursor{
-    display: none;
-  }
-
-  .hero {
-    padding: 5%;
-    padding-top: 60px;
-  }
-
-  /* Glass Card */
-
-  .hero-content {
-    max-width: 100%;
-    padding: 28px 20px;
-    border-radius: 14px;
-  }
-
-  /* Badge */
-
-  .hero-badge {
-    font-size: 10px;
-    padding: 6px 14px;
-    margin-bottom: 14px;
-  }
-
-  /* Headings */
-
-  .hero h1 {
-    font-size: 1.8rem;
-    line-height: 1.25;
-    margin-bottom: 14px;
-  }
-
-  .hero h2 {
-    font-size: 1rem;
-    margin-bottom: 16px;
-  }
-
-  .hero p {
-    font-size: .8rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
-  }
-
-  /* Buttons Layout */
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  /* Buttons */
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    justify-content: center;
-    padding: 14px 22px;
-    font-size: 1rem;
-  }
-}
-
 
 /* ----------------------------------------------------
    Sections: Services, About, Portfolio, Contact
@@ -576,52 +446,6 @@ min-height: 100vh;
   font-size: 1rem;
   padding-top: 10px;
 }
-/* ----------------------------------------------------
-   Sections — Mobile Responsive (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-
-  .services,
-  .about,
-  .portfolio,
-  .contact {
-    height: auto;
-  }
-
-  /* Section Headings */
-
-  .services h2,
-  .about h2,
-  .portfolio h2,
-  .contact h2,
-  .certificates-slider h2 {
-    font-size: 1.7rem;
-    padding-top: 8px;
-  }
-
-  .services h3,
-  .about h3,
-  .portfolio h3,
-  .contact h3,
-  .certificates-slider h3 {
-    font-size: 1.3rem;
-    padding-bottom: 8px;
-  }
-
-  /* Section Text */
-
-  .services p,
-  .about p,
-  .portfolio p,
-  .contact p,
-  .certificates-slider p {
-    font-size: 0.95rem;
-    padding-top: 8px;
-    line-height: 1.6;
-  }
-}
-
 
 /* ----------------------------------------------------
    Service Cards
@@ -659,27 +483,6 @@ min-height: 100vh;
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* ----------------------------------------------------
-   Mobile Cards (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-  .service-cards {
-    gap: 20px;
-    padding: 30px 10px;
-  }
-
-  .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding: 24px 18px;
-  }
-
-  .card:hover {
-    transform: none;
-    box-shadow: 0 8px 10px #146ef569;
-  }
-}
 
 /* ----------------------------------------------------
    Service Images Animation
@@ -748,36 +551,29 @@ animation: myAnim 4s ease 0s 1 normal forwards;}
 	}
 }
 /* ----------------------------------------------------
-   Service Images — Mobile (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-  .service-img {
-    width: 110px;
-  }
-
-  .animate-service-img {
-    animation-duration: 1.4s;
-  }
-}
-
-
-/* ----------------------------------------------------
    About Section
 ---------------------------------------------------- */
 
+.about {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 30px;
+}
+
+/* Profile Image */
 .about img {
   height: 150px;
   margin: 20px auto;
   display: block;
   opacity: 0.9;
   filter: grayscale(50%);
-  border-radius: 60%;
+  border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  position: relative;
-  z-index: 1;
 }
 
 .about img:hover {
@@ -786,8 +582,10 @@ animation: myAnim 4s ease 0s 1 normal forwards;}
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
+/* Card */
 .about-card {
-  flex: 1 1 280px;
+  max-width: 600px;
+  margin: auto;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
   border-radius: 12px;
@@ -804,37 +602,122 @@ animation: myAnim 4s ease 0s 1 normal forwards;}
   box-shadow: 0 6px 25px #146EF5;
 }
 
-@keyframes rotateGlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 /* ----------------------------------------------------
-   About Section — Mobile Responsive (max 800px)
+   Toggle Button
 ---------------------------------------------------- */
 
-@media (max-width: 800px) {
+.about-toggle {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #146EF5;
+  color: white;
+  transition: 0.3s;
+}
 
-  .about img {
-    height: 120px;
-    margin: 16px auto;
-  }
+.about-toggle:hover {
+  background: #0f57c7;
+}
 
-  .about img:hover {
-    transform: none;
-    filter: grayscale(50%);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
-  }
+#aboutArrow {
+  margin-left: 8px;
+  transition: 0.3s;
+}
 
-  .about-card {
-    flex: 1 1 100%;
-    padding: 24px 18px;
-    text-align: left;
-  }
+/* ----------------------------------------------------
+   Hidden Section
+---------------------------------------------------- */
 
-  .about-card:hover {
-    transform: none;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
-  }
+.about-hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+
+.about-hidden.show {
+  max-height: 800px;
+  margin-top: 25px;
+}
+
+/* ----------------------------------------------------
+   Stats
+---------------------------------------------------- */
+
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h4 {
+  font-size: 22px;
+  color: #146EF5;
+  margin-bottom: 5px;
+}
+
+/* ----------------------------------------------------
+   Skills
+---------------------------------------------------- */
+
+.skills {
+  text-align: left;
+}
+
+.skill {
+  margin-bottom: 18px;
+}
+
+.skill span {
+  font-size: 14px;
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background: #146EF5;
+  border-radius: 10px;
+  transition: 1.5s ease;
+}
+
+/* Hide dropdown by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(20,20,20,0.95);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 10px;
+  list-style: none;
+  z-index: 999;
+}
+
+/* Show on hover (desktop) */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.skill-fill {
+  width: 0;
+  height: 8px;
+  background: #00f5d4;
+  border-radius: 10px;
+  transition: width 1s ease;
 }
 
 
@@ -879,58 +762,6 @@ animation: myAnim 4s ease 0s 1 normal forwards;}
 .project-card p {
   padding: 0 15px 15px;
   font-size: 0.95rem;
-}
-/* ----------------------------------------------------
-   Portfolio & Contact — Mobile Responsive (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-
-  /* Portfolio */
-
-  .portfolio-grid {
-    gap: 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-
-  .project-card {
-    width: 100%;
-  }
-
-  .project-card:hover {
-    transform: none;
-    box-shadow: 0 2px 5px wheat;
-  }
-
-  .project-card h3 {
-    font-size: 1.1rem;
-    padding: 12px 12px 0;
-  }
-
-  .project-card p {
-    font-size: 0.9rem;
-    padding: 0 12px 12px;
-  }
-
-  /* Contact */
-
-  .contact {
-    height: auto;
-    padding: 40px 0;
-  }
-
-  .contact form {
-    max-width: 100%;
-    padding: 0 15px;
-  }
-
-  input,
-  textarea,
-  button {
-    font-size: 1rem;
-    padding: 12px;
-  }
 }
 
 /* ----------------------------------------------------
@@ -1080,51 +911,6 @@ animation: myAnim 4s ease 0s 1 normal forwards;}
 .slider-wrapper:hover .slider-track {
   animation-play-state: paused;
 }
-/* ----------------------------------------------------
-   Certificates Slider — Mobile Responsive (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-
-  .certificates-slider {
-    min-height: auto;
-    padding: 60px 10px;
-  }
-
-  /* Headings */
-
-  .certificates-slider h2 {
-    margin-bottom: 28px;
-    font-size: 1.6rem;
-  }
-
-  /* Slider spacing */
-
-  .slider-track {
-    gap: 16px;
-    animation-duration: 22s;
-  }
-
-  /* Certificate Images */
-
-  .slider-track img {
-    height: 160px;
-    max-width: 240px;
-    padding: 6px;
-    border-radius: 10px;
-  }
-
-  .slider-track img:hover {
-    transform: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-  }
-
-  /* Touch behavior */
-
-  .slider-wrapper:hover .slider-track {
-    animation-play-state: running;
-  }
-}
 
 
 /* ----------------------------------------------------
@@ -1164,33 +950,6 @@ button {
 button:hover {
   background: #146ef57e;
   color: whitesmoke;
-}
-/* ----------------------------------------------------
-   Contact Form — Mobile Responsive (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-
-  .contact {
-    padding: 40px 0;
-  }
-
-  .contact form {
-    max-width: 100%;
-    padding: 0 15px;
-    gap: 12px;
-  }
-
-  input,
-  textarea {
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  button {
-    padding: 12px;
-    font-size: 1rem;
-  }
 }
 
 /* ----------------------------------------------------
@@ -1274,708 +1033,4 @@ footer a:hover {
   color: #146EF5;
   text-shadow: 0 0 8px black;
 }
-/* ----------------------------------------------------
-   Footer — Mobile Responsive (max 800px)
----------------------------------------------------- */
 
-@media (max-width: 800px) {
-
-  footer {
-    text-align: center;
-    padding: 24px 12px;
-    font-size: 0.95rem;
-  }
-
-  /* Footer Text */
-
-  footer p,
-  footer a {
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  /* Social Icons */
-
-  .social {
-    margin-top: 18px;
-    gap: 18px;
-  }
-
-  .social li {
-    font-size: 1.8rem;
-  }
-
-  .social li:hover {
-    transform: none;
-  }
-
-  .social li:hover a {
-    text-shadow: none;
-  }
-}
-
-
-
-
-/* ----------------------------------------------------
-   Blog Pages
----------------------------------------------------- */
-/* =========================
-   PRO BLOG HERO
-========================= */
-
-.blog-hero {
-  position: relative;
-  min-height: 100vh;
-  padding: 80px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-
-  background: radial-gradient(circle at 20% 20%, #1e293b, #020617 60%);
-  color: white;
-}
-
-/* Glow Effect */
-
-.hero-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 70%);
-  top: -150px;
-  left: -150px;
-  filter: blur(80px);
-  pointer-events: none;
-}
-
-/* Layout */
-
-.blog-hero-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: center;
-}
-
-/* Badge */
-
-.hero-badge {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
-}
-
-/* Heading */
-
-.blog-hero-content h1 {
-  font-size: 48px;
-  line-height: 1.15;
-  margin-bottom: 18px;
-}
-
-.blog-hero-content h1 span {
-  background: linear-gradient(90deg, #38bdf8, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Text */
-
-.blog-hero-content p {
-  font-size: 18px;
-  line-height: 1.7;
-  opacity: 0.9;
-  margin-bottom: 30px;
-  max-width: 520px;
-}
-
-/* Buttons */
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.hero-btn {
-  padding: 14px 26px;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.hero-btn.primary {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
-  color: white;
-}
-
-.hero-btn.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(99,102,241,0.4);
-}
-
-.hero-btn.outline {
-  border: 1px solid rgba(255,255,255,0.3);
-  color: white;
-}
-
-.hero-btn.outline:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-/* Image Card */
-
-.blog-hero-img {
-  border-radius: 18px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  padding: 10px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-}
-
-.blog-hero-img img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-}
-
-
-/* Blog Container */
-/* Blog Posts Wrapper */
-.blog-posts {
-  padding: 100px 8%;
-}
-
-/* Single, clean container (REMOVED DUPLICATES) */
-.blog-container {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  gap: 40px;
-}
-
-
-/* ==============================
-   BLOG POSTS — PREMIUM STYLE
-============================== */
-
-.blog-posts {
-  padding: 100px 8%;
-}
-
-.blog-container {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  gap: 40px;
-}
-
-/* Blog Card */
-.blog-post {
-  padding: 40px;
-  border-radius: 20px;
-  background: linear-gradient(180deg, #111, #0c0c0c);
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.blog-post:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
-}
-
-/* Title */
-.blog-post h2 {
-  font-size: 26px;
-  color: #ffffff;
-  line-height: 1.4;
-  margin-bottom: 12px;
-}
-
-/* Meta */
-.meta {
-  font-size: 14px;
-  color: #9a9a9a;
-  margin-bottom: 18px;
-}
-
-.meta .author {
-  color: #ffb703;
-  font-weight: 500;
-}
-
-/* Excerpt */
-.excerpt {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #cfcfcf;
-  margin-bottom: 22px;
-}
-
-
-
-/* ==============================
-   SINGLE BLOG POST — PRO STYLE
-============================== */
-
-.post-container {
-  padding: 120px 8% 80px;
-}
-
-.post-content {
-  max-width: 850px;
-  margin: auto;
-  background: linear-gradient(180deg, #111, #0c0c0c);
-  padding: 60px;
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-.post-meta {
-  font-size: 14px;
-  color: #9a9a9a;
-}
-
-.post-meta span {
-  color: #ffb703;
-  font-weight: 500;
-}
-
-/* Content Typography */
-.post-content p {
-  font-size: 17px;
-  line-height: 1.9;
-  color: #cfcfcf;
-  margin-bottom: 26px;
-}
-
-.post-content h2 {
-  font-size: 26px;
-  color: #ffffff;
-  margin: 48px 0 18px;
-  line-height: 1.4;
-}
-
-/* Highlight */
-.post-highlight {
-  margin-top: 40px;
-  padding: 24px 28px;
-  background: rgba(255,183,3,0.08);
-  border-left: 4px solid #ffb703;
-  font-weight: 500;
-  color: #ffffff;
-  border-radius: 6px;
-}
-
-/* ----------------------------------------------------
-   Blog Pages — Mobile Responsive (max 800px)
----------------------------------------------------- */
-
-@media (max-width: 800px) {
-
-  /* =========================
-     BLOG HERO
-  ========================= */
-
-  .blog-hero {
-    min-height: auto;
-    padding: 60px 16px;
-  }
-
-  .hero-glow {
-    width: 360px;
-    height: 360px;
-    top: -120px;
-    left: -120px;
-    filter: blur(60px);
-  }
-
-  .blog-hero-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .blog-hero-content h1 {
-    font-size: 2.1rem;
-    line-height: 1.25;
-  }
-
-  .blog-hero-content p {
-    font-size: 1rem;
-    max-width: 100%;
-    margin-bottom: 24px;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-btn {
-    width: 100%;
-    text-align: center;
-    padding: 14px 22px;
-  }
-
-  /* Image Card */
-
-  .blog-hero-img {
-    padding: 8px;
-    border-radius: 14px;
-  }
-
-  /* =========================
-     BLOG LISTING
-  ========================= */
-
-  .blog {
-    margin: 40px auto;
-    padding: 30px 16px;
-  }
-
-  .blog h1 {
-    font-size: 2rem;
-  }
-
-  .blog-posts {
-    padding: 60px 16px;
-  }
-
-  .blog-container {
-    gap: 24px;
-  }
-
-  .blog-post {
-    padding: 26px;
-  }
-
-  .blog-post:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .blog-post h2 {
-    font-size: 1.35rem;
-  }
-
-  .excerpt {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  /* =========================
-     SINGLE BLOG POST
-  ========================= */
-
-  .post-container {
-    padding: 80px 16px 60px;
-  }
-
-  .post-content {
-    padding: 30px 22px;
-    border-radius: 16px;
-  }
-
-  .post-content p {
-    font-size: 0.95rem;
-    line-height: 1.75;
-  }
-
-  .post-content h2 {
-    font-size: 1.4rem;
-    margin: 36px 0 14px;
-  }
-
-  .post-highlight {
-    padding: 18px 20px;
-    font-size: 0.95rem;
-  }
-
-  .back-link {
-    margin-top: 36px;
-  }
-}
-
-/* ----------------------------------------------------
-   DAY / NIGHT TOGGLE BUTTON
----------------------------------------------------- */
-
-.theme-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  z-index: 8888;
-
-  background: linear-gradient(135deg, #ffd86f, #fc6262);
-  color: #111;
-  font-size: 22px;
-
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.08);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
-}
-/* ====================================================
-   DAY MODE OVERRIDES
-   Triggered when body has .day-mode
-==================================================== */
-
-/* --------------------
-   Global
--------------------- */
-body.day-mode {
-  background: whitesmoke url('/assets/basketball.png') fixed;
-  background-repeat: repeat;
-  color: black;
-}
-
-/* --------------------
-   Header & Navbar
--------------------- */
-body.day-mode header {
-  background: rgba(255, 255, 255, 0.25);
-  border-bottom: 2px solid black;
-}
-
-
-body.day-mode .nav-links a {
-  color: black;
-}
-
-body.day-mode .hamburger span {
-  background: black;
-}
-
-/* --------------------
-   Mobile Responsive
--------------------- */
-@media (max-width: 800px) {
-  body.day-mode .nav-links {
-  background: rgba(255, 255, 255, 0.25);
-  }
-}
-
-
-/* --------------------
-   Hero Section
--------------------- */
-body.day-mode .hero {
-  color: black;
-}
-body.day-mode .hero {
-  background-image: url("/assets/gradient-1770579979210.svg"); /* show image in day mode */
-}
-body.day-mode .hero-content {
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-body.day-mode .hero-badge {
-  background: rgba(0, 0, 0, 0.27);
-  color: black;
-}
-
-body.day-mode .hero h2 {
-  color: whitesmoke;
-}
-
-/* --------------------
-   Buttons
--------------------- */
-body.day-mode .btn-secondary {
-  background: rgba(0, 0, 0, 0.76);
-  color: #fff;
-  border: 2px solid rgba(255,255,255,0.6);
-}
-
-body.day-mode .btn-secondary:hover {
-  background: #fff;
-  color: #111;
-}
-
-/* --------------------
-   Sections
--------------------- */
-body.day-mode .services,
-body.day-mode .card a,
-body.day-mode .about,
-body.day-mode .portfolio,
-body.day-mode .contact {
-  color: black;
-}
-
-/* --------------------
-   Cards
--------------------- */
-body.day-mode .card,
-body.day-mode .about-card {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: black;
-}
-
-/* --------------------
-   Portfolio
--------------------- */
-body.day-mode .project-card {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-/* --------------------
-   Certificates Slider
--------------------- */
-body.day-mode .certificates-slider::before {
-  background: rgba(0, 0, 0, 0.55);
-}
-
-/* --------------------
-   Contact Form
--------------------- */
-body.day-mode input,
-body.day-mode textarea {
-  border: 1px solid #ccc;
-}
-
-body.day-mode button {
-  background: #146EF5;
-}
-
-body.day-mode button:hover {
-  background: #146ef57e;
-  color: whitesmoke;
-}
-
-/* --------------------
-   Footer
--------------------- */
-body.day-mode footer {
-  background: whitesmoke;
-  color: black;
-}
-
-body.day-mode footer p,
-body.day-mode footer a {
-  color: black;
-}
-
-body.day-mode footer a:hover {
-  color: white;
-}
-
-/* --------------------
-   Blog Pages
--------------------- */
-body.day-mode .blog-hero {
-  background: radial-gradient(circle at 20% 20%, #e5e7eb, #f9fafb 60%);
-  color: black;
-}
-
-body.day-mode .blog-post,
-body.day-mode .post-content {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-body.day-mode .blog-post h2,
-body.day-mode .excerpt,
-body.day-mode .post-content p,
-body.day-mode .post-content h2,
-body.day-mode .post-highlight {
-  color: black;
-}
-/* Hide hero background video in Day Mode */
-body.day-mode .hero video,
-body.day-mode .hero-bg-video,
-body.day-mode .hero video.bg-video {
-  display: none;
-}
-/* Navbar Logos - Theme Mode */
-.logo.day-mode {
-  display: none; /* hide day mode logo in night mode */
-}
-
-/* Day mode */
-body.day-mode .logo {
-  display: none; /* hide default/night logo */
-}
-
-body.day-mode .logo.day-mode {
-  display: block; /* show day mode logo */
-}
-body.day-mode .custom-cursor {
-  color: black;
-}
-/* =========================
-   Free Course Videos
-========================= */
-
-.free-course-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.video-grid {
-  display: flex;
-  justify-content: center;
-}
-
-.video-card {
-  width: 500px;
-  max-width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.video-card img {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-}
-
-.video-card h3 {
-  margin: 15px 0;
-  font-size: 20px;
-}
-
-
-/* =========================
-   Mobile Responsive (800px)
-========================= */
-
-@media (max-width: 800px) {
-
-
-  .video-card {
-    width: 100%;
-  }
-
-  .video-card h3 {
-    font-size: 18px;
-  }
-
-}

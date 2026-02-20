@@ -2,7 +2,7 @@
   <!-- Meta Essentials -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Webflow by Khalid | Web Development Services</title>
+  <title>Web Development Services Worldwide</title>
   <meta name="description" content="Get professional Webflow, WordPress, SEO & digital marketing services with Khalid Karim. Certified from DigiSkills Pakistan. Let's grow your business online!">
 
   <!-- Open Graph (Facebook, LinkedIn) -->
@@ -17,6 +17,8 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="day.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -68,21 +70,23 @@
       <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
       <li><a href="#portfolio" title="Portfolio"><i class="fa-solid fa-briefcase"></i></a></li>
       <li><a href="#contact" title="Contact"><i class="fa-solid fa-phone"></i></a></li>
-      <li><a href="blog.html" title="Blog"><i class="fa-solid fa-pen-nib"></i></a></li>
+      <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i></a>
+</li>
+
       <div class="indicator"></div>
     </ul>
   </nav>
 </header>
 <section id="home" class="hero">
 <video autoplay muted loop playsinline class="bg-video">
-    <source src="/assets/background video.mp4" type="video/mp4">
+    <source src="/assets/ramadan mubarak.mp4" type="video/mp4">
   </video>
 
   <div class="video-overlay"></div>
   <div class="hero-content">
 
     <span class="hero-badge">
-      Webflow • WordPress • SEO • Available Worldwide
+      Custom Websites • Webflow websites • WordPress Websites
     </span>
 
     <h1>
@@ -90,11 +94,11 @@
     </h1>
 
     <h2>
-      Online Web-Development And Digital Marketing Services
+      Online Web-Development And Digital Marketing Services Worldwide
     </h2>
 
     <p>
-      We design and develop fast, modern, and SEO-optimized websites 
+      I design and develop fast, modern, and SEO-optimized websites 
       for startups, small businesses, and brands worldwide.
     </p>
 
@@ -146,35 +150,110 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <H2>About Us</H2>
-      <div class="service-cards">
+<!-- About Section -->
+<section id="about" class="about">
+
+  <h2>About Me</h2>
+
+  <div class="service-cards">
+
     <div class="about-card">
-      <img src="assets/khalid-karim.png" alt="Webflow-Developer">
-      <h3>Web Developer</h3>
-      <p>Hello! I'm <strong>Khalid Karim</strong>, CEO of "WEBFLOW BY KHALID". With Years of experience in web development. Expertise in Webflow Development, WordPress , HTML and CSS. I help businesses build strong online identities with Proffessional and Stunning Look.</p>
+      <img src="assets/khalid-karim.png" alt="Webflow Developer">
+      <h3>Khalid Karim</h3>
+
+      <p>
+        I'm a professional Web Developer and the founder of 
+        <strong>Webflow by Khalid</strong>. I create modern, high-performance
+        websites that help businesses grow online and build a strong digital presence.
+      </p>
+
+      <p>
+        My expertise includes HTML, CSS, JavaScript, Webflow, and WordPress.
+        I also provide SEO and Social Media Marketing services to help businesses
+        rank on Google, attract customers, and increase sales.
+      </p>
+
+      <!-- PRO DROPDOWN BUTTON -->
+      <button class="about-toggle" onclick="toggleAbout()">
+        View My Experience & Skills
+        <span id="aboutArrow">▼</span>
+      </button>
+
+      <!-- HIDDEN CONTENT -->
+      <div class="about-hidden" id="aboutHidden">
+
+        <!-- Experience -->
+        <div class="about-stats">
+          <div class="stat">
+            <h4>5+</h4>
+            <span>Years Experience</span>
+          </div>
+
+          <div class="stat">
+            <h4>50+</h4>
+            <span>Projects Completed</span>
+          </div>
+
+          <div class="stat">
+            <h4>100%</h4>
+            <span>Client Satisfaction</span>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="skills">
+
+          <div class="skill">
+            <span>HTML / CSS</span>
+            <div class="skill-bar">
+             <div class="skill-fill" data-width="95%"></div>
+
+            </div>
+          </div>
+
+          <div class="skill">
+            <span>JavaScript</span>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="85%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <span>Webflow</span>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="90%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <span>SEO</span>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="88%"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CV -->
+        <a href="assets/khalid-karim-cv.pdf" class="btn-primary" download>
+          Download CV
+        </a>
+
+      </div>
+
     </div>
-    <div class="about-card">
-      <img src="assets/ali-hussain.png" alt="SEO-Expert">
-      <h3>SEO Expert</h3>
-      <p>Hello! I'm <strong>Ali Hussain</strong>, Manager and Focal Person of "WEBFLOW BY KHALID". I help to Improve website’s visibility and rankings on Google & other search engines.
-            Keywords Research, On-page SEO, Off-page SEO, Technical-SEO, Content Optimization.</p>
-    </div>
-    <div class="about-card">
-      <img src="assets/Zeeshan.png" alt="social-media-Manager">
-      <h3>Social Media Manager</h3>
-      <p>Hello! I'm <strong>Zeeshan Siddique</strong>, Social Media Manager of "WEBFLOW BY KHALID". I help to Grow your audience and brand presence across all major platforms.</p>
-    </div>
-    </div>
-    </section>
+
+  </div>
+
+</section>
+
 <!-- Skills & Certificates Section -->
 <section id="certificates" class="certificates-slider">
    <!-- Background Video -->
   <video autoplay muted loop playsinline class="bg-video">
     <source src="assets/slider background.mp4" type="video/mp4">
   </video>
-  <h2>Certificates by <a href="https://digiskills.pk/">DigiSkills.pk</a></h2>
+  <h2>My Certificates</h2>
   <div class="slider-wrapper">
     <div class="slider-container">
       <div class="slider-track">
@@ -192,8 +271,8 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-      <h2>Our Portfolio</h2>
-      <p>Some of the recent projects We've worked on.</p>
+      <h2>My Portfolio</h2>
+      <p>Some of the recent projects I've worked on.</p>
       <div class="portfolio-grid">
         <div class="project-card">
           <a href="http://niceflyconsultants.org/" target="_blank"><img src="assets/nice fly consultants.PNG" alt="Consultancy-Website-by-kk-developer" /></a>
@@ -242,7 +321,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-      <h2>Contact Us</h2>
+      <h2>Contact Me</h2>
       <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="5ded0990-dab7-48df-8947-7044915f9b2c">
         <input type="text" name="name" placeholder="Your name" required>
