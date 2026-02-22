@@ -365,3 +365,25 @@ function resetSkills() {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+
+  const progressBar = document.getElementById("progressBar");
+  let ticking = false;
+
+  function updateProgressBar() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+
+    progressBar.style.width = scrollPercent + "%";
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateProgressBar);
+      ticking = true;
+    }
+  });
+
+});
