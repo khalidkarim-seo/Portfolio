@@ -66,7 +66,6 @@
 </head>
 
 <body>
-<div class="progress-bar" id="progressBar"></div>
 <!-- Preloader -->
 <div id="preloader">
   <div class="loader"></div>
@@ -208,24 +207,29 @@
   <!-- External JS -->
   <script src="script.js" defer></script> 
   
-      <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   const post = document.querySelector(".post-content");
   const progress = document.querySelector(".timeline-progress");
   const dot = document.querySelector(".timeline-dot");
 
+  if (!post || !progress || !dot) return;
+
   function updateTimeline() {
-    const rect = post.getBoundingClientRect();
+    const postTop = post.offsetTop;
+    const postHeight = post.offsetHeight;
     const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
 
-    const totalHeight = post.offsetHeight;
-    const scrollStart = window.scrollY + rect.top;
-    const scrollEnd = scrollStart + totalHeight;
+    const scrollableDistance = postHeight - windowHeight;
 
-    const currentScroll = window.scrollY + windowHeight / 4;
+    if (scrollableDistance <= 0) {
+      progress.style.height = "100%";
+      dot.style.top = "100%";
+      return;
+    }
 
-    let progressPercent = 
-      (currentScroll - scrollStart) / (scrollEnd - scrollStart);
+    let progressPercent = (scrollY - postTop) / scrollableDistance;
 
     progressPercent = Math.max(0, Math.min(1, progressPercent));
 
@@ -235,7 +239,9 @@ document.addEventListener("DOMContentLoaded", function () {
     dot.style.top = progressHeight + "%";
   }
 
-  window.addEventListener("scroll", updateTimeline);
+  window.addEventListener("scroll", updateTimeline, { passive: true });
+  window.addEventListener("resize", updateTimeline);
+
   updateTimeline();
 });
 </script>

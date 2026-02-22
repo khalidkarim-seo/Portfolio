@@ -374,7 +374,7 @@
   }
 
   .about-card {
-    padding: 24px 18px;
+    max-width: 100%;
     text-align: left;
   }
 

@@ -273,33 +273,6 @@ window.addEventListener("load", () => {
   }, 600); // match CSS transition
 });
 
-/* ================= Reading Progress ================= */
-
-const progressBar = document.getElementById("progressBar");
-
-if (progressBar) {
-
-  function updateProgress() {
-
-    const scrollTop =
-      window.pageYOffset ||
-      document.documentElement.scrollTop;
-
-    const docHeight =
-      document.documentElement.scrollHeight -
-      window.innerHeight;
-
-    const progress =
-      docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-
-    progressBar.style.width = progress + "%";
-  }
-
-  window.addEventListener("scroll", updateProgress);
-  window.addEventListener("load", updateProgress);
-  window.addEventListener("resize", updateProgress);
-}
-
 
 // scroll reveal for about section
 const about = document.querySelector(".about");
@@ -390,3 +363,5 @@ function resetSkills() {
     bar.style.width = "0";
   });
 }
+
+
