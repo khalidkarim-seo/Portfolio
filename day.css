@@ -39,9 +39,9 @@
 ========================= */
 
 body.day-mode {
-  background: whitesmoke url("/assets/basketball.png") fixed;
+  background:rgb(238, 223, 245) url("/assets/basketball.png") fixed;
   background-repeat: repeat;
-  color: black;
+  color:rgb(1, 23, 6);
 }
 
 /* =========================
@@ -53,11 +53,11 @@ body.day-mode header {
 }
 
 body.day-mode .nav-links a {
-  color: black;
+  color:rgb(1, 23, 6);
 }
 
 body.day-mode .hamburger span {
-  background: black;
+  background:rgb(1, 23, 6);
 }
 
 /* Mobile */
@@ -72,7 +72,7 @@ body.day-mode .hamburger span {
 ========================= */
 
 body.day-mode .hero {
-  color: black;
+  color: rgb(1, 23, 6);
   background-image: url("/assets/gradient-1770579979210.svg");
 }
 
@@ -88,7 +88,7 @@ body.day-mode .hero-badge {
 }
 
 body.day-mode .hero h2 {
-  color: whitesmoke;
+  color: rgb(255, 224, 224);
 }
 
 /* Hide hero background video in Day Mode */
@@ -130,7 +130,7 @@ body.day-mode .services,
 body.day-mode .about,
 body.day-mode .portfolio,
 body.day-mode .contact,
-body.day-mode .card a {
+body.day-mode .blog-card a {
   color: black;
 }
 
@@ -138,7 +138,7 @@ body.day-mode .card a {
    CARDS
 ========================= */
 
-body.day-mode .card {
+body.day-mode .blog-card {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: black;
@@ -302,4 +302,37 @@ body.day-mode .logo.day-mode {
 
 body.day-mode .custom-cursor {
   color: black;
+}
+
+/* ===============================
+   SERVICES SECTION
+=================================*/
+
+body.day-mode .services-section {
+  color: #111;
+}
+
+body.day-mode .service-content h3 {
+  color: #111;
+}
+
+body.day-mode .service-content p {
+  color: #333;
+}
+
+body.day-mode .service-row {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.day-mode .service-btn {
+  background: #146EF5;
+  color: white;
+}
+
+body.day-mode .service-btn:hover {
+  background: #0b4fc1;
 }

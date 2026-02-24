@@ -323,58 +323,61 @@ header {
    PRIMARY CTA — PRO VERSION
 ============================ */
 
+
 .btn-primary {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 8px 8px 8px 24px;
   font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: .4px;
+  letter-spacing: .3px;
+
+  background: #073f00;
   color: #fff;
   text-decoration: none;
-  border-radius: 20px;
-  border: none;
-  background: linear-gradient(135deg, #1b7500, #91ff38);
-  box-shadow:
-    0 14px 35px rgba(0,0,0,0.45),
-    inset 0 1px 0 rgba(255,255,255,0.25);
-  overflow: hidden;
-  transition: all .28s ease;
+
+  border-radius: 999px;
+  border: 3px solid #000;
+
+  transition: all .25s ease;
 }
 
+/* Arrow Circle */
+.btn-primary .arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  background: #fff;
+  color: #000;
+
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+
+  transition: all .25s ease;
+}
+
+/* Hover Effect */
 .btn-primary:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow:
-    0 22px 50px rgba(0,0,0,0.6),
-    0 0 20px rgba(37,211,102,0.35);
+  background: #111;
+  transform: translateY(-3px);
 }
 
+.btn-primary:hover .arrow-circle {
+  transform: translateX(4px);
+}
+
+/* Click effect */
 .btn-primary:active {
-  transform: translateY(-1px) scale(.98);
+  transform: translateY(0) scale(.97);
 }
-
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -130%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.45),
-    transparent
-  );
-  transition: .75s;
-}
-
-.btn-primary:hover::after {
-  left: 150%;
-}
-
 
 /* ============================
    SECONDARY CTA — PRO VERSION
@@ -383,29 +386,56 @@ header {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 8px 8px 8px 24px;
   font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: .4px;
-  text-decoration: none;
+  letter-spacing: .3px;
+
+  background: #000;
   color: #fff;
-  border-radius: 20px;
-  border: 2px solid rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(6px);
-  transition: all .28s ease;
+  text-decoration: none;
+
+  border-radius: 999px;
+  border: 3px solid #000;
+
+  transition: all .25s ease;
 }
 
-.btn-secondary:hover {
+/* Arrow Circle */
+.btn-secondary .arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
   background: #fff;
-  color: #111;
-  border-color: #fff;
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  color: #000;
+
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+
+  transition: all .25s ease;
 }
 
+/* Hover Effect */
+.btn-secondary:hover {
+  background: #111;
+  transform: translateY(-3px);
+}
+
+.btn-secondary:hover .arrow-circle {
+  transform: translateX(4px);
+}
+
+/* Click effect */
 .btn-secondary:active {
-  transform: translateY(-1px) scale(.98);
+  transform: translateY(0) scale(.97);
 }
 
 /* ----------------------------------------------------
@@ -467,119 +497,106 @@ min-height: 100vh;
   padding-top: 10px;
 }
 
-/* ----------------------------------------------------
-   Service Cards
----------------------------------------------------- */
+/* ===============================
+   SERVICES SECTION
+=================================*/
 
-.service-cards {
+.services-section {
+  padding: 120px 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 100px;
+}
+
+/* ===============================
+   ROW LAYOUT
+=================================*/
+
+.service-row {
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-.service-cards a {
-  text-decoration: none;
-  color: rgb(245, 245, 245);
-}
-
-.card {
-  flex: 1 1 280px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  padding: 30px 25px;
-  color: #f5f5f5;
-  text-align: center;
-  box-shadow: 0 8px 10px #146ef569;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-
-/* ----------------------------------------------------
-   Service Images Animation
----------------------------------------------------- */
-.service-img-wrap {
-  overflow: visible;
-}
-
-.service-img {
-  width: 150px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 120px;
   opacity: 0;
-  transform: translateX(-120px);
-  will-change: transform, opacity;
-}
-.blog-img {
-  width: 150px;
-  border-radius: 5%;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
 }
 
-.animate-service-img {
-animation: myAnim 4s ease 0s 1 normal forwards;}
-
-@keyframes myAnim {
-	0% {
-		animation-timing-function: ease-in;
-		opacity: 1;
-		transform: translateY(-45px);
-	}
-
-	24% {
-		opacity: 1;
-	}
-
-	40% {
-		animation-timing-function: ease-in;
-		transform: translateY(-24px);
-	}
-
-	65% {
-		animation-timing-function: ease-in;
-		transform: translateY(-12px);
-	}
-
-	82% {
-		animation-timing-function: ease-in;
-		transform: translateY(-6px);
-	}
-
-	93% {
-		animation-timing-function: ease-in;
-		transform: translateY(-4px);
-	}
-
-	25%,
-	55%,
-	75%,
-	87% {
-		animation-timing-function: ease-out;
-		transform: translateY(0px);
-	}
-
-	100% {
-		animation-timing-function: ease-out;
-		opacity: 1;
-		transform: translateY(0px);
-	}
-}
-/* ----------------------------------------------------
-   About Section
----------------------------------------------------- */
-
-.about {
-  padding: 60px 20px;
-  text-align: center;
+.service-row:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
+/* Content */
+.service-content {
+  flex: 1;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
 
+.service-row:nth-child(even) .service-content {
+  transform: translateX(100px);
+}
+
+.service-content h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.service-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.service-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 24px;
+  background: #0d6efd;
+  color: white;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.service-btn:hover {
+  background: #084298;
+}
+
+/* Image */
+.service-image {
+  flex: 1;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.service-row:nth-child(even) .service-image {
+  transform: translateX(-100px);
+}
+
+.service-image img {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Active Reveal */
+.service-row.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-row.show .service-content,
+.service-row.show .service-image {
+  opacity: 1;
+  transform: translateX(0);
+}
 /* Profile Image */
 .about img {
   height: 150px;
@@ -599,7 +616,7 @@ animation: myAnim 4s ease 0s 1 normal forwards;}
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
-/* Card */
+/* about Card */
 .about-card {
   max-width: 90%;
   margin: auto;
@@ -1048,5 +1065,54 @@ footer a:hover {
 .social li:hover a {
   color: #146EF5;
   text-shadow: 0 0 8px black;
+}
+
+/* ===============================
+   Infinite Loop Banner
+================================== */
+
+.loop-banner {
+  background: #052b16; /* dark green */
+  overflow: hidden;
+  padding: 40px 0;
+  margin-top: 60px;
+  position: relative;
+}
+
+.loop-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLoop 18s linear infinite;
+}
+
+.loop-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding-right: 60px;
+  white-space: nowrap;
+}
+
+.loop-content span {
+    font-family: "Purple Purse", serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #d7c8db; /* light lavender */
+  letter-spacing: 2px;
+}
+
+.loop-content .arrow {
+  font-size: 50px;
+  opacity: 0.8;
+}
+
+/* Infinite scrolling animation */
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 

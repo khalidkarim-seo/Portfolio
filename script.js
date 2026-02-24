@@ -387,3 +387,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+// Scroll Reveal for Services Section
+
+const serviceRows = document.querySelectorAll(".service-row");
+
+const serviceObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+serviceRows.forEach(row => {
+  serviceObserver.observe(row);
+});
