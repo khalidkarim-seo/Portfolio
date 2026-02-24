@@ -321,7 +321,7 @@ function toggleAbout() {
   hidden.classList.toggle("show");
 
   if (hidden.classList.contains("show")) {
-    arrow.textContent = "▲";
+    arrow.textContent = "↑";
 
     // Delay animation by 0.2 seconds
     setTimeout(() => {
@@ -329,7 +329,7 @@ function toggleAbout() {
     }, 200);
 
   } else {
-    arrow.textContent = "▼";
+    arrow.textContent = "↓";
 
     // Reset bars when closing (optional but recommended)
     resetSkills();

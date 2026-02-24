@@ -266,9 +266,9 @@ header {
 
 .hero-content {
   border-radius: 18px;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.445);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.397);
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
   animation: heroFade 1.2s ease;
 }
@@ -325,23 +325,20 @@ header {
 
 
 .btn-primary {
+  margin-top:10px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-
   padding: 8px 8px 8px 24px;
-  font-size: 1.05rem;
+  font-size: 1.rem;
   font-weight: 700;
   letter-spacing: .3px;
-
   background: #073f00;
   color: #fff;
   text-decoration: none;
-
   border-radius: 999px;
   border: 3px solid #000;
-
   transition: all .25s ease;
 }
 
@@ -384,23 +381,21 @@ header {
 ============================ */
 
 .btn-secondary {
+    margin-top:10px;
+
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-
   padding: 8px 8px 8px 24px;
-  font-size: 1.05rem;
+  font-size: 1.rem;
   font-weight: 700;
   letter-spacing: .3px;
-
   background: #000;
   color: #fff;
   text-decoration: none;
-
   border-radius: 999px;
   border: 3px solid #000;
-
   transition: all .25s ease;
 }
 
@@ -409,17 +404,13 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 44px;
   height: 44px;
-
   background: #fff;
   color: #000;
-
   border-radius: 50%;
   font-size: 18px;
   font-weight: 700;
-
   transition: all .25s ease;
 }
 
@@ -597,6 +588,9 @@ min-height: 100vh;
   opacity: 1;
   transform: translateX(0);
 }
+
+/* about Card */
+
 /* Profile Image */
 .about img {
   height: 150px;
@@ -616,7 +610,6 @@ min-height: 100vh;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
-/* about Card */
 .about-card {
   max-width: 90%;
   margin: auto;
@@ -634,22 +627,6 @@ min-height: 100vh;
 .about-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 25px #146EF5;
-}
-
-/* ----------------------------------------------------
-   Toggle Button
----------------------------------------------------- */
-
-.about-toggle {
-  margin-top: 20px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  background: #146EF5;
-  color: white;
-  transition: 0.3s;
 }
 
 .about-toggle:hover {
@@ -728,23 +705,6 @@ min-height: 100vh;
   transition: 1.5s ease;
 }
 
-/* Hide dropdown by default */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(20,20,20,0.95);
-  backdrop-filter: blur(10px);
-  padding: 10px;
-  border-radius: 10px;
-  list-style: none;
-  z-index: 999;
-}
-/* Show on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
 .skill-fill {
   width: 0;
   height: 8px;

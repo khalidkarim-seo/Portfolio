@@ -1,205 +1,181 @@
-/* ====================================================
-   MOBILE RESPONSIVE (max-width: 800px)
-==================================================== */
+/* ======================================
+   RESPONSIVE FOR TABLET & MOBILE (≤800px)
+====================================== */
 
 @media (max-width: 800px) {
 
-  /* ====================================================
-     GLOBAL / CURSOR
-  ==================================================== */
-
-  .custom-cursor {
-    display: none;
-  }
-
-  /* ====================================================
-     HEADER & NAVBAR
-  ==================================================== */
-
-  .navbar {
-    max-width: 85%;
-  }
-
-  .logo a {
-    font-size: 1.1rem;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
+  /* NAVBAR */
   .nav-links {
     position: fixed;
     top: 60px;
     right: -100%;
-    width: 25%;
-    height: auto;
-
-    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0,0,0,0.95);
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    gap: 18px;
-    padding: 28px 22px;
-
-    background: rgba(0, 0, 0, 0.445);
-    backdrop-filter: blur(14px);
-
-    transition: right 0.35s ease;
-    z-index: 1250;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: 0.4s ease;
+    font-size: 2.5rem;
   }
 
   .nav-links.active {
     right: 0;
   }
 
-  .nav-links a {
-    padding: 12px 26px;
-    border-radius: 28px;
-    font-size: 1.8rem;
+  .hamburger {
+    display: flex;
   }
 
-  .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateX(-6px);
-    letter-spacing: 1px;
-  }
-
-  .indicator {
-    display: none;
-  }
-
-  /* ====================================================
-     HERO SECTION
-  ==================================================== */
-
-  .hero {
-    padding: 5%;
-    padding-top: 60px;
-  }
-
+  /* HERO SECTION */
   .hero-content {
-    max-width: 100%;
-    padding: 28px 20px;
-    border-radius: 14px;
-  }
-
-  .hero-badge {
-    font-size: 10px;
-    padding: 6px 14px;
-    margin-bottom: 14px;
+    margin-top: auto;
+    max-width: 95%;
+    padding: 15px;
   }
 
   .hero h1 {
     font-size: 1.8rem;
-    line-height: 1.25;
-    margin-bottom: 14px;
   }
 
   .hero h2 {
     font-size: 1rem;
-    margin-bottom: 16px;
   }
 
   .hero p {
-    font-size: 0.8rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    font-size: 0.6rem;
   }
 
-
-  .btn-primary,
-  .btn-secondary {
-    font-size: 1rem;
+  .hero-actions {
+    flex-direction: column;
   }
 
-  /* ====================================================
-     BLOG HERO
-  ==================================================== */
-
-  .blog-hero {
-    min-height: auto;
-    padding: 60px 16px;
+  /* SERVICES SECTION */
+  .service-row {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
   }
 
-  .hero-glow {
-    width: 360px;
-    height: 360px;
-    top: -120px;
-    left: -120px;
-    filter: blur(60px);
+  .service-content,
+  .service-image {
+    transform: none !important;
   }
 
+  .service-content h3 {
+    font-size: 24px;
+  }
+
+  .service-content p {
+    font-size: 16px;
+  }
+
+  /* ABOUT STATS */
+  .about-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* PORTFOLIO GRID */
+  .project-card {
+    width: 100%;
+  }
+
+  /* CERTIFICATE SLIDER IMAGES */
+  .slider-track img {
+    height: 160px;
+  }
+
+  /* CONTACT FORM */
+  .contact form {
+    width: 95%;
+  }
+
+  /* FOOTER SOCIAL ICONS */
+  .social {
+    gap: 15px;
+  }
+
+  .social li {
+    font-size: 1.6rem;
+  }
+
+  /* LOOP BANNER TEXT */
+  .loop-content span {
+    font-size: 32px;
+  }
+}
+/* =========================================
+   BLOG RESPONSIVE (TABLET & MOBILE ≤800px)
+========================================= */
+
+@media (max-width: 800px) {
+
+  /* BLOG HERO LAYOUT */
   .blog-hero-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr; /* stack columns */
+    gap: 30px;
     text-align: center;
   }
 
   .blog-hero-content h1 {
-    font-size: 2.1rem;
-    line-height: 1.25;
+    font-size: 32px;
   }
 
   .blog-hero-content p {
-    font-size: 1rem;
+    font-size: 16px;
     max-width: 100%;
-    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-direction: column;
   }
 
   .hero-btn {
     width: 100%;
-    text-align: center;
-    padding: 10px 10px;
-    font-size: 0.9rem;
   }
 
+  /* BLOG HERO IMAGE */
   .blog-hero-img {
-    padding: 8px;
-    border-radius: 14px;
+    max-width: 90%;
+    margin: auto;
   }
 
-  /* ====================================================
-     BLOG LISTING
-  ==================================================== */
-
-  .blog {
-    margin: 40px auto;
-    padding: 30px 16px;
-  }
-
-  .blog h1 {
-    font-size: 2rem;
-  }
-
+  /* BLOG POSTS SECTION */
   .blog-posts {
-    padding: 60px 16px;
+    padding: 60px 5%;
   }
 
   .blog-container {
-    gap: 24px;
+    gap: 25px;
   }
 
   .blog-post {
-    padding: 26px;
-  }
-
-  .blog-post:hover {
-    transform: none;
-    box-shadow: none;
+    padding: 20px;
   }
 
   .blog-post h2 {
-    font-size: 1.35rem;
+    font-size: 22px;
   }
 
   .excerpt {
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 15px;
   }
 
-  /* ====================================================
+  /* BLOG CARDS GRID */
+  .blog-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+ /* ====================================================
      SINGLE BLOG POST
   ==================================================== */
 
@@ -247,10 +223,11 @@
     width: 12px;
     height: 12px;
   }
-
-  /* ====================================================
-     FREE COURSE VIDEOS
-  ==================================================== */
+  /* FREE COURSE VIDEO */
+  .video-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .video-card {
     width: 100%;
@@ -259,248 +236,4 @@
   .video-card h3 {
     font-size: 18px;
   }
-
-  /* ====================================================
-     CERTIFICATES SLIDER
-  ==================================================== */
-
-  .certificates-slider {
-    min-height: auto;
-    padding: 60px 10px;
-  }
-
-  .certificates-slider h2 {
-    margin-bottom: 28px;
-    font-size: 1.6rem;
-  }
-
-  .slider-track {
-    gap: 16px;
-    animation-duration: 22s;
-  }
-
-  .slider-track img {
-    height: 160px;
-    max-width: 240px;
-    padding: 6px;
-    border-radius: 10px;
-  }
-
-  .slider-track img:hover {
-    transform: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-  }
-
-  .slider-wrapper:hover .slider-track {
-    animation-play-state: running;
-  }
-
-  /* ====================================================
-     PORTFOLIO
-  ==================================================== */
-
-  .portfolio-grid {
-    gap: 16px;
-    margin: 16px 0;
-  }
-
-  .project-card {
-    width: 100%;
-  }
-
-  .project-card:hover {
-    transform: none;
-    box-shadow: 0 2px 5px wheat;
-  }
-
-  .project-card h3 {
-    font-size: 1.1rem;
-    padding: 12px 12px 0;
-  }
-
-  .project-card p {
-    font-size: 0.9rem;
-    padding: 0 12px 12px;
-  }
-
-  /* ====================================================
-     SERVICES
-  ==================================================== */
-
-  .service-img {
-    width: 110px;
-  }
-
-  .animate-service-img {
-    animation-duration: 1.4s;
-  }
-
-  .service-cards {
-    gap: 20px;
-    padding: 30px 10px;
-  }
-
-  .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding: 24px 18px;
-  }
-
-  .card:hover {
-    transform: none;
-    box-shadow: 0 8px 10px #146ef569;
-  }
-
-  /* ====================================================
-     ABOUT
-  ==================================================== */
-
-  .about img {
-    height: 120px;
-    margin: 16px auto;
-  }
-
-  .about img:hover {
-    transform: none;
-    filter: grayscale(50%);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
-  }
-
-  .about-card {
-    max-width: 100%;
-    text-align: left;
-  }
-
-  .about-card:hover {
-    transform: none;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
-  }
-
-  .about-stats {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  /* ====================================================
-     CONTACT
-  ==================================================== */
-
-  .contact {
-    padding: 40px 0;
-  }
-
-  .contact form {
-    max-width: 100%;
-    padding: 0 15px;
-    gap: 12px;
-  }
-
-  input,
-  textarea {
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  button {
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  /* ====================================================
-     FOOTER
-  ==================================================== */
-
-  footer {
-    text-align: center;
-    padding: 24px 12px;
-    font-size: 0.95rem;
-  }
-
-  footer p,
-  footer a {
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .social {
-    margin-top: 18px;
-    gap: 18px;
-  }
-
-  .social li {
-    font-size: 1.8rem;
-  }
-
-  .social li:hover,
-  .social li:hover a {
-    transform: none;
-    text-shadow: none;
-  }
-
-  /* ====================================================
-     SECTIONS
-  ==================================================== */
-
-  .services,
-  .about,
-  .portfolio,
-  .contact {
-    height: auto;
-  }
-
-  .services h2,
-  .about h2,
-  .portfolio h2,
-  .contact h2,
-  .certificates-slider h2 {
-    font-size: 1.7rem;
-    padding-top: 8px;
-  }
-
-  .services h3,
-  .about h3,
-  .portfolio h3,
-  .contact h3,
-  .certificates-slider h3 {
-    font-size: 1.3rem;
-    padding-bottom: 8px;
-  }
-
-  .services p,
-  .about p,
-  .portfolio p,
-  .contact p,
-  .certificates-slider p {
-    font-size: 0.95rem;
-    padding-top: 8px;
-    line-height: 1.6;
-  }
-}
-/* portfolio loop Responsive */
-@media (max-width: 800px) {
-  .loop-content span {
-    font-size: 32px;
-  }
-}
-/* ===============================
-   servies cards RESPONSIVE
-=================================*/
-
-@media (max-width: 800px) {
-
-  .service-row,
-  .service-row:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .service-content,
-  .service-image {
-    transform: translateY(50px);
-  }
-
-  .service-row.show .service-content,
-  .service-row.show .service-image {
-    transform: translateY(0);
-  }
-
 }

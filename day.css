@@ -29,17 +29,13 @@
   transform: scale(0.95);
 }
 
-/* ====================================================
-   DAY MODE OVERRIDES
-   Triggered when body has .day-mode
-==================================================== */
 
 /* =========================
    GLOBAL
 ========================= */
 
 body.day-mode {
-  background:rgb(238, 223, 245) url("/assets/basketball.png") fixed;
+  background:rgb(238, 223, 245);
   background-repeat: repeat;
   color:rgb(1, 23, 6);
 }
@@ -77,13 +73,13 @@ body.day-mode .hero {
 }
 
 body.day-mode .hero-content {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.11);
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 body.day-mode .hero-badge {
-  background: rgba(0, 0, 0, 0.27);
+  background: rgba(0, 0, 0, 0.164);
   color: black;
 }
 
@@ -320,19 +316,54 @@ body.day-mode .service-content p {
   color: #333;
 }
 
-body.day-mode .service-row {
-  background: rgba(255, 255, 255, 0.6);
-  padding: 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+/* =========================
+   BLOG HERO BUTTONS - DAY MODE
+========================= */
+
+body.day-mode .btn-primary {
+  background: linear-gradient(135deg, #146EF5, #6C63FF);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(20, 110, 245, 0.25);
 }
 
-body.day-mode .service-btn {
+body.day-mode .btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(20, 110, 245, 0.4);
+}
+
+/* Arrow circle */
+body.day-mode .btn-primary .arrow-circle {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* Secondary Buttons (Free Tutorial, Back to Blog) */
+body.day-mode .hero-btn {
+  background: transparent;
+  border: 2px solid #146EF5;
+  color: #146EF5;
+}
+
+body.day-mode .hero-btn:hover {
   background: #146EF5;
-  color: white;
+  color: #fff;
+  transform: translateY(-4px);
 }
 
-body.day-mode .service-btn:hover {
-  background: #0b4fc1;
+/* =========================
+   ARTICLE READING TIMELINE - DAY MODE
+========================= */
+
+body.day-mode .timeline-line {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+body.day-mode .timeline-progress {
+  background: linear-gradient(180deg, #146EF5, #6C63FF);
+}
+
+body.day-mode .timeline-dot {
+  background: #ffffff;
+  border: 2px solid #146EF5;
+  box-shadow: 0 0 0 6px rgba(20, 110, 245, 0.15);
 }
