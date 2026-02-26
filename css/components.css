@@ -1,0 +1,119 @@
+/* ================= BUTTON ================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--accent-green);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px rgba(76, 175, 0, 0.5);
+}
+
+.btn-primary:hover {
+  background: var(--accent-green-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(76, 175, 0, 0.8);
+}
+
+.arrow {
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ================= BADGES ================= */
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.badge-fintech {
+  background: rgba(255, 153, 0, 0.15);
+  color: #ff9900;
+}
+
+.badge-edtech {
+  background: rgba(0, 102, 255, 0.15);
+  color: #0066ff;
+}
+
+.badge-pharma {
+  background: rgba(0, 170, 120, 0.15);
+  color: #00aa78;
+}
+
+/* ================= BUTTON VARIANTS ================= */
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-orange {
+  background: #ff9900;
+  color: #fff;
+}
+
+.btn-orange:hover {
+  background: #ffad33;
+  transform: translateY(-2px);
+}
+
+.btn-blue {
+  background: #0033ff;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background: #335cff;
+  transform: translateY(-2px);
+}
+
+.btn-green {
+  background: #1fa67a;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background: #28c796;
+  transform: translateY(-2px);
+}
+/* ================= REVEAL ANIMATION ================= */
+
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active {
+  opacity: 1;
+  transform: translate(0);
+}
