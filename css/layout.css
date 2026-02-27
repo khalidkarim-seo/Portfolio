@@ -1,3 +1,8 @@
+
+body {
+  overflow-x: hidden;
+}
+
 /* ================= NAV ================= */
 
 .header {
@@ -59,7 +64,6 @@
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 1100;
 }
 
 .hamburger span {

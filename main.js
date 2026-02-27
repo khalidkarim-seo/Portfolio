@@ -1,88 +1,146 @@
-// Sticky shadow on scroll
-const header = document.querySelector(".header");
+document.addEventListener("DOMContentLoaded", () => {
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.5)";
-  } else {
-    header.style.boxShadow = "none";
+  /* =========================================================
+     1. STICKY HEADER SHADOW
+  ========================================================= */
+  const header = document.querySelector(".header");
+
+  function handleHeaderShadow() {
+    if (!header) return;
+
+    header.style.boxShadow =
+      window.scrollY > 50
+        ? "0 5px 20px rgba(0, 0, 0, 0.5)"
+        : "none";
   }
-});
-// ================= REVEAL ON SCROLL =================
-const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-
-  reveals.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    const revealPoint = 150; // Distance from bottom of screen
-
-    if (elementTop < windowHeight - revealPoint) {
-      el.classList.add('active');
-    } else {
-      // Remove class when scrolling up
-      el.classList.remove('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll); // Reveal elements on load if visible
 
 
+  /* =========================================================
+     2. REVEAL ON SCROLL
+  ========================================================= */
+  const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+  );
 
-// ================= HERO IMAGE BORDER curser ANIMATION =================
-const heroBorder = document.querySelector('.image-border');
+  function handleRevealOnScroll() {
+    const windowHeight = window.innerHeight;
+    const revealPoint = 150;
 
-window.addEventListener('mousemove', (e) => {
-  const rect = heroBorder.getBoundingClientRect();
+    revealElements.forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
 
-  // Get cursor position relative to image center
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-  const deltaX = e.clientX - centerX;
-  const deltaY = e.clientY - centerY;
-
-  // Calculate angle in degrees (0-360)
-  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 180; // +180 to make 0 at top
-
-  // Animate border up to cursor angle
-  heroBorder.style.background = `conic-gradient(
-    white 0deg ${angle}deg,
-    rgba(255,255,255,0) ${angle}deg 360deg
-  )`;
-});
-
-
-const form = document.querySelector(".contact-form");
-const popup = document.getElementById("thankYouPopup");
-const countdownEl = document.getElementById("countdown");
-
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-
-  const response = await fetch(form.action, {
-    method: "POST",
-    body: formData
-  });
-
-  if (response.ok) {
-    popup.classList.add("active");
-
-    let timeLeft = 3;
-    const timer = setInterval(() => {
-      timeLeft--;
-      countdownEl.textContent = timeLeft;
-
-      if (timeLeft <= 0) {
-        clearInterval(timer);
-        window.location.href = "https://webflowbykhalid.com/";
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
       }
-    }, 1000);
-
-    form.reset();
+    });
   }
+
+
+  /* =========================================================
+     3. HERO BORDER CURSOR ANIMATION
+  ========================================================= */
+  const heroBorder = document.querySelector(".image-border");
+
+  function handleHeroBorderAnimation(e) {
+    if (!heroBorder) return;
+
+    const rect = heroBorder.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const deltaX = e.clientX - centerX;
+    const deltaY = e.clientY - centerY;
+
+    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 180;
+
+    heroBorder.style.background = `
+      conic-gradient(
+        white 0deg ${angle}deg,
+        rgba(255, 255, 255, 0) ${angle}deg 360deg
+      )
+    `;
+  }
+
+
+  /* =========================================================
+     4. MOBILE NAVIGATION (HAMBURGER)
+  ========================================================= */
+ const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+const body = document.body;
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("active");
+  body.classList.toggle("nav-open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
+    body.classList.remove("nav-open");
+  });
+});
+
+
+  /* =========================================================
+     5. CONTACT FORM SUBMISSION + THANK YOU POPUP
+  ========================================================= */
+  const form = document.querySelector(".contact-form");
+  const popup = document.getElementById("thankYouPopup");
+  const countdownEl = document.getElementById("countdown");
+
+  if (form && popup && countdownEl) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) throw new Error("Form submission failed");
+
+        popup.classList.add("active");
+
+        let timeLeft = 3;
+        countdownEl.textContent = timeLeft;
+
+        const timer = setInterval(() => {
+          timeLeft--;
+          countdownEl.textContent = timeLeft;
+
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            window.location.href = "https://webflowbykhalid.com/";
+          }
+        }, 1000);
+
+        form.reset();
+
+      } catch (error) {
+        console.error("Submission error:", error);
+      }
+    });
+  }
+
+
+  /* =========================================================
+     GLOBAL EVENT LISTENERS
+  ========================================================= */
+
+  window.addEventListener("scroll", () => {
+    handleHeaderShadow();
+    handleRevealOnScroll();
+  });
+
+  window.addEventListener("load", handleRevealOnScroll);
+  window.addEventListener("mousemove", handleHeroBorderAnimation);
+
 });

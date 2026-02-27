@@ -1,7 +1,6 @@
 /* ====================================================
    RESPONSIVE DESIGN
 ==================================================== */
-
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {
 
@@ -31,41 +30,57 @@
   .section-header {
     margin-bottom: 70px;
   }
+   .templates-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 
 /* ================= MOBILE ================= */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
-  /* NAVIGATION */
-  .hamburger {
+ .hamburger {
     display: flex;
+    z-index: 1100;
   }
 
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    left: 0;
+    width: 100%;
     height: 100vh;
-    width: 280px;
-    background: #111;
+
+    background: var(--bg-dark); /* same as your site */
+
+    display: flex;
     flex-direction: column;
-    padding-top: 120px;
-    gap: 30px;
     align-items: center;
-    transition: 0.4s ease;
-    border-left: 1px solid #1f1f1f;
+    justify-content: center;
+
+    gap: 35px;
+
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+
+    z-index: 1050;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    list-style: none;
   }
 
   .nav-links a {
-    font-size: 16px;
+    font-size: 22px;
+    color: var(--text-primary);
+    text-decoration: none;
   }
 
-
+ 
   /* HERO */
   .hero {
     padding-top: 100px;
@@ -110,23 +125,9 @@
   .work-card h3 {
     font-size: 22px;
   }
-
-}
-
-@media (max-width: 1024px) {
-  .templates-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
   .templates-grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
   .seo-content {
     padding: 70px 0;
   }
@@ -141,5 +142,18 @@
 
   .seo-content h3 {
     font-size: 1.3rem;
+  }
+
+}
+
+/* Ensure navbar is responsive */
+@media (max-width: 480px) {
+  .nav-links {
+    width: 100%; /* full width on very small screens */
+    padding-top: 100px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
   }
 }
