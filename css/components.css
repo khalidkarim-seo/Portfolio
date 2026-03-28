@@ -23,7 +23,8 @@
 /* 1 BUTTON */
 
 .arrow-btn{
-position:absolute;
+position:relative;
+  z-index:111;
 bottom:2rem;
 background:#ffffff;
 width:3rem;
