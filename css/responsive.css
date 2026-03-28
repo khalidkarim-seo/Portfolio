@@ -60,10 +60,7 @@ a, button, .arrow-btn, .prev, .next {
   .nav-links {
     gap: 24px;
   }
-   .arrow-btn{
-      position: relative;
-      z-index:111;
-   }
+   
   .image-border {
     width: 260px;
     height: 260px;
