@@ -13,12 +13,6 @@ a, button, .arrow-btn, .prev, .next {
   z-index: 1000;
 }
 
-.hero,
-.hero * {
-  position: relative;
-  z-index: 1;
-}
-
 /* ===============================
    TABLET (≤ 992px)
 ================================= */
