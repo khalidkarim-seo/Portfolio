@@ -33,16 +33,16 @@
   <header class="header">
     <div class="container nav-wrapper">
 
-      <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
+      <div class="hamburger menu7" id="hamburger">
+  <span class="line7 line7-top"></span>
+  <span class="line7 line7-middle"></span>
+  <span class="line7 line7-bottom"></span>
 </div>
 
       <nav class="nav">
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
-          <li><a href="#case">Services</a></li>
+          <li><a href="#service">Services</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#work">Recent Work</a></li>
           <li><a href="#contact">Get In Touch</a></li>
@@ -75,43 +75,44 @@
     </div>
   </header>
 
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="hero">
-    <div class="container hero-grid">
-
-      <div class="hero-content">
-        <h1>KHALID KARIM</h1>
-
-        <p>
-I provide professional web development services for startups, small businesses, and enterprises worldwide. 
-From custom website development to advanced Webflow and WordPress solutions, I build fast, responsive, 
-SEO-optimized websites designed to increase traffic, leads, and sales.
-</p>
-               
-  <a href="https://wa.me/923078829986" 
-   class="btn-primary"
-   target="_blank"
-   rel="noopener noreferrer">
-  Let’s get started
-  <span class="arrow">›</span>
-</a>
+    <!-- LEFT SIDE -->
+    <div class="hero-content">
+      <div class="hero-text">
+        <small data-animate="left">Hy! I am Khalid Karim</small>
+        <h1 data-animate="right">Creative <br> Web Developer</h1>
+        <p data-animate="left">
+          Passionate web developer specializing in modern, responsive,
+          and high-performance websites.
+        </p>
       </div>
-<div class="hero-image">
-  <div class="image-border">
-    <img src="assets/khalid karim profile.jpeg" alt="Profile">
-  </div>
+      <div class="arrow-btn">
+<a href="#about"><i class="fa-solid fa-arrow-down"></i></a>
 </div>
-      
     </div>
-  </section>
+
+    <!-- RIGHT SIDE -->
+    <div class="hero-image" data-animate="right">
+      <div class="image-border">
+        <img src="assets/khalid karim profile.jpeg" alt="Profile">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cursor-glow"></div>
+</section>
+
   <!-- ================= My SERVICES ================= -->
-<section class="case-section" id="case">
+<section class="service-section" id="service">
   <div class="container">
 
     <div class="section-header">
-      <h2>Professional Web Development & Digital Services</h2>
-       <p>
+      <h2 data-animate="left">Professional Web Development & Digital Services</h2>
+       <p data-animate="right">
           My expertise includes HTML, CSS, JavaScript, Webflow, and WordPress. 
           I also provide SEO and Social Media Marketing services to help businesses rank on Google, 
           attract customers, and increase sales.
@@ -119,45 +120,45 @@ SEO-optimized websites designed to increase traffic, leads, and sales.
         </p>
     </div>
 
-    <!-- Case 1 -->
-    <div class="case-row reveal">
-      <div class="case-content reveal-left">
+    <!-- service 1 -->
+    <div class="service-row ">
+      <div class="service-content" data-animate="left" >
         <span class="badge badge-fintech">Step 1</span>
         <h3>Custom Website Development Services</h3>
         <p>
           Custom, responsive, and fast-loading websites tailored to your business. Custom Coding (HTML, CSS, JavaScript), Advanced WordPress and Webflow services.
         </p>
-        <a href="#" class="btn btn-orange">Learn More ›</a>
+        <a href="#" class="btn btn-orange">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
       </div>
-      <div class="case-image reveal-right">
+      <div class="service-image " data-animate="right">
         <img src="assets/web-development-services.png" alt="Professional web development services by Khalid Karim">
       </div>
     </div>
 
-    <!-- Case 2 -->
-    <div class="case-row reverse reveal">
-      <div class="case-content reveal-right">
+    <!-- service 2 -->
+    <div class="service-row reverse" >
+      <div class="service-content" data-animate="right">
         <span class="badge badge-edtech">Step 2</span>
         <h3>Technical & On-Page SEO Services</h3>
         <p>
 Improve your site’s visibility and rankings on Google & other search engines. Keyword Research, On-page SEO, Off-page SEO, Technical SEO, Content Optimization.        </p>
-        <a href="#" class="btn btn-blue">Learn More ›</a>
+        <a href="#" class="btn btn-blue">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
       </div>
-      <div class="case-image reveal-left">
+      <div class="service-image " data-animate="left">
         <img src="assets/SEO-services.png" alt="SEO services by Khalid Karim">
       </div>
     </div>
 
-    <!-- Case 3 -->
-    <div class="case-row reveal">
-      <div class="case-content reveal-left">
+    <!-- service 3 -->
+    <div class="service-row ">
+      <div class="service-content " data-animate="left">
         <span class="badge badge-pharma">Step 3</span>
         <h3>Social Media Marketing & Paid Ads Management</h3>
         <p>
 Grow your audience and brand presence across all major platforms. Facebook, Instagram, LinkedIn Ads Running Services and management.        </p>
-        <a href="#" class="btn btn-green">Learn More ›</a>
+        <a href="#" class="go-btn">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
       </div>
-      <div class="case-image reveal-right">
+      <div class="service-image " data-animate="right">
         <img src="assets/social-media-marketing.png" alt="social-media-marketing services by Khalid Karim">
       </div>
     </div>
@@ -169,8 +170,8 @@ Grow your audience and brand presence across all major platforms. Facebook, Inst
   <div class="container">
 
     <div class="section-header dark">
-      <h2>Testimonials</h2>
-      <p>
+      <h2 data-animate="down">Testimonials</h2>
+      <p data-animate="left">
   Client satisfaction is my top priority. From design to development, 
   I ensure every website is fast, scalable, and professionally crafted 
   to meet business goals.
@@ -247,74 +248,155 @@ Grow your audience and brand presence across all major platforms. Facebook, Inst
   <div class="container">
 
     <div class="section-header">
-      <h2>Recent Work</h2>
-<p>
+      <h2 data-animate="down">Recent Work</h2>
+<p data-animate="right">
   A selection of recent web development projects focused on performance, 
   modern design, and real business impact. Each project is crafted to 
   deliver strong user experience and measurable results.
 </p>
     </div>
 
-    <div class="work-grid">
+<div class="work-grid">
 
-      <!-- Work 1 -->
-      <div class="work-card">
-        <img src="assets/nice fly consultants.PNG" alt="Consultancy website design and development project">
-        <h3>Nice Fly Consultants</h3>
-        <p>
-  A modern consultancy website designed for students planning to study abroad. 
-  Built with a clean layout, clear call-to-actions, and responsive design 
-  to generate inquiries and build trust.
-</p>
-        <a href="http://niceflyconsultants.org/" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   class="btn-primary">
-  Live Demo <span class="arrow">›</span>
-</a>
-      </div>
-
-      <!-- Work 2 -->
-      <div class="work-card">
-        <img src="assets/Food website.PNG" alt="food website design and development project">
-        <h3>Nimiese Pizza</h3>
-        <p>
-  A visually engaging restaurant website built to showcase menu items, 
-  improve online presence, and attract local customers with a fast, 
-  mobile-friendly experience.
-</p>
-        <a href="https://nimiese-pizza.webflow.io/" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   class="btn-primary">
-  Live Demo <span class="arrow">›</span>
-</a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-<section class="seo-content">
-  <div class="container">
-    <h2>Why Choose My Web Development Services?</h2>
-    <p>
-      Choosing the right web developer is crucial for your business success. I combine modern design, 
-      clean coding practices, SEO best practices, and performance optimization to deliver websites 
-      that rank on Google and convert visitors into customers.
+  <!-- Work 1 -->
+  <div class="work-card">
+    <img data-animate="left" src="assets/nice fly consultants.PNG" alt="study abroad consultancy website">
+    <h3>Nice Fly Consultants</h3>
+    <p data-animate="right">
+      A modern study abroad consultancy website designed for students planning to study abroad. 
+      Built with a clean layout, clear call-to-actions, and responsive design 
+      to generate inquiries and build trust.
     </p>
 
-    <h3>What You Get:</h3>
-    <ul>
-      <li>Custom Website Development</li>
-      <li>Fully Responsive Design</li>
-      <li>SEO-Optimized Structure</li>
-      <li>Fast Loading Speed</li>
-      <li>Secure & Scalable Code</li>
-    </ul>
+    <a href="https://niceflyconsultants.org" target="_blank" class="btn-parent">
+      <span class="btn-txt-1">Click Here</span>
+      <span class="btn-txt-2">Visit Now</span>
+    </a>
+
+  </div>
+
+  <!-- Work 2 -->
+  <div class="work-card">
+    <img data-animate="right" src="assets/Food website.PNG" alt="restaurant website">
+    <h3>Nimiese Pizza</h3>
+    <p data-animate="left">
+      A visually engaging restaurant website built to show service menu items, 
+      improve online presence, and attract local customers with a fast, 
+      mobile-friendly experience.
+    </p>
+
+    <a href="https://nimiese-pizza.webflow.io/" target="_blank" class="btn-parent">
+      <span class="btn-txt-1">Click Here</span>
+      <span class="btn-txt-2">Visit Now</span>
+    </a>
+
+  </div>
+
+  <!-- Work 3 -->
+  <div class="work-card">
+    <img data-animate="right" src="assets/niceandpurefoods.PNG" alt="rice-export-website">
+    <h3>Nice and pure foods pvt ltd.</h3>
+    <p data-animate="left">
+      A visually engaging rice export website built to show service menu items, 
+      improve online presence, and attract local & international customers with a fast, 
+      mobile-friendly experience.
+    </p>
+
+    <a href="https://niceandpurefoods.com" target="_blank" class="btn-parent">
+      <span class="btn-txt-1">Click Here</span>
+      <span class="btn-txt-2">Visit Now</span>
+    </a>
+
+  </div>
+    <!-- Work 4 -->
+  <div class="work-card">
+    <img data-animate="left" src="assets/webflowbykhalid.PNG" alt="Portfolio website">
+    <h3>webflow by khalid</h3>
+    <p data-animate="right">
+      A modern portfolio website designed for students planning to study abroad. 
+      Built with a clean layout, clear call-to-actions, and responsive design 
+      to generate inquiries and build trust.
+    </p>
+
+    <a href="https://webflowbykhalid.com" target="_blank" class="btn-parent">
+      <span class="btn-txt-1">Click Here</span>
+      <span class="btn-txt-2">Visit Now</span>
+    </a>
+
+  </div>
+
+
+</div>
   </div>
 </section>
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <img src="assets/khalid-karim.png" class="outline">
+  <div class="about-content">
+    <small data-animate="down">ABOUT ME</small>
+    <h2 data-animate="right">
+      My name is <span>Khalid Karim</span>, I’m a <span>Web Developer</span> based in 
+      <span>Pakistan</span> and this is a <span>selection</span> of my personal 
+      and <span>professional</span> work.
+    </h2>
+    <p data-animate="left">
+      I am a passionate web developer specializing in modern website development, 
+      responsive design, and clean user experiences. I work with technologies like 
+      HTML, CSS, WordPress, and Webflow to create fast, visually appealing, and 
+      SEO-friendly websites. I enjoy transforming ideas into functional and 
+      engaging digital products. My goal is to deliver high-quality websites that 
+      help businesses grow online and create a strong digital presence.
+    </p>
+    <a href="https://wa.me/923078829986" class="btn"  rel="noopener noreferrer" target="_blank">Get in Touch</a>
+  </div>
+</section>
+<!-- ================= Why choose me ================= -->
 
+<section class="seo-content">
+
+<div class="container">
+
+<h2 data-animate="down">Why Choose My Web Development Services?</h2>
+
+<div class="timeline">
+
+<div class="progress-line"></div>
+
+<ul>
+
+<li>
+<div class="card">
+<h3>Custom Website Development</h3>
+<p>Fully tailored website built for your business.</p>
+</div>
+</li>
+
+<li>
+<div class="card">
+<h3>Responsive Design</h3>
+<p>Perfect display across mobile, tablet and desktop.</p>
+</div>
+</li>
+
+<li>
+<div class="card">
+<h3>SEO Optimized</h3>
+<p>Structured to rank better on Google search.</p>
+</div>
+</li>
+
+<li>
+<div class="card">
+<h3>Fast Performance</h3>
+<p>Optimized for speed and performance.</p>
+</div>
+</li>
+
+</ul>
+
+</div>
+</div>
+</section>
 <!-- ================= WEBSITE TEMPLATES ================= -->
 <section class="templates-section">
   <div class="container">
@@ -328,60 +410,55 @@ Grow your audience and brand presence across all major platforms. Facebook, Inst
       </p>
     </div>
 
-    <div class="templates-grid">
+    <div class="slider">
 
-      <!-- Template 1 -->
-      <div class="template-card">
-        <img src="assets/Demo-1.PNG" alt="Business Template">
-        <h3>Business / Corporate</h3>
-        <p>
-          Perfect for agencies, consultants, and service-based businesses.
-        </p>
-        <a href="#" class="btn-primary">Preview Template</a>
+      <!-- Slides Wrapper -->
+      <div class="slides" id="slides">
+
+        <!-- Slide -->
+        <div class="slide">
+          <img src="assets/Demo-1.PNG">
+          <h3>Business / Corporate</h3>
+          <p>Perfect for agencies, consultants, and service-based businesses.</p>
+        </div>
+
+        <div class="slide">
+          <img src="assets/Demo-2.PNG">
+          <h3>Restaurant / Food</h3>
+          <p>Modern design for restaurants, cafes, and food brands.</p>
+        </div>
+
+        <div class="slide">
+          <img src="assets/Demo-3.PNG">
+          <h3>Portfolio</h3>
+          <p>Clean and stylish template for freelancers.</p>
+        </div>
+
+        <div class="slide">
+          <img src="assets/Demo-4.PNG">
+          <h3>Services Website</h3>
+          <p>Perfect for service-based businesses.</p>
+        </div>
+
+        <div class="slide">
+          <img src="assets/Demo-5.PNG">
+          <h3>Landing Page</h3>
+          <p>High converting landing page design.</p>
+        </div>
+
       </div>
 
-      <!-- Template 2 -->
-      <div class="template-card">
-        <img src="assets/Demo-2.PNG" alt="Restaurant Template">
-        <h3>Restaurant / Food</h3>
-        <p>
-          Modern design for restaurants, cafes, and food brands.
-        </p>
-        <a href="#" class="btn-primary">Preview Template</a>
-      </div>
+      <!-- Buttons -->
+      <button class="prev" id="prev">&#10094;</button>
+      <button class="next" id="next">&#10095;</button>
 
-      <!-- Template 3 -->
-      <div class="template-card">
-        <img src="assets/Demo-3.PNG" alt="Portfolio Template">
-        <h3>Personal Portfolio</h3>
-        <p>
-          Clean and stylish template for freelancers and creatives.
-        </p>
-        <a href="#" class="btn-primary">Preview Template</a>
-      </div>
-       <!-- Template 3 -->
-      <div class="template-card">
-        <img src="assets/Demo-4.PNG" alt="Portfolio Template">
-        <h3>Services Website</h3>
-        <p>
-          Clean and stylish template for freelancers and creatives.
-        </p>
-        <a href="#" class="btn-primary">Preview Template</a>
-      </div>
-       <!-- Template 3 -->
-      <div class="template-card">
-        <img src="assets/Demo-5.PNG" alt="Portfolio Template">
-        <h3>Landing Page</h3>
-        <p>
-          Clean and stylish template for freelancers and creatives.
-        </p>
-        <a href="#" class="btn-primary">Preview Template</a>
-      </div>
+      <!-- Dots -->
+      <div class="dots" id="dots"></div>
 
     </div>
+
   </div>
 </section>
-
   <!-- ================= CONTACT ================= -->
 <section class="contact-section" id="contact">
   <div class="container">
@@ -395,7 +472,7 @@ Grow your audience and brand presence across all major platforms. Facebook, Inst
     <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
 
       <!-- Web3Forms Access Key -->
-      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="access_key" value="5ded0990-dab7-48df-8947-7044915f9b2c">
 
       <!-- Optional: Redirect After Submit -->
       <input type="hidden" name="redirect" value="https://webflowbykhalid.com/">
@@ -433,13 +510,14 @@ Grow your audience and brand presence across all major platforms. Facebook, Inst
       </div>
 
       <button type="submit" class="btn-primary">
-        Submit <span class="arrow">›</span>
+        Submit <i class="fa-solid fa-arrow-right-long"></i>
       </button>
 
     </form>
 
   </div>
 </section>
+
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
