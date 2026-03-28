@@ -1,886 +1,206 @@
-/* =========================================================
-   SMALL LAPTOPS (max-width: 1439px) HEADER
-========================================================= */
+/* ===============================
+   GLOBAL RESPONSIVE SCALING
+================================= */
 
-@media (max-width:1439px){
-
-.nav-links{
-gap:36px;
-}
-
-.header{
-padding:18px 0;
-}
-.hamburger{
-  display:none;
-}
-
-
-}
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.nav-links{
-gap:28px;
-}
-
-.socials{
-gap:14px;
-}
-
-.socials a{
-width:30px;
-height:30px;
-font-size:16px;
-}
-
-}
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-/* show hamburger */
-
-.hamburger{
-display:block;
-z-index:1100;
-}
-
-
-/* mobile menu */
-
-.nav-links{
-position:fixed;
-top:0;
-top:-100%;
-height:auto;
-width:100%;
-
-background:#0f0f0f;
-
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-gap:30px;
-
-transition:0.4s ease;
-}
-
-/* active menu */
-
-.nav-links.active{
-up:0;
-}
-
-/* bigger mobile links */
-
-.nav-links a{
-font-size:18px;
-}
-
-}
-
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) HERO
-========================================================= */
-
-@media (max-width:1439px){
-
-.hero-grid{
-gap:40px;
-}
-
-.hero-text h1{
-font-size:54px;
-}
-
-.image-border{
-width:380px;
-height:380px;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.hero-grid{
-grid-template-columns:1fr;
-text-align:center;
-gap:50px;
-}
-
-.hero-text p{
-margin:0 auto 35px;
-}
-
-.hero-text h1{
-font-size:46px;
-}
-
-.hero-text small{
-border:none;
-padding-left:0;
-}
-
-.image-border{
-width:340px;
-height:340px;
-margin:auto;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.hero{
-padding-top:120px;
-}
-
-.hero-grid{
-gap:40px;
-}
-
-.hero-text h1{
-font-size:34px;
-line-height:1.3;
-}
-
-.hero-text p{
-font-size:15px;
-}
-
-.image-border{
-width:260px;
-height:260px;
-}
-
-}
-
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) ABOUT
-========================================================= */
-
-@media (max-width:1439px){
-
-.about{
-padding:70px 80px;
-}
-
-.about-content{
-max-width:80%;
-}
-
-.about-content h2{
-font-size:1.8rem;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.about{
-height:auto;
-padding:70px 60px;
-}
-
-.about-content{
-max-width:100%;
-}
-
-.about-content h2{
-font-size:1.6rem;
-}
-
-.about-content p{
-font-size:0.95rem;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.about{
-height:auto;
-padding:60px 25px;
-}
-
-.about-content{
-max-width:100%;
-}
-
-.about-content small{
-font-size:12px;
-}
-
-.about-content h2{
-font-size:1.4rem;
-line-height:1.6;
-}
-
-.about-content p{
-font-size:0.9rem;
-}
-
-.btn{
-padding:10px 20px;
-font-size:0.8rem;
-}
-
-}
-
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) SERVICE
-========================================================= */
-
-@media (max-width:1439px){
-
-.service-section{
-padding:90px 40px;
-}
-
-.section-header h2{
-font-size:36px;
-}
-
-.service-row{
-gap:60px;
-margin-bottom:100px;
-}
-
-.service-content h3{
-font-size:26px;
-}
-
-.service-image img{
-width:85%;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.service-section{
-padding:80px 40px;
-}
-
-.section-header{
-margin-bottom:70px;
-}
-
-.section-header h2{
-font-size:32px;
-}
-
-.service-row{
-grid-template-columns:1fr;
-gap:40px;
-margin-bottom:80px;
-text-align:center;
-}
-
-/* remove reverse effect */
-
-.service-row.reverse{
-direction:ltr;
-}
-
-.service-content p{
-margin:0 auto 25px;
-}
-
-.service-image img{
-width:70%;
-margin:auto;
-display:block;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.service-section{
-padding:70px 20px;
-}
-
-.section-header{
-margin-bottom:60px;
-}
-
-.section-header h2{
-font-size:26px;
-}
-
-.section-header p{
-font-size:14px;
-}
-
-.service-row{
-gap:30px;
-margin-bottom:60px;
-}
-
-.service-content h3{
-font-size:22px;
-}
-
-.service-content p{
-font-size:14px;
-}
-
-.service-image img{
-width:85%;
-}
-
-}
-
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) TESTIMONIALS
-========================================================= */
-
-@media (max-width:1439px){
-
-.testimonials-section{
-padding:100px 0;
-}
-
-.testimonials-grid{
-gap:30px;
-}
-
-.testimonial-card{
-padding:35px;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.testimonials-grid{
-grid-template-columns:1fr;
-gap:30px;
-}
-
-.testimonial-card{
-padding:30px;
-}
-
-.testimonial-card p{
-font-size:15px;
-}
-
-.client img{
-width:45px;
-height:45px;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.testimonials-section{
-padding:80px 20px;
-}
-
-.testimonial-card{
-padding:25px;
-}
-
-.quote{
-font-size:32px;
-}
-
-.testimonial-card p{
-font-size:14px;
-line-height:1.6;
-}
-
-.client{
-gap:12px;
-}
-
-.client img{
-width:40px;
-height:40px;
-}
-
-.client span{
-font-size:14px;
-}
-
-}
-
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) WORK
-========================================================= */
-
-@media (max-width:1439px){
-
-.recent-work-section{
-padding:90px 40px;
-}
-
-.work-grid{
-gap:60px;
-}
-
-.work-card{
-height:auto;
-}
-
-.work-card h3{
-font-size:26px;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.recent-work-section{
-padding:80px 40px;
-}
-
-.work-grid{
-grid-template-columns:1fr;
-gap:50px;
-}
-
-.work-card{
-height:auto;
-text-align:center;
-}
-
-.work-card p{
-margin:0 auto 25px;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.recent-work-section{
-padding:70px 20px;
-}
-
-.work-grid{
-gap:40px;
-}
-
-.work-card{
-height:auto;
-}
-
-.work-card h3{
-font-size:22px;
-}
-
-.work-card p{
-font-size:14px;
-}
-
-}
-
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px)
-========================================================= */
-
-@media (max-width:1439px){
-
-.seo-content{
-padding:100px 0;
-}
-
-.seo-content h2{
-font-size:2.2rem;
-}
-
-.seo-content p{
-font-size:1.05rem;
-}
-
-.timeline{
-margin-top:70px;
-}
-
-.seo-content ul li{
-padding:25px 35px;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.seo-content{
-padding:90px 0;
-}
-
-.seo-content h2{
-font-size:2rem;
-}
-
-.seo-content p{
-font-size:1rem;
-}
-
-.seo-content ul li{
-padding:25px 25px;
-}
-
-.seo-content ul li .card{
-font-size:0.95rem;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.seo-content{
-padding:80px 0;
-}
-
-.seo-content h2{
-font-size:1.6rem;
-}
-
-.seo-content p{
-font-size:0.95rem;
-margin-bottom:40px;
-}
-
-/* timeline line left side */
-
-.seo-content .timeline::before{
-left:20px;
-transform:none;
-}
-
-.seo-content .progress-line{
-left:20px;
-transform:none;
-}
-
-/* timeline items full width */
-
-.seo-content ul li{
-width:100%;
-left:0;
-text-align:left;
-padding:20px 20px 20px 70px;
-}
-
-/* remove alternating layout */
-
-.seo-content ul li:nth-child(odd),
-.seo-content ul li:nth-child(even){
-left:0;
-text-align:left;
-}
-
-/* force all dots to center of line */
-
-.seo-content ul li::before,
-.seo-content ul li:nth-child(odd)::before,
-.seo-content ul li:nth-child(even)::before{
-left:20px;
-transform:translateX(-50%);
-right:auto;
-}
-
-/* card adjustments */
-
-.seo-content ul li .card{
-font-size:0.9rem;
-padding:18px;
-margin-left:10px;
-}
-
-}
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) TEMPLATE
-========================================================= */
-
-@media (max-width:1439px){
-
-.templates-section{
-padding:90px 40px;
-}
-
-.templates-grid{
-gap:50px;
-}
-
-.template-card h3{
-font-size:22px;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.templates-section{
-padding:80px 40px;
-}
-
-.templates-grid{
-grid-template-columns:repeat(2,1fr);
-gap:40px;
-}
-
-.template-card{
-text-align:center;
-}
-
-.template-card p{
-margin:0 auto 20px;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.templates-section{
-padding:70px 20px;
-}
-
-.templates-grid{
-grid-template-columns:1fr;
-gap:35px;
-}
-
-.template-card h3{
-font-size:20px;
-}
-
-.template-card p{
-font-size:14px;
-}
-
-}
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) CONTACT
-========================================================= */
-
-@media (max-width:1439px){
-
-.contact-section{
-padding:100px 40px;
-}
-
-.contact-form{
-max-width:550px;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.contact-section{
-padding:90px 40px;
-}
-
-.contact-form{
-max-width:500px;
-gap:25px;
-}
-
-.form-group input,
-.form-group textarea{
-padding:14px;
-}
-
-}
-
-
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
-
-@media (max-width:767px){
-
-.contact-section{
-padding:80px 20px;
-}
-
-.contact-form{
-max-width:100%;
-gap:20px;
-}
-
-.form-group label{
-font-size:13px;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.form-group input,
-.form-group textarea{
-padding:12px;
-font-size:14px;
+/* Smooth font scaling */
+h1 {
+  font-size: clamp(32px, 5vw, 64px);
 }
 
+h2 {
+  font-size: clamp(24px, 4vw, 42px);
 }
 
-/* =========================================================
-   SMALL LAPTOPS (max-width:1439px) FOOTER
-========================================================= */
-
-@media (max-width:1439px){
-
-.footer{
-padding:22px 0;
-}
-
-}
-
-
-/* =========================================================
-   TABLETS (max-width:1023px)
-========================================================= */
-
-@media (max-width:1023px){
-
-.footer{
-padding:20px 0;
+p {
+  font-size: clamp(14px, 1.5vw, 16px);
 }
 
-.footer p{
-font-size:13px;
-}
+/* ===============================
+   TABLET (≤ 992px)
+   Keep layout SAME, just scale
+================================= */
 
-}
+@media (max-width: 992px) {
 
+  .hero-grid,
+  .service-row,
+  .testimonials-grid,
+  .work-grid {
+    gap: 40px;
+  }
 
-/* =========================================================
-   MOBILE (max-width:767px)
-========================================================= */
+  .image-border {
+    width: 320px;
+    height: 320px;
+  }
 
-@media (max-width:767px){
+  .about-content {
+    max-width: 90%;
+  }
 
-.footer{
-padding:18px 15px;
+  .templates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.footer p{
-font-size:12px;
-line-height:1.6;
-}
+/* ===============================
+   MOBILE (≤ 768px)
+   Layout still SAME (2 columns)
+   Only tighter scaling
+================================= */
 
-}
+@media (max-width: 768px) {
 
-/* ===== MOBILE SLIDER FIX ===== */
+  .nav-links {
+    gap: 24px;
+  }
 
-@media (max-width: 767px) {
+  .hero-text h1 {
+    font-size: clamp(28px, 6vw, 40px);
+  }
 
-  .slider {
+  .hero-text p {
     max-width: 100%;
   }
 
-  .slide img {
-    height: 200px;
-    object-fit: cover;
+  .image-border {
+    width: 260px;
+    height: 260px;
   }
 
-  .slide h3 {
-    font-size: 18px;
+  .service-image img {
+    width: 100%;
   }
 
-  .slide p {
-    font-size: 14px;
-    padding: 0 10px;
+  .templates-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE (≤ 600px)
+   NOW stack layout + NAV MENU
+================================= */
+
+@media (max-width: 600px) {
+
+  /* ========= NAV ========= */
+
+  .hamburger {
+    display: block;
   }
 
-  /* smaller arrows */
-  .prev, .next {
-    padding: 8px 12px;
-    font-size: 14px;
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.4s ease;
   }
 
-  .prev {
-    left: 5px;
+  /* ACTIVE STATE (JS will add .active) */
+  .nav-links.active {
+    max-height: 500px; /* auto feel */
+    padding: 20px 0;
   }
 
-  .next {
-    right: 5px;
+  .socials {
+    display: none;
   }
 
+  /* ========= LAYOUT STACK ========= */
+
+  .hero-grid,
+  .service-row,
+  .testimonials-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .service-row.reverse {
+    direction: ltr;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .service-content p,
+  .work-card p {
+    max-width: 100%;
+  }
+
+  .image-border {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  /* ========= TIMELINE FIX ========= */
+
+  .seo-content .timeline::before,
+  .seo-content .progress-line {
+    left: 10px;
+  }
+
+  .seo-content ul li {
+    width: 100%;
+    padding-left: 40px;
+    text-align: left;
+  }
+
+  .seo-content ul li:nth-child(even) {
+    left: 0;
+  }
+
+  .seo-content ul li::before,
+  .seo-content ul li:nth-child(even)::before {
+    left: 10px;
+  }
+
+  /* ========= TEMPLATES ========= */
+
+  .templates-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   EXTRA SMALL (≤ 400px)
+================================= */
+
+@media (max-width: 400px) {
+
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  .image-border {
+    width: 180px;
+    height: 180px;
+  }
 }
