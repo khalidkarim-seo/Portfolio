@@ -25,7 +25,7 @@
 .arrow-btn{
 position:relative;
   z-index:111;
-bottom:2rem;
+bottom:1rem;
 background:#ffffff;
 width:3rem;
 height:3rem;
@@ -215,30 +215,6 @@ background:black;
   transform: translateY(-2px);
   letter-spacing: 1.2px;
 }
-/* ================= REVEAL ANIMATION ================= */
-
-.reveal,
-.reveal-left,
-.reveal-right {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal-left {
-  transform: translateX(-60px);
-}
-
-.reveal-right {
-  transform: translateX(60px);
-}
-
-.reveal.active,
-.reveal-left.active,
-.reveal-right.active {
-  opacity: 1;
-  transform: translate(0);
-}
 
 /* ===== Cursor Glow ===== */
 
@@ -317,57 +293,111 @@ transform: scale(.95);
 }
 
 
-/* ===== SLIDER ===== */
+/* ================= PREMIUM SLIDER ================= */
 
 .slider {
   position: relative;
-  overflow: hidden;
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
+  perspective: 1000px;
+  overflow: visible;
 }
 
 .slides {
   display: flex;
+  align-items: center;
+  gap: 30px;
   transition: transform 0.6s ease;
 }
 
+/* Slide */
 .slide {
-  min-width: 100%;
-  text-align: center;
+  min-width: 70%;
+  opacity: 0.4;
+  transform: scale(0.85);
+  transition: all 0.5s ease;
+  filter: blur(2px);
 }
 
-.slide img {
+/* Active center slide */
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  z-index: 2;
+}
+
+/* Card */
+.card-img {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.slide h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
 
-.slide p {
+.premium-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Content */
+.card-content {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card-content h3 {
+  font-size: 24px;
+}
+
+.card-content p {
   color: #666;
+  margin: 10px 0 20px;
+}
+
+/* Button */
+.view-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #00ff88, #00cfff);
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,255,136,0.4);
 }
 
 /* Arrows */
-
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: black;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
   border-radius: 50%;
+  padding: 12px 18px;
+  color: white;
+  cursor: pointer;
   z-index: 10;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: -20px; }
+.next { right: -20px; }
 
 .prev:hover, .next:hover {
   background: #00ff88;
@@ -375,22 +405,22 @@ transform: scale(.95);
 }
 
 /* Dots */
-
 .dots {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .dots span {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   margin: 5px;
-  background: #ccc;
+  background: #555;
   border-radius: 50%;
-  cursor: pointer;
+  display: inline-block;
 }
 
 .dots span.active {
   background: #00ff88;
+  transform: scale(1.3);
 }
+

@@ -88,38 +88,52 @@ window.addEventListener("load", updateTimeline);
   /* =========================================================
      4. HERO BORDER CURSOR ANIMATION
   ========================================================= */
+/* =========================================================
+   HERO BORDER CURSOR ANIMATION (DESKTOP ONLY)
+========================================================= */
 
-  const heroBorder = document.querySelector(".image-border");
+const heroBorder = document.querySelector(".image-border");
 
-  function handleHeroBorderAnimation(e) {
+function handleHeroBorderAnimation(e) {
+  if (!heroBorder) return;
 
-    if (!heroBorder) return;
+  const rect = heroBorder.getBoundingClientRect();
 
-    const rect = heroBorder.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
 
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+  const deltaX = e.clientX - centerX;
+  const deltaY = e.clientY - centerY;
 
-    const deltaX = e.clientX - centerX;
-    const deltaY = e.clientY - centerY;
+  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 180;
 
-    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 180;
+  heroBorder.style.background = `
+    conic-gradient(
+      white 0deg ${angle}deg,
+      rgba(255,255,255,0) ${angle}deg 360deg
+    )
+  `;
+}
 
-    heroBorder.style.background = `
-      conic-gradient(
-        white 0deg ${angle}deg,
-        rgba(255,255,255,0) ${angle}deg 360deg
-      )
-    `;
+/* ✅ Toggle function (PRO way) */
+function toggleHeroBorderEffect() {
+  if (!heroBorder) return;
 
-  }
+  const isMobile = window.innerWidth <= 768;
 
-  if (heroBorder) {
+  if (isMobile) {
+    window.removeEventListener("mousemove", handleHeroBorderAnimation);
+    heroBorder.style.background = "none";
+  } else {
     window.addEventListener("mousemove", handleHeroBorderAnimation);
   }
+}
 
+/* ✅ Run on load */
+toggleHeroBorderEffect();
 
-
+/* ✅ Run on resize */
+window.addEventListener("resize", toggleHeroBorderEffect);
   /* =========================================================
      5. MOBILE NAVIGATION (HAMBURGER)
   ========================================================= */
@@ -232,7 +246,7 @@ if (glow) {
 }
 
 
-/* ================= SLIDER ================= */
+/* ================= PREMIUM SLIDER ================= */
 
 const slides = document.getElementById("slides");
 const slide = document.querySelectorAll(".slide");
@@ -254,34 +268,41 @@ const dots = document.querySelectorAll(".dots span");
 
 /* Update slider */
 function updateSlider() {
-  slides.style.transform = `translateX(-${index * 100}%)`;
+  const isMobile = window.innerWidth <= 768;
+
+slides.style.transform = isMobile
+  ? `translateX(-${index * 100}%)`
+  : `translateX(-${index * 80}%)`;
+
+  slide.forEach((s, i) => {
+    s.classList.remove("active");
+    if (i === index) s.classList.add("active");
+  });
 
   dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
+  if (dots[index]) dots[index].classList.add("active");
 }
 
-/* Go to specific slide */
+/* Controls */
 function goToSlide(i) {
   index = i;
   updateSlider();
   resetAutoSlide();
 }
 
-/* Next */
 function nextSlide() {
   index = (index + 1) % slide.length;
   updateSlider();
 }
 
-/* Prev */
 function prevSlide() {
   index = (index - 1 + slide.length) % slide.length;
   updateSlider();
 }
 
-/* Auto slide */
+/* Auto */
 function startAutoSlide() {
-  autoSlide = setInterval(nextSlide, 3000);
+  autoSlide = setInterval(nextSlide, 3500);
 }
 
 function resetAutoSlide() {
