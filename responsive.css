@@ -1,0 +1,344 @@
+/* ================================
+   GLOBAL RESPONSIVE SCALING
+================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .section-header h2 {
+    font-size: 34px;
+  }
+
+  .service-row,
+  .work-grid,
+  .testimonials-grid {
+    gap: 40px;
+  }
+
+  .image-border {
+    width: 320px;
+    height: 320px;
+  }
+
+}
+
+/* Small Tablets */
+@media (max-width: 768px) {
+
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .service-content h3,
+  .work-card h3 {
+    font-size: 22px;
+  }
+
+  .image-border {
+    width: 260px;
+    height: 260px;
+  }
+
+  .arrow-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  /* ================= TEMPLATES SECTION ================= */
+
+/* MOBILE FIRST */
+.templates-section {
+  padding: 60px 20px;
+}
+
+/* REMOVE GRID FOR MOBILE */
+.templates-grid {
+  display: block;
+}
+
+/* ===== TEMPLATE CARD ===== */
+.template-card {
+  margin-bottom: 30px;
+}
+
+.template-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.template-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.template-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.section-header {
+  max-width: 100%;
+}
+
+/* ===== SLIDER WRAPPER ===== */
+.slider {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+/* Remove drag text for cleaner mobile UX */
+.slider::after {
+  display: none;
+}
+
+/* ===== TRACK ===== */
+.slides {
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s ease;
+  cursor: grab;
+  will-change: transform;
+  padding-left: 10px;
+}
+
+.slides:active {
+  cursor: grabbing;
+}
+
+/* ===== SLIDE ===== */
+.slide {
+  flex: 0 0 80%; /* Bigger for mobile */
+  margin: 0 10px;
+
+  opacity: 0.8;
+  transform: scale(0.9);
+
+  transition: 
+    transform 0.4s ease,
+    opacity 0.3s ease;
+
+  user-select: none;
+}
+
+/* ===== ACTIVE ===== */
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Reduce side distractions */
+.slide.prev,
+.slide.next {
+  opacity: 0.7;
+  transform: scale(0.92);
+}
+
+.slide:not(.active):not(.prev):not(.next) {
+  opacity: 0.3;
+  transform: scale(0.85);
+}
+
+/* ===== CARD ===== */
+.card-img {
+  border-radius: 12px;
+  border: 1px solid white;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  height: 180px; /* smaller for mobile */
+  object-fit: cover;
+}
+
+/* Prevent drag glitch */
+.slide img {
+  pointer-events: none;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+/* ===== CONTENT ===== */
+.card-content {
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+  margin: 6px 0 10px;
+}
+
+/* ===== BUTTONS ===== */
+.slider-btn {
+  display: none; /* hide arrows for mobile swipe UX */
+}
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+/* ================= MOBILE NAV (TOP DROPDOWN) ================= */
+
+.nav-links {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(12px);
+
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.nav-links.active {
+  max-height: 400px; /* enough for menu */
+  padding: 30px 0;
+}
+
+/* Hamburger visible */
+.hamburger {
+  display: block;
+}
+
+  /* HERO */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+    margin-bottom: 30px;
+  }
+.cursor-glow{
+   display: none;
+}
+ .image-border {
+    background: none !important;
+  }
+
+  /* SERVICES */
+  .service-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .service-row.reverse {
+    direction: ltr;
+  }
+
+  .service-image img {
+    width: 100%;
+  }
+
+  /* WORK */
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ABOUT */
+  .about-content {
+    max-width: 100%;
+  }
+
+  /* TIMELINE */
+  .seo-content ul li {
+    width: 100%;
+    left: 0 !important;
+    text-align: left;
+  }
+
+  .seo-content .timeline::before,
+  .seo-content .progress-line {
+    left: 20px;
+  }
+
+  .seo-content ul li::before,
+  .seo-content ul li.active::after {
+    left: 20px !important;
+  }
+
+}
+
+/* Extra Small Mobile */
+@media (max-width: 400px) {
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+  }
+
+  .btn,
+  .btn-primary {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+    .slide {
+    flex: 0 0 85%;
+  }
+
+  .card-img img {
+    height: 160px;
+  }
+
+
+}
