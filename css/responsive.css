@@ -64,6 +64,150 @@
     width: 2.5rem;
     height: 2.5rem;
   }
+  /* ================= TEMPLATES SECTION ================= */
+
+/* MOBILE FIRST */
+.templates-section {
+  padding: 60px 20px;
+}
+
+/* REMOVE GRID FOR MOBILE */
+.templates-grid {
+  display: block;
+}
+
+/* ===== TEMPLATE CARD ===== */
+.template-card {
+  margin-bottom: 30px;
+}
+
+.template-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.template-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.template-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.section-header {
+  max-width: 100%;
+}
+
+/* ===== SLIDER WRAPPER ===== */
+.slider {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+/* Remove drag text for cleaner mobile UX */
+.slider::after {
+  display: none;
+}
+
+/* ===== TRACK ===== */
+.slides {
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s ease;
+  cursor: grab;
+  will-change: transform;
+  padding-left: 10px;
+}
+
+.slides:active {
+  cursor: grabbing;
+}
+
+/* ===== SLIDE ===== */
+.slide {
+  flex: 0 0 80%; /* Bigger for mobile */
+  margin: 0 10px;
+
+  opacity: 0.8;
+  transform: scale(0.9);
+
+  transition: 
+    transform 0.4s ease,
+    opacity 0.3s ease;
+
+  user-select: none;
+}
+
+/* ===== ACTIVE ===== */
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Reduce side distractions */
+.slide.prev,
+.slide.next {
+  opacity: 0.7;
+  transform: scale(0.92);
+}
+
+.slide:not(.active):not(.prev):not(.next) {
+  opacity: 0.3;
+  transform: scale(0.85);
+}
+
+/* ===== CARD ===== */
+.card-img {
+  border-radius: 12px;
+  border: 1px solid white;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  height: 180px; /* smaller for mobile */
+  object-fit: cover;
+}
+
+/* Prevent drag glitch */
+.slide img {
+  pointer-events: none;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+/* ===== CONTENT ===== */
+.card-content {
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+  margin: 6px 0 10px;
+}
+
+/* ===== BUTTONS ===== */
+.slider-btn {
+  display: none; /* hide arrows for mobile swipe UX */
+}
 
 }
 
@@ -172,6 +316,16 @@
 
 }
 
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
 /* Extra Small Mobile */
 @media (max-width: 400px) {
 
@@ -188,5 +342,13 @@
     padding: 10px 18px;
     font-size: 14px;
   }
+    .slide {
+    flex: 0 0 85%;
+  }
+
+  .card-img img {
+    height: 160px;
+  }
+
 
 }

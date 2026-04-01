@@ -1,3 +1,53 @@
+
+/* base hidden state */
+
+[data-animate]{
+  opacity:0;
+  transform:translateY(50px);
+  transition:0.6s ease;
+}
+
+/* from left */
+
+[data-animate="left"]{
+transform: translateX(-120px);
+}
+
+/* from right */
+
+[data-animate="right"]{
+transform: translateX(120px);
+}
+
+/* from bottom */
+
+[data-animate="up"]{
+transform: translateY(80px);
+}
+
+/* from top (NEW) */
+
+[data-animate="down"]{
+transform: translateY(-80px);
+}
+
+/* fade */
+
+[data-animate="fade"]{
+transform: scale(.95);
+}
+
+/* visible state */
+
+[data-animate].show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+
+
+
 /* ================= BUTTON ================= */
 
 .btn-primary {
@@ -241,56 +291,70 @@ z-index: 0;
 
 .outline{
 position:absolute;
-opacity:.15;
+opacity:.11;
 width:30%;
 right:1%;
 border-radius: 50%;
 
 }
 
-/* base hidden state */
+/* ================= WHATSAPP FLOAT ================= */
 
-[data-animate]{
-  opacity:0;
-  transform:translateY(50px);
-  transition:0.6s ease;
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  background: #25D366;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 28px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+  z-index: 9999;
+  cursor: pointer;
+
+  transition: 0.3s ease;
 }
 
-/* from left */
-
-[data-animate="left"]{
-transform: translateX(-120px);
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #20b358;
 }
 
-/* from right */
-
-[data-animate="right"]{
-transform: translateX(120px);
+/* Pulse animation */
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.5);
+  animation: whatsappPulse 2s infinite;
+  z-index: -1;
 }
 
-/* from bottom */
-
-[data-animate="up"]{
-transform: translateY(80px);
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-
-/* from top (NEW) */
-
-[data-animate="down"]{
-transform: translateY(-80px);
-}
-
-/* fade */
-
-[data-animate="fade"]{
-transform: scale(.95);
-}
-
-/* visible state */
-
-[data-animate].show{
-  opacity:1;
-  transform:translateY(0);
-}
-
 

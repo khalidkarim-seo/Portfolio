@@ -224,10 +224,6 @@ window.addEventListener("resize", toggleHeroBorderEffect);
 
   }
 
-});
-
-
-
 /* =========================================================
    7. CURSOR GLOW EFFECT
 ========================================================= */
@@ -249,6 +245,7 @@ if (glow) {
 /* ================= PREMIUM SLIDER (DRAG ONLY) ================= */
 
 const slides = document.getElementById("slides");
+if (!slides) return;
 const dotsContainer = document.getElementById("dots");
 
 let slideItems = document.querySelectorAll(".slide");
@@ -381,7 +378,7 @@ let currentTranslate = 0;
 let prevTranslate = 0;
 
 /* Disable image drag */
-document.querySelectorAll("img").forEach(img => {
+slides.querySelectorAll("img").forEach(img => {
   img.addEventListener("dragstart", e => e.preventDefault());
 });
 
@@ -448,3 +445,8 @@ function getTranslate() {
 /* ===== INIT ===== */
 index = 1;
 setPosition(false);
+
+});
+
+
+
