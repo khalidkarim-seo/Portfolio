@@ -27,7 +27,7 @@
 }
 
 /* Small Tablets */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   .container {
     width: 95%;
@@ -64,8 +64,6 @@
     width: 2.5rem;
     height: 2.5rem;
   }
-  /* ================= TEMPLATES SECTION ================= */
-
 /* MOBILE FIRST */
 .templates-section {
   padding: 60px 20px;
@@ -207,6 +205,13 @@
 /* ===== BUTTONS ===== */
 .slider-btn {
   display: none; /* hide arrows for mobile swipe UX */
+}
+
+.about-content{
+  max-width: 100%;
+}
+.about-right {
+  display: none;
 }
 
 }

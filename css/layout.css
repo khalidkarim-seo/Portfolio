@@ -243,6 +243,11 @@ transform:translateY(0);
 
 /* ================= about section ================= */
 .about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
   position: relative;
   min-height: 100vh;   
   padding: 120px 40px;
@@ -256,8 +261,9 @@ transform:translateY(0);
 }
 
 .about-content {
-  max-width: 75%;
+  max-width: 50%;
   padding-top: 40px;
+  text-align: justify;
 }
 
 .about-content small {
@@ -306,6 +312,41 @@ transform:translateY(0);
   background: #ff4ecd;
   color: #fff;
   box-shadow: 5px 5px 0px #000;
+}
+
+
+.about-right{
+width: 50%;
+  height: 500px; /* 👈 IMPORTANT */
+  position: relative;
+}
+
+spline-viewer{
+ width: 110%;
+  height: 130%;
+  display: block;
+  pointer-events:auto;
+}
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 25px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.about-highlights div {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.about-highlights div:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-3px);
 }
 /* ================= services SECTION ================= */
 
