@@ -214,6 +214,10 @@
   display: none;
 }
 
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 /* Mobile */
@@ -318,6 +322,10 @@
   .seo-content ul li.active::after {
     left: 20px !important;
   }
+     .category-grid {
+    grid-template-columns: 1fr;
+  }
+
 
 }
 
