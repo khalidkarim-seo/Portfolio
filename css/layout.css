@@ -250,7 +250,7 @@ transform:translateY(0);
 
   position: relative;
   min-height: 100vh;   
-  padding: 120px 40px;
+  padding: 40px 40px;
 
   background: conic-gradient(
     white 0deg 0deg,
@@ -916,7 +916,6 @@ opacity:0;
   width: 80px;
   height: 150px;
   object-fit: cover;
-  border-radius: 8px;
   transition: 0.5s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.664);
 }
@@ -951,4 +950,67 @@ opacity:0;
 
 .category-card:hover .img3 {
   transform: translateX(-100px)  scale(1.05);
+}
+
+/* HERO */
+.template-hero {
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.template-hero h1 {
+  font-size: 42px;
+}
+
+.template-hero p {
+  color: #777;
+}
+.template-list{
+  padding-bottom: 100px;
+}
+
+/* GRID */
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.template-card {
+  background: #121212;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.template-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.template-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* INFO */
+.template-info {
+  padding: 20px;
+}
+
+.template-info h3 {
+  margin-bottom: 10px;
+}
+
+.template-info p {
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.template-actions {
+  display: flex;
+  gap: 10px;
 }
