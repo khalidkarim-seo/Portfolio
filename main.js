@@ -29,9 +29,12 @@ const observer = new IntersectionObserver((entries) => {
 
   entries.forEach(entry => {
 
-   if (entry.isIntersecting) {
+if (entry.isIntersecting) {
+
   entry.target.classList.add("show");
-  observer.unobserve(entry.target); // stop observing after first reveal
+
+  observer.unobserve(entry.target);
+
 }
 
   });
@@ -237,7 +240,28 @@ if (glow) {
   });
 
 }
+/* =========================================================
+   WORD BY WORD REVEAL ANIMATION
+========================================================= */
 
+const textElements = document.querySelectorAll('[data-animate="words"]');
+
+/* Wrap every word inside span */
+textElements.forEach((element) => {
+
+  const words = element.textContent.trim().split(" ");
+
+  element.innerHTML = words
+    .map((word, index) => {
+      return `
+        <span style="transition-delay:${index * 0.08}s">
+          ${word}&nbsp;
+        </span>
+      `;
+    })
+    .join("");
+
+});
 
 
 });
